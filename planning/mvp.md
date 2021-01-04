@@ -6,7 +6,10 @@ On load a random national park with it's data will be called through the [Nation
 
 There will be a separate profile view where the user can see their complete list of favorite parks and bucket list and can remove or check them off. This information will be stored using localStorage.
 
-The wireframe can be found [here](https://github.com/jaypeasee/national-parkfinder/blob/main/planning/wireframe-v1.png).
+[Favorites View Wireframe](https://github.com/jaypeasee/national-parkfinder/blob/main/planning/parkfinder-wireframe-v2-1.png)
+[Park Details View Wireframe](https://github.com/jaypeasee/national-parkfinder/blob/main/planning/parkfinder-wireframe-v2-2.png)
+[Park Activities View Wireframe](https://github.com/jaypeasee/national-parkfinder/blob/main/planning/parkfinder-wireframe-v2-3.png)
+
 
 ## Technologies:
 
