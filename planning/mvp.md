@@ -14,3 +14,8 @@ The wireframe can be found [here](https://github.com/jaypeasee/national-parkfind
 * SCSS
 * TypeScript (stretch
 * LocalStorage
+
+## Plan for Learning the Stretch (TypeScript)
+
+1. Dividing between the three of us to get our own basic understanding on day 1. This will include blogs, articles and online tutorials.
+1. The start of the project will be done entirely together because TypeScript will be sprinkled everywhere in our application.
