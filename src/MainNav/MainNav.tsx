@@ -8,7 +8,6 @@ interface FuncProps {
 }
 
 const MainNav: React.FC<FuncProps> = (props) => {
-  console.log(props)
     return (
         <nav className="main-nav">
             <img 

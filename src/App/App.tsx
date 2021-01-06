@@ -9,16 +9,21 @@ interface ChoosePark {
   choosePark: (parkCode: string) => void
 }
 
+interface Park {
+  parkCode: string;
+}
+
 const App: React.FC = () => {
-  const [park, setPark] = useState('') 
+  const [parkCode, setParkCode] = useState('')
   
-  const choosePark = (parkCode: string) => {
-   setPark(parkCode)
+  const choosePark = (parkCodeId: string) => {
+   setParkCode(parkCodeId)
   }
+
   return (
     <main className="body">
       <MainNav choosePark={choosePark}/>
-      <ParkContainer />
+      <ParkContainer parkCode={parkCode}/>
     </main>
   )
 }
