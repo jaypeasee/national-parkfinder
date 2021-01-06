@@ -2,15 +2,24 @@ import './App.scss'
 import React, { useState, useEffect, Fragment } from 'react'
 import MainNav from '../MainNav/MainNav'
 import ParkContainer from '../ParkContainer/ParkContainer'
+// import { Route } from 'react-router-dom'
+import { nationalParks } from '../ParkData'
 
+interface ChoosePark {
+  choosePark: (parkCode: string) => void
+}
 
-
-function App() {
+const App: React.FC = () => {
+  const [park, setPark] = useState('') 
+  
+  const choosePark = (parkCode: string) => {
+   setPark(parkCode)
+  }
   return (
-    <div className="body">
-      <MainNav />
+    <main className="body">
+      <MainNav choosePark={choosePark}/>
       <ParkContainer />
-    </div>
+    </main>
   )
 }
 
