@@ -3,7 +3,12 @@ import NavSearch from '../NavSearch/NavSearch'
 import ParkList from '../ParkList/ParkList'
 import parkfinderLogo from './landscape.png'
 
-function MainNav() {
+interface FuncProps {
+  choosePark: (parkCode: string) => void
+}
+
+const MainNav: React.FC<FuncProps> = (props) => {
+  console.log(props)
     return (
         <nav className="main-nav">
             <img 
@@ -13,7 +18,7 @@ function MainNav() {
             />
             <h1>National Parkfinder</h1>
             <NavSearch />
-            <ParkList />
+            <ParkList choosePark={props.choosePark} />
             <div className="main-nav-saved-btn-container">
                 <button className="main-nav-saved-btn">Visited</button>
                 <button className="main-nav-saved-btn">Bucket List</button>
