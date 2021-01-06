@@ -12,49 +12,30 @@ interface Response {
   response: Array<object>
 }
 
-interface Booking {
-  id: string
-  userID: number
-  date: string
-  roomNumber: string
-}
-
-// interface ParkData {
-//   name: string
-//   state: string
-//   parkCode: string
-//   directionsInfo: string
+// interface Booking {
+//   id: string
+//   userID: number
+//   date: string
+//   roomNumber: string
 // }
+
+interface ParkData {
+  name: string
+  state: string
+  parkCode: string
+  directionsInfo: string
+}
 
 const ParkContainer: React.FC<ParkCode> = props => {
   const [currentPark, setCurrentPark] = useState([])
   const { parkCode } = props as ParkCode
-  
-/*
-const request = async () => {
-    const response = await fetch(
-      'https://api/v1/',
-      {
-        method: 'GET',
-        headers: {
-          Authorization:
-            'Bearer asdfasdfasdfasdfasdfasdfasdfasdfasdf',
-        },
-      }
-    );
-    const data = await response.json();
-    setResult(data);
-    return data
-  };
-*/
-  // const one = new Promise<string>((resolve, reject) => {})
 
   const request = async () => {
     const response = await fetch(
-      'https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings',
+      `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=2hfS4AxtbC4JiDwsIX0nEC4iVLXP57q8sUoEHUXp`,
     );
     const data = await response.json();
-    setCurrentPark(data.bookings);
+    setCurrentPark(data.data);
     return data
   }
 
