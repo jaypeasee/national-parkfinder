@@ -9,7 +9,7 @@ interface Park {
 
 function ParkBtn(natPark: Park) {
     return (
-        <button>{natPark.name}</button>
+        <button className="park-button">{natPark.name}</button>
     )
 }
 

@@ -12,7 +12,8 @@ function ParkList() {
     />
   })
   return (
-    <section>
+    <section className="park-list">
+      <button className="park-button">randomize</button>
       {parksOnDisplay}
     </section>
   )
