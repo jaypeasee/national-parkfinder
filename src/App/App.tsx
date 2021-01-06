@@ -7,10 +7,10 @@ import ParkContainer from '../ParkContainer/ParkContainer'
 
 function App() {
   return (
-    <Fragment>
+    <div className="body">
       <MainNav />
       <ParkContainer />
-    </Fragment>
+    </div>
   )
 }
 
