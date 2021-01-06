@@ -1,9 +1,22 @@
 import React from 'react'
-import './ParkBtn.scss';
+import './ParkBtn.scss'
+import { JsxElement } from 'typescript'
+import { type } from 'os'
 
-function ParkBtn() {
+interface Park { 
+  name: string
+  parkCode: string
+  image: string
+  state: string
+}
+
+type ParkBtn = {natPark: Park}
+
+function ParkBtn(natPark: Park): JSX.Element {
+  console.log(natPark)
     return (
-        <button>Arches</button>
+
+        <button>{natPark.name}</button>
     )
 }
 
