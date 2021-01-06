@@ -2,7 +2,8 @@ import './ParkContainer.scss'
 
 function ParkContainer() {
     return (
-        <h1>Park container</h1>
+        <h1>Grand Canyon National Park</h1>
+        
     )
 }
 
