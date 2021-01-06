@@ -1,10 +1,16 @@
 import './App.scss'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
+import MainNav from '../MainNav/MainNav'
+import ParkContainer from '../ParkContainer/ParkContainer'
+
 
 
 function App() {
   return (
-    <h1>hello... its me</h1>
+    <Fragment>
+      <MainNav />
+      <ParkContainer />
+    </Fragment>
   )
 }
 
