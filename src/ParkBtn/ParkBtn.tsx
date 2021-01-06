@@ -1,7 +1,4 @@
-import React from 'react'
 import './ParkBtn.scss'
-import { JsxElement } from 'typescript'
-import { type } from 'os'
 
 interface Park { 
   name: string
@@ -10,12 +7,8 @@ interface Park {
   state: string
 }
 
-type ParkBtn = {natPark: Park}
-
-function ParkBtn(natPark: Park): JSX.Element {
-  console.log(natPark)
+function ParkBtn(natPark: Park) {
     return (
-
         <button>{natPark.name}</button>
     )
 }
