@@ -5,7 +5,7 @@ import parkfinderLogo from './landscape.png'
 
 function MainNav() {
     return (
-        <nav>
+        <nav className="main-nav">
             <img 
                 className="logo"
                 src={parkfinderLogo}
@@ -18,6 +18,7 @@ function MainNav() {
                 <button className="main-nav-saved-btn">Visited</button>
                 <button className="main-nav-saved-btn">Bucket List</button>
             </div>
+
         </nav>
     )
 }

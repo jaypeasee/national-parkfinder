@@ -1,0 +1,17 @@
+@import '../mixins.scss';
+
+.banner-img {
+    height: 300px;
+}
+
+.banner-btn-container {
+    @include row-wrap;
+}
+
+.saved-icon {
+    height: 50px;
+}
+
+.banner-icons {
+    @include row-wrap;
+}

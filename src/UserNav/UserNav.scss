@@ -1,0 +1,9 @@
+@import '../mixins.scss';
+@import '../variables.scss';
+
+.user-nav {
+    @include row-wrap;
+    justify-content: space-around;
+    background-color: $brown;
+    color: white;
+}

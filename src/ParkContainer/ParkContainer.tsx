@@ -1,8 +1,15 @@
 import './ParkContainer.scss'
+import Banner from '../Banner/Banner'
+import UserNav from '../UserNav/UserNav'
+import ParkInfo from '../ParkInfo/ParkInfo'
 
 function ParkContainer() {
     return (
-        <h1>Grand Canyon National Park</h1>
+        <section>
+            <Banner />
+            <UserNav />
+            <ParkInfo />
+        </section>
         
     )
 }
