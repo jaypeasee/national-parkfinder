@@ -5,7 +5,6 @@ import BannerIcons from '../BannerIcons/BannerIcons'
 type BannerProps = CurrentPark | CurrentParkContainer | Name | Images | ImageObject
 
 const Banner: React.FC<BannerProps> = props => {
-console.log(props)
     const { currentPark } = props as CurrentParkContainer
     const { images } = currentPark as any
     console.log('url', images[0])
