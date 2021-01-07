@@ -1,22 +1,22 @@
 import './Banner.scss'
-import { CurrentPark, Name, CurrentParkContainer } from '../ParkContainer/interfaces'
+import { CurrentPark, Name, CurrentParkContainer, Images, ImageObject} from '../ParkContainer/interfaces'
 import BannerIcons from '../BannerIcons/BannerIcons'
 
-type BannerProps = CurrentPark | CurrentParkContainer | Name
+type BannerProps = CurrentPark | CurrentParkContainer | Name | Images | ImageObject
 
 const Banner: React.FC<BannerProps> = props => {
-
+console.log(props)
     const { currentPark } = props as CurrentParkContainer
-    // const { currentPark } = props as CurrentParkContainer
-    // const { fullName } = props as Name
-    // const { url, altText } = props as Images
+    const { images } = currentPark as any
+    console.log('url', images[0])
+
     return(
         <section>
-            {/* <img 
+            {<img 
                 className="banner-img"
-                src={url}
-                alt={altText}
-            /> */}
+                src={images[0].url}
+                alt={images[0].altText}
+            /> }
             <h1>{currentPark.fullName}</h1>
             <BannerIcons />
         </section>

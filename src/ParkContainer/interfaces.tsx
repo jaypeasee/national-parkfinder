@@ -18,12 +18,16 @@ export interface Contacts {
   type: string
 }
 
-export interface Images {
+export interface ImageObject {
   credit: string
   title: string
   altText: string
   caption: string
   url: string
+}
+
+export interface Images {
+  images: Array<ImageObject> | string
 }
 
 export interface CurrentParkContainer {
@@ -43,7 +47,7 @@ export interface CurrentPark {
   directionsInfo: string
   directionsUrl: string
   weatherInfo: string
-  image: Images
+  images: Images
   id: string
   url: string
 }

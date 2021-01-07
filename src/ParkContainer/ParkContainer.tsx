@@ -33,9 +33,6 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
       {currentPark && 
       <Banner 
         currentPark={currentPark}
-        // fullName={fullName} 
-        // url={url} 
-        // altText={altText}
       />}
         <UserNav />
         <ParkInfo />
