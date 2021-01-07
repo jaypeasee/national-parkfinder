@@ -13,9 +13,11 @@ const ParkContainer: React.FC<Props> = props => {
   const { parkCode } = props as ParkCode
 
   useEffect(() => {
-    parkRequest(parkCode)
-      .then(data => setCurrentPark(data.data))  
-      .catch(error => setCurrentPark(error.message))
+    if (parkCode !== '') {
+      parkRequest(parkCode)
+        .then(data => setCurrentPark(data.data))  
+        .catch(error => setCurrentPark(error.message))
+    } 
   }, [parkCode])
 
   return (

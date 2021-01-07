@@ -1,9 +1,10 @@
 import './App.scss'
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import MainNav from '../MainNav/MainNav'
 import ParkContainer from '../ParkContainer/ParkContainer'
 // import { Route } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
+import { parkRequest } from '../ParkContainer/npsApiCall'
 
 interface ChoosePark {
   choosePark: (parkCode: string) => void
@@ -25,8 +26,16 @@ const App: React.FC = () => {
     setParkCode(nationalParks[index].parkCode)
   }
 
+  // useEffect(() => {
+  //   parkRequest(parkCode)
+  //     .then(data => setCurrentPark(data.data))
+  //     .catch(error => setCurrentPark(error.message))
+  // }, [parkCode])
+
   useEffect(() => {
-    generateRandomParkCode()
+    if (parkCode === '') {
+      generateRandomParkCode()
+    }
   }, [parkCode])
 
   return (
