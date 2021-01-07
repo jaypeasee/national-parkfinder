@@ -2,10 +2,6 @@ export interface ParkCode {
   parkCode: string
 }
 
-export interface Name {
-  fullName: string
-}
-
 export interface Activities {
   id: string
   name: string
