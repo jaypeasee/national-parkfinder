@@ -27,7 +27,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
 
   return (
     <section>
-      {currentPark !== undefined && 
+      {currentPark && 
       <Banner 
         currentPark={currentPark} 
         // url={url} 

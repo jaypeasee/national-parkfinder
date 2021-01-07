@@ -16,7 +16,7 @@ const Banner: React.FC<CurrentPark> = props => {
                 src={url}
                 alt={altText}
             /> */}
-            <h1>Grand Canyon</h1>
+            <h1>{currentPark.fullName}</h1>
             <BannerIcons />
         </section>
     )
