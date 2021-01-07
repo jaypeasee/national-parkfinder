@@ -27,7 +27,7 @@ export interface ImageObject {
 }
 
 export interface Images {
-  images: Array<ImageObject> | string
+  images: Array<ImageObject>
 }
 
 export interface CurrentParkContainer {
@@ -35,7 +35,6 @@ export interface CurrentParkContainer {
 }
 
 export interface CurrentPark {
-  // currentPark: CurrentPark
   name: string
   fullName: string
   description: string

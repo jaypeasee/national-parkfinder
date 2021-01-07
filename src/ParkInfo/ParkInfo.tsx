@@ -1,10 +1,8 @@
 import './ParkInfo.scss'
 import About from '../About/About'
-import { CurrentPark, Name, CurrentParkContainer, Images, ImageObject } from '../ParkContainer/interfaces'
+import { CurrentParkContainer } from '../ParkContainer/interfaces'
 
-type ParkInfoProps = CurrentPark | CurrentParkContainer | Name | Images | ImageObject
-
-const ParkInfo: React.FC<ParkInfoProps> = props => {
+const ParkInfo: React.FC<CurrentParkContainer> = props => {
     const { currentPark } = props as CurrentParkContainer
     return (
         <section>
