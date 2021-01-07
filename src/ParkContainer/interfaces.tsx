@@ -26,8 +26,12 @@ export interface Images {
   url: string
 }
 
-export interface CurrentPark {
+export interface CurrentParkContainer {
   currentPark: CurrentPark
+}
+
+export interface CurrentPark {
+  // currentPark: CurrentPark
   name: string
   fullName: string
   description: string

@@ -11,6 +11,8 @@ type ParkContainerProps = ParkCode | Name | Activities | Contacts | Images | Cur
 const ParkContainer: React.FC<ParkContainerProps> = props => {
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
   const { parkCode } = props as ParkCode
+  // const { fullName } = currentPark as CurrentPark
+
   
   
   // const { url, altText } = currentPark[0].images[0] as Images
@@ -20,6 +22,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
       parkRequest(parkCode)
       .then(data => {
         setCurrentPark(data.data[0])
+
         })    
         .catch(error => setCurrentPark(error.message))
     } 
@@ -29,7 +32,8 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
     <section>
       {currentPark && 
       <Banner 
-        currentPark={currentPark} 
+        currentPark={currentPark}
+        // fullName={fullName} 
         // url={url} 
         // altText={altText}
       />}
