@@ -20,6 +20,15 @@ const App: React.FC = () => {
    setParkCode(parkCodeId)
   }
 
+  const generateRandomParkCode = () => {
+    let index = Math.floor(Math.random() * nationalParks.length)
+    setParkCode(nationalParks[index].parkCode)
+  }
+
+  useEffect(() => {
+    generateRandomParkCode()
+  }, [parkCode])
+
   return (
     <main className="body">
       <MainNav choosePark={choosePark}/>
