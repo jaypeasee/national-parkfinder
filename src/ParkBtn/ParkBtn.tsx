@@ -11,9 +11,9 @@ interface ChoosePark {
   choosePark: (parkCode: string) => void;
 }
 
-type Props = Park | ChoosePark
+type ParkBtnProps = Park | ChoosePark
 
-const ParkBtn: React.FC<Props> = props => {
+const ParkBtn: React.FC<ParkBtnProps> = props => {
   const { name } = props as Park
   const { state } = props as Park
   const { parkCode } = props as Park

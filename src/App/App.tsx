@@ -26,12 +26,6 @@ const App: React.FC = () => {
     setParkCode(nationalParks[index].parkCode)
   }
 
-  // useEffect(() => {
-  //   parkRequest(parkCode)
-  //     .then(data => setCurrentPark(data.data))
-  //     .catch(error => setCurrentPark(error.message))
-  // }, [parkCode])
-
   useEffect(() => {
     if (parkCode === '') {
       generateRandomParkCode()

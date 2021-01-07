@@ -2,6 +2,10 @@ export interface ParkCode {
   parkCode: string
 }
 
+export interface Name {
+  fullName: string
+}
+
 export interface Activities {
   id: string
   name: string
@@ -23,6 +27,7 @@ export interface Images {
 }
 
 export interface CurrentPark {
+  currentPark: CurrentPark
   name: string
   fullName: string
   description: string
