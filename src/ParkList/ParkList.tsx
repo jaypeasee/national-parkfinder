@@ -20,6 +20,7 @@ const ParkList: React.FC<Props> = props => {
   const { choosePark } = props as ChoosePark
   const parksOnDisplay = nationalParks.map(park => {
     return <ParkBtn
+      key={park.parkCode}
       name={park.name}
       parkCode={park.parkCode}
       image={park.image}
