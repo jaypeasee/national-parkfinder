@@ -2,12 +2,13 @@ import './MainNav.scss';
 import NavSearch from '../NavSearch/NavSearch'
 import ParkList from '../ParkList/ParkList'
 import parkfinderLogo from './landscape.png'
+// import { ChoosePark } from '../interfaces'
 
-interface FuncProps {
+interface ChoosePark {
   choosePark: (parkCode: string) => void
 }
 
-const MainNav: React.FC<FuncProps> = (props) => {
+const MainNav: React.FC<ChoosePark> = (props) => {
     return (
         <nav className="main-nav">
             <img 
@@ -22,7 +23,6 @@ const MainNav: React.FC<FuncProps> = (props) => {
                 <button className="main-nav-saved-btn">Visited</button>
                 <button className="main-nav-saved-btn">Bucket List</button>
             </div>
-
         </nav>
     )
 }
