@@ -2,8 +2,11 @@ import './ParkInfo.scss'
 import About from '../About/About'
 // import { Switch, Route } from 'react-router-dom'
 import { CurrentParkContainer } from '../interfaces'
+import { RouteComponentProps } from 'react-router-dom'
 
-const ParkInfo: React.FC<CurrentParkContainer> = props => {
+type ParkInfoProps = CurrentParkContainer | RouteComponentProps
+
+const ParkInfo: React.FC<ParkInfoProps> = props => {
     const { currentPark } = props as CurrentParkContainer
     return (
         <section>

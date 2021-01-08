@@ -3,17 +3,17 @@ import Banner from '../Banner/Banner'
 import UserNav from '../UserNav/UserNav'
 import ParkInfo from '../ParkInfo/ParkInfo'
 import SavedParks from '../SavedParks/SavedParks'
-import { ParkCode, CurrentPark } from '../interfaces'
+import { ParkCode, CurrentPark, RouteProps } from '../interfaces'
 import { parkRequest } from './npsApiCall'
-import { render } from "react-dom"
-import { Switch, Route, RouteComponentProps, Link } from "@reach/router"
+import { Switch, Route, RouteComponentProps, Link } from 'react-router-dom'
 import './ParkContainer.scss'
+
 
 type ParkContainerProps = ParkCode | CurrentPark
 
 const ParkContainer: React.FC<ParkContainerProps> = props => {
-  let ParkInfo = (props: RouteComponentProps) => <div>Home</div>
-  let Dash = (props: RouteComponentProps) => <div>Dash</div>
+  // let ParkInfo = (props: RouteComponentProps) => <div>Home</div>
+  // let Dash = (props: RouteComponentProps) => <div>Dash</div>
 
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
   const { parkCode } = props as ParkCode
@@ -23,7 +23,6 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
       parkRequest(parkCode)
       .then(data => {
         setCurrentPark(data.data[0])
-        
       })    
       .catch(error => setCurrentPark(error.message))
     } 
@@ -38,18 +37,18 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
               currentPark={currentPark} />
             <UserNav />
             <Route
-              path='/:parkCode'
-              render={() => {
+              path={`/:${parkCode}`}
+              render={props => {
                 <ParkInfo 
-                  currentPark={currentPark} />
+                  currentPark={currentPark}{...props} />
               }}
             />
-              <Route
+              {/* <Route
                 path='/:savedParks'
-                render={() => {
+                render={props => {
                   <SavedParks />
                 }}
-              />
+              /> */}
           </Fragment>
         </Switch>
       }
