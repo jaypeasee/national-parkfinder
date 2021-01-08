@@ -3,17 +3,15 @@ import Banner from '../Banner/Banner'
 import UserNav from '../UserNav/UserNav'
 import ParkInfo from '../ParkInfo/ParkInfo'
 import SavedParks from '../SavedParks/SavedParks'
-import { ParkCode, CurrentPark, RouteProps } from '../interfaces'
+import { ParkCode, CurrentPark } from '../interfaces'
 import { parkRequest } from './npsApiCall'
-import { Switch, Route, RouteComponentProps, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import './ParkContainer.scss'
 
 
 type ParkContainerProps = ParkCode | CurrentPark
 
 const ParkContainer: React.FC<ParkContainerProps> = props => {
-  // let ParkInfo = (props: RouteComponentProps) => <div>Home</div>
-  // let Dash = (props: RouteComponentProps) => <div>Dash</div>
 
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
   const { parkCode } = props as ParkCode
@@ -38,7 +36,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
             <UserNav />
             <Route
               exact
-              path="/hello"
+              path={`/${parkCode}`}
               render={props => {
                 return (
                   <ParkInfo 

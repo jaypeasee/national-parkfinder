@@ -1,5 +1,3 @@
-import { RouteComponentProps } from 'react-router-dom'
-
 export interface LocalParkData {
   name: string
   parkCode: string
@@ -52,15 +50,4 @@ export interface CurrentPark {
 
 export interface CurrentParkContainer {
   currentPark: CurrentPark
-}
-
-export interface RouteProps {
-    // location?: H.Location;
-    component?: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>;
-    render?: (props: RouteComponentProps) => JSX.Element
-    // children?: ((props: RouteChildrenProps<any>) => React.ReactNode) | React.ReactNode;
-    path?: string | string[];
-    exact?: boolean;
-    sensitive?: boolean;
-    strict?: boolean;
 }
