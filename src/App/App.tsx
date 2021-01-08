@@ -2,7 +2,7 @@ import './App.scss'
 import React, { useState, useEffect } from 'react'
 import MainNav from '../MainNav/MainNav'
 import ParkContainer from '../ParkContainer/ParkContainer'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
 import { parkRequest } from '../ParkContainer/npsApiCall'
 
@@ -26,23 +26,31 @@ const App: React.FC = () => {
     setParkCode(nationalParks[index].parkCode)
   }
 
-  useEffect(() => {
-    if (parkCode === '') {
-      generateRandomParkCode()
-    }
-  }, [parkCode])
-
   return (
     <main className="body">
       <MainNav choosePark={choosePark}/>
-      <Route 
-        path='/'
-        render={() => {
-          return (
-            <ParkContainer parkCode={parkCode}/>
-          )
-        }}
-      />
+      <Switch>
+        <Route
+          // exact
+          path='/'
+          render={ () => {
+            if (!parkCode) {
+              generateRandomParkCode()
+            }
+            return (
+              <ParkContainer parkCode={parkCode}/>
+            )
+          }}
+        />
+        {/* <Route 
+          path='/'
+          render={ () => {
+            return (
+              <ParkContainer parkCode={parkCode}/>
+            )
+          }}
+        /> */}
+      </Switch>
     </main>
   )
 }
