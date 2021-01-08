@@ -2,13 +2,29 @@ import './MainNav.scss';
 import NavSearch from '../NavSearch/NavSearch'
 import ParkList from '../ParkList/ParkList'
 import parkfinderLogo from './landscape.png'
-// import { ChoosePark } from '../interfaces'
+import { nationalParks } from '../ParkData'
+import ParkBtn from '../ParkBtn/ParkBtn'
+import { LocalParkData } from '../interfaces'
+
 
 interface ChoosePark {
   choosePark: (parkCode: string) => void
 }
 
-const MainNav: React.FC<ChoosePark> = (props) => {
+type NavProps = ChoosePark | LocalParkData
+
+const MainNav: React.FC<NavProps> = (props) => {
+    const { choosePark } = props as ChoosePark
+
+    const parksOnDisplay = nationalParks.map(park => {
+    return <ParkBtn
+      key={park.parkCode}
+      name={park.name}
+      parkCode={park.parkCode}
+      choosePark={choosePark}
+    />
+  })
+
     return (
         <nav className="main-nav">
             <img 
@@ -18,7 +34,10 @@ const MainNav: React.FC<ChoosePark> = (props) => {
             />
             <h1>National Parkfinder</h1>
             <NavSearch />
-            <ParkList choosePark={props.choosePark} />
+            <ParkList 
+                choosePark={choosePark}
+                parksOnDisplay={parksOnDisplay} 
+            />
             <div className="main-nav-saved-btn-container">
                 <button className="main-nav-saved-btn">Visited</button>
                 <button className="main-nav-saved-btn">Bucket List</button>

@@ -5,6 +5,8 @@ import './NavSearch.scss'
 const NavSearch: React.FC = () => {
     const [nameSearch, setNameSearch] = useState<string>('')
 
+    
+
     return(
         <form
             className='nav-search'
@@ -14,9 +16,6 @@ const NavSearch: React.FC = () => {
                 value={nameSearch}
                 onChange={event => setNameSearch(event.target.value)}
                 name="name"
-            />
-            <input 
-                placeholder='state'
             />
         </form>
     )
