@@ -1,3 +1,8 @@
+export interface LocalParkData {
+  name: string
+  parkCode: string
+}
+
 export interface ParkCode {
   parkCode: string
 }
