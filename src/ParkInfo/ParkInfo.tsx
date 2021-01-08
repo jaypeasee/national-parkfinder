@@ -36,10 +36,11 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
         />
         <Route
           exact
-          path='/contact'
+          path={`/${currentPark.parkCode}/contact`}
           render={() => {
             return (
-              <Contact />
+              <Contact 
+                currentPark={currentPark} />
             )
           }}
         />
