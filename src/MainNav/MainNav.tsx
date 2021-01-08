@@ -12,7 +12,7 @@ interface ChoosePark {
 }
 
 interface FilterButtonsByName {
-    filterButtonsByName: (searchTerm: string) => any
+    filterButtonsByName: (searchTerm: string) => void
 }
 
 type NavProps = ChoosePark | LocalParkData | FilterButtonsByName
@@ -34,13 +34,25 @@ const MainNav: React.FC<NavProps> = (props) => {
         setParksOnDisplay(parkButtons)
     }, [nameSearch])
 
-    // const filterButtonsByName = (searchTerm: string): FilterButtonsByName => {
+    // const createFilteredBtns = (filteredParks) => {
+    //     const parkButtons = filteredParks.map(park => {
+    //         return <ParkBtn
+    //             key={park.parkCode}
+    //             name={park.name}
+    //             parkCode={park.parkCode}
+    //             choosePark={choosePark}
+    //         />
+    //     })
+    //     setParksOnDisplay(parkButtons)
+    // } 
+
+    // const filterButtonsByName = (searchTerm: string) => void {
+    //     setNameSearch(searchTerm)
     //     if (parksOnDisplay) {
-    //         setNameSearch(searchTerm)
-    //         const filteredParks = parksOnDisplay.filter(park => {
+    //         const filteredParks = nationalParks.filter(park => {
     //         return park.name.includes(searchTerm)
     //     })
-    //         setParksOnDisplay(filteredParks)
+    //         createFilteredBtns(filteredParks)
     //     }
     // }
 
@@ -52,9 +64,9 @@ const MainNav: React.FC<NavProps> = (props) => {
                 alt="National Parkfinder Logo"
             />
             <h1>National Parkfinder</h1>
-            {/* <NavSearch 
-                filterButtonsByName={filterButtonsByName}
-            /> */}
+            <NavSearch 
+                // filterButtonsByName={filterButtonsByName}
+            />
             <ParkList 
                 choosePark={choosePark}
                 parksOnDisplay={parksOnDisplay} 

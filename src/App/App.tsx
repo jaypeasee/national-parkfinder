@@ -2,7 +2,7 @@ import './App.scss'
 import React, { useState, useEffect } from 'react'
 import MainNav from '../MainNav/MainNav'
 import ParkContainer from '../ParkContainer/ParkContainer'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
 import { parkRequest } from '../ParkContainer/npsApiCall'
 
@@ -16,10 +16,18 @@ interface Park {
 
 const App: React.FC = () => {
   const [parkCode, setParkCode] = useState('')
-  
+  const location = useLocation()
   const choosePark = (parkCodeId: string) => {
    setParkCode(parkCodeId)
   }
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      generateRandomParkCode()
+    } else {
+      setParkCode(location.pathname.split('/')[1])
+    }
+  }, [parkCode])
 
   const generateRandomParkCode = () => {
     let index = Math.floor(Math.random() * nationalParks.length)
@@ -31,25 +39,13 @@ const App: React.FC = () => {
       <MainNav choosePark={choosePark}/>
       <Switch>
         <Route
-          // exact
-          path='/'
+          path={location.pathname}
           render={ () => {
-            if (!parkCode) {
-              generateRandomParkCode()
-            }
             return (
               <ParkContainer parkCode={parkCode}/>
             )
           }}
         />
-        {/* <Route 
-          path='/'
-          render={ () => {
-            return (
-              <ParkContainer parkCode={parkCode}/>
-            )
-          }}
-        /> */}
       </Switch>
     </main>
   )

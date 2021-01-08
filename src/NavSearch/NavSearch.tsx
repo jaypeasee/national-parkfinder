@@ -2,10 +2,18 @@ import React, { useState, FormEvent } from 'react'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 import './NavSearch.scss'
 
-const NavSearch: React.FC = () => {
+interface FilterButtonsByName {
+    filterButtonsByName: (searchTerm: string) => void
+}
+
+const NavSearch: React.FC = (props) => {
     const [nameSearch, setNameSearch] = useState<string>('')
 
-    
+    const handleSearchChange = (event: any) => {
+        setNameSearch(event.target.value)
+        console.log(event.target.value)
+        // props.filterButtonsByName(event.currentTarget.value)
+    }
 
     return(
         <form
@@ -14,7 +22,7 @@ const NavSearch: React.FC = () => {
             <input
                 placeholder='search by name'
                 value={nameSearch}
-                onChange={event => setNameSearch(event.target.value)}
+                onChange={handleSearchChange}
                 name="name"
             />
         </form>
