@@ -1,5 +1,6 @@
 import './ParkInfo.scss'
 import About from '../About/About'
+// import { Switch, Route } from 'react-router-dom'
 import { CurrentParkContainer } from '../interfaces'
 
 const ParkInfo: React.FC<CurrentParkContainer> = props => {

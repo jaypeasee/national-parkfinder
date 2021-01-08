@@ -2,20 +2,29 @@ import { useState, useEffect, Fragment } from 'react'
 import Banner from '../Banner/Banner'
 import UserNav from '../UserNav/UserNav'
 import ParkInfo from '../ParkInfo/ParkInfo'
+import SavedParks from '../SavedParks/SavedParks'
 import { ParkCode, CurrentPark } from '../interfaces'
 import { parkRequest } from './npsApiCall'
+import { render } from "react-dom"
+import { Switch, Route, RouteComponentProps, Link } from "@reach/router"
 import './ParkContainer.scss'
 
 type ParkContainerProps = ParkCode | CurrentPark
 
 const ParkContainer: React.FC<ParkContainerProps> = props => {
+  let ParkInfo = (props: RouteComponentProps) => <div>Home</div>
+  let Dash = (props: RouteComponentProps) => <div>Dash</div>
+
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
   const { parkCode } = props as ParkCode
   
   useEffect(() => {
     if (parkCode !== '') {
       parkRequest(parkCode)
-      .then(data => setCurrentPark(data.data[0]))    
+      .then(data => {
+        setCurrentPark(data.data[0])
+        
+      })    
       .catch(error => setCurrentPark(error.message))
     } 
   }, [parkCode])
@@ -23,13 +32,26 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
   return (
     <section>
       {currentPark && 
-        <Fragment>
-          <Banner 
-            currentPark={currentPark} />
-          <UserNav />
-          <ParkInfo 
-            currentPark={currentPark} />
-        </Fragment>
+        <Switch>
+          <Fragment>
+            <Banner 
+              currentPark={currentPark} />
+            <UserNav />
+            <Route
+              path='/:parkCode'
+              render={() => {
+                <ParkInfo 
+                  currentPark={currentPark} />
+              }}
+            />
+              <Route
+                path='/:savedParks'
+                render={() => {
+                  <SavedParks />
+                }}
+              />
+          </Fragment>
+        </Switch>
       }
     </section>
   )
