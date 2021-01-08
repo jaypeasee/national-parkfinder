@@ -34,15 +34,15 @@ const MainNav: React.FC<NavProps> = (props) => {
         setParksOnDisplay(parkButtons)
     }, [nameSearch])
 
-    const filterButtonsByName = (searchTerm: string): FilterButtonsByName => {
-        if (parksOnDisplay) {
-            setNameSearch(searchTerm)
-            const filteredParks = parksOnDisplay.filter(park => {
-            return park.name.includes(searchTerm)
-        })
-            setParksOnDisplay(filteredParks)
-        }
-    }
+    // const filterButtonsByName = (searchTerm: string): FilterButtonsByName => {
+    //     if (parksOnDisplay) {
+    //         setNameSearch(searchTerm)
+    //         const filteredParks = parksOnDisplay.filter(park => {
+    //         return park.name.includes(searchTerm)
+    //     })
+    //         setParksOnDisplay(filteredParks)
+    //     }
+    // }
 
     return (
         <nav className="main-nav">
@@ -52,9 +52,9 @@ const MainNav: React.FC<NavProps> = (props) => {
                 alt="National Parkfinder Logo"
             />
             <h1>National Parkfinder</h1>
-            <NavSearch 
+            {/* <NavSearch 
                 filterButtonsByName={filterButtonsByName}
-            />
+            /> */}
             <ParkList 
                 choosePark={choosePark}
                 parksOnDisplay={parksOnDisplay} 

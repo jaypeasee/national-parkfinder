@@ -33,7 +33,8 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
           <Fragment>
             <Banner 
               currentPark={currentPark} />
-            <UserNav />
+            <UserNav 
+              currentPark={currentPark} />
             <Route
               exact
               path={`/${parkCode}`}
