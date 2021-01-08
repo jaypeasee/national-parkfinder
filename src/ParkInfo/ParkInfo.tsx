@@ -9,42 +9,42 @@ import { RouteComponentProps } from 'react-router-dom'
 type ParkInfoProps = CurrentParkContainer | RouteComponentProps
 
 const ParkInfo: React.FC<ParkInfoProps> = props => {
-    const { currentPark } = props as CurrentParkContainer
-    return (
-        <section>
-            <p><b>About {currentPark.name}:</b>{currentPark.description}</p>
-            <p><b>Weather Info:</b>{currentPark.weatherInfo}</p>
-                <Switch>
-                <Route
-                    exact 
-                    path={`${currentPark.parkCode}/about`}
-                    render={() => {
-                        return (
-                            <About />
-                        )
-                    }}
-                    />
-                <Route
-                    exact
-                    path='/location'
-                    render={() => {
-                        return (
-                            <Location />
-                        )
-                    }}
-                    />
-                <Route
-                    exact
-                    path='/contact'
-                    render={() => {
-                        return (
-                            <Contact />
-                        )
-                    }}
-                    />
-            </Switch>
-        </section>
-    )
+  const { currentPark } = props as CurrentParkContainer
+  return (
+    <section>
+      <Switch>
+        <Route
+          exact
+          path={`${currentPark.parkCode}/about`}
+          render={() => {
+            return (
+              <About
+                currentPark={currentPark}
+              />
+            )
+          }}
+        />
+        <Route
+          exact
+          path='/location'
+          render={() => {
+            return (
+              <Location />
+            )
+          }}
+        />
+        <Route
+          exact
+          path='/contact'
+          render={() => {
+            return (
+              <Contact />
+            )
+          }}
+        />
+      </Switch>
+    </section>
+  )
 }
 
 export default ParkInfo
