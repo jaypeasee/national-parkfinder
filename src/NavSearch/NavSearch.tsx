@@ -6,13 +6,13 @@ interface FilterButtonsByName {
     filterButtonsByName: (searchTerm: string) => void
 }
 
-const NavSearch: React.FC = (props) => {
+const NavSearch: React.FC<FilterButtonsByName> = (props) => {
     const [nameSearch, setNameSearch] = useState<string>('')
 
     const handleSearchChange = (event: any) => {
         setNameSearch(event.target.value)
         console.log(event.target.value)
-        // props.filterButtonsByName(event.currentTarget.value)
+        props.filterButtonsByName(event.currentTarget.value)
     }
 
     return(

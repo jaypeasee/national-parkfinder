@@ -6,14 +6,6 @@ import { Route, Switch, useLocation } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
 import { parkRequest } from '../ParkContainer/npsApiCall'
 
-interface ChoosePark {
-  choosePark: (parkCode: string) => void
-}
-
-interface Park {
-  parkCode: string;
-}
-
 const App: React.FC = () => {
   const [parkCode, setParkCode] = useState('')
   const location = useLocation()
