@@ -2,7 +2,7 @@ import './App.scss'
 import React, { useState, useEffect } from 'react'
 import MainNav from '../MainNav/MainNav'
 import ParkContainer from '../ParkContainer/ParkContainer'
-// import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
 import { parkRequest } from '../ParkContainer/npsApiCall'
 
@@ -35,7 +35,14 @@ const App: React.FC = () => {
   return (
     <main className="body">
       <MainNav choosePark={choosePark}/>
-      <ParkContainer parkCode={parkCode}/>
+      <Route 
+        path='/'
+        render={() => {
+          return (
+            <ParkContainer parkCode={parkCode}/>
+          )
+        }}
+      />
     </main>
   )
 }

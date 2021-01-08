@@ -14,7 +14,7 @@ const ParkBtn: React.FC<ParkBtnProps> = props => {
   const { choosePark } = props as ChoosePark
     return (
       <Link
-      to={`/${parkCode}`}>
+      to={`/${parkCode}/about`}>
         <button 
           className="park-button" 
           onClick={() => choosePark(parkCode)}

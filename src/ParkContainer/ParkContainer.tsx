@@ -7,6 +7,7 @@ import { ParkCode, CurrentPark } from '../interfaces'
 import { parkRequest } from './npsApiCall'
 import { Switch, Route } from 'react-router-dom'
 import './ParkContainer.scss'
+import { nationalParks } from '../ParkData'
 
 
 type ParkContainerProps = ParkCode | CurrentPark
@@ -36,12 +37,15 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
             <UserNav 
               currentPark={currentPark} />
             <Route
-              exact
-              path={`/${parkCode}`}
-              render={props => {
+              exact 
+              path='/:matchedCode/about'
+              render={({match}) => {
+                const matchedCode = nationalParks.find(park => {
+                  return park.parkCode === match.params.parkCode})
+                  console.log(matchedCode)
                 return (
                   <ParkInfo 
-                  currentPark={currentPark}{...props} />
+                  currentPark={currentPark} />
                 )
               }}
             />
