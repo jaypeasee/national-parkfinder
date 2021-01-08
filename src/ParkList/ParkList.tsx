@@ -1,20 +1,13 @@
 import { nationalParks } from '../ParkData'
 import './ParkList.scss'
 import ParkBtn from '../ParkBtn/ParkBtn'
+import { LocalParkData } from '../interfaces'
 
 interface ChoosePark {
   choosePark: (parkCode: string) => void;
 }
 
-interface ParkListProps {
-  name: string
-  parkCode: string
-  image: string
-  state: string
-}
-
-type Props = ParkListProps | ChoosePark
-
+type Props = LocalParkData | ChoosePark
 
 const ParkList: React.FC<Props> = props => {
   const { choosePark } = props as ChoosePark
@@ -23,8 +16,6 @@ const ParkList: React.FC<Props> = props => {
       key={park.parkCode}
       name={park.name}
       parkCode={park.parkCode}
-      image={park.image}
-      state={park.state}
       choosePark={choosePark}
     />
   })

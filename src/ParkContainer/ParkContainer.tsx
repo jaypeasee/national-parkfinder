@@ -2,7 +2,7 @@ import { useState, useEffect, Fragment } from 'react'
 import Banner from '../Banner/Banner'
 import UserNav from '../UserNav/UserNav'
 import ParkInfo from '../ParkInfo/ParkInfo'
-import { ParkCode, CurrentPark } from './interfaces'
+import { ParkCode, CurrentPark } from '../interfaces'
 import { parkRequest } from './npsApiCall'
 import './ParkContainer.scss'
 

@@ -1,6 +1,6 @@
 import './ParkInfo.scss'
 import About from '../About/About'
-import { CurrentParkContainer } from '../ParkContainer/interfaces'
+import { CurrentParkContainer } from '../interfaces'
 
 const ParkInfo: React.FC<CurrentParkContainer> = props => {
     const { currentPark } = props as CurrentParkContainer

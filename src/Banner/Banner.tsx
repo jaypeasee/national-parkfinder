@@ -1,5 +1,5 @@
 import './Banner.scss'
-import { CurrentParkContainer } from '../ParkContainer/interfaces'
+import { CurrentParkContainer } from '../interfaces'
 import BannerIcons from '../BannerIcons/BannerIcons'
 
 const Banner: React.FC<CurrentParkContainer> = props => {

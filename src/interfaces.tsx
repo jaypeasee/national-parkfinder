@@ -1,9 +1,10 @@
-export interface ParkCode {
+export interface LocalParkData {
+  name: string
   parkCode: string
 }
 
-export interface Name {
-  fullName: string
+export interface ParkCode {
+  parkCode: string
 }
 
 export interface Activities {
@@ -30,10 +31,6 @@ export interface Images {
   images: Array<ImageObject>
 }
 
-export interface CurrentParkContainer {
-  currentPark: CurrentPark
-}
-
 export interface CurrentPark {
   name: string
   fullName: string
@@ -49,4 +46,8 @@ export interface CurrentPark {
   images: Images
   id: string
   url: string
+}
+
+export interface CurrentParkContainer {
+  currentPark: CurrentPark
 }
