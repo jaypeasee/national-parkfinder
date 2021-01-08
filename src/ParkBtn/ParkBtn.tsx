@@ -1,5 +1,6 @@
 import './ParkBtn.scss'
 import { LocalParkData } from '../interfaces'
+import { Link } from 'react-router-dom'
 
 interface ChoosePark {
   choosePark: (parkCode: string) => void;
@@ -12,10 +13,13 @@ const ParkBtn: React.FC<ParkBtnProps> = props => {
   const { parkCode } = props as LocalParkData
   const { choosePark } = props as ChoosePark
     return (
-      <button 
-        className="park-button" 
-        onClick={() => choosePark(parkCode)}
-      >{name}</button>
+      <Link
+      to={`/${parkCode}`}>
+        <button 
+          className="park-button" 
+          onClick={() => choosePark(parkCode)}
+        >{name}</button>
+      </Link>
     )
 }
 

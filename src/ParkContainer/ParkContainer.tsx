@@ -37,10 +37,13 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
               currentPark={currentPark} />
             <UserNav />
             <Route
-              path={`/:${parkCode}`}
+              exact
+              path="/hello"
               render={props => {
-                <ParkInfo 
+                return (
+                  <ParkInfo 
                   currentPark={currentPark}{...props} />
+                )
               }}
             />
               {/* <Route
