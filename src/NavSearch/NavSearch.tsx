@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { useState, FormEvent } from 'react'
+import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 import './NavSearch.scss'
 
-function NavSearch() {
+interface FilterButtonsByName {
+    filterButtonsByName: (searchTerm: string) => void
+}
+
+const NavSearch: React.FC<FilterButtonsByName> = (props) => {
+    const [nameSearch, setNameSearch] = useState<string>('')
+
+    const handleSearchChange = (event: any) => {
+        setNameSearch(event.target.value)
+        console.log(event.target.value)
+        props.filterButtonsByName(event.currentTarget.value)
+    }
+
     return(
-        <form>
+        <form
+            className='nav-search'
+        >
             <input
-                placeholder="search by name"
-            />
-            <input 
-                placeholder="state"
+                placeholder='search by name'
+                value={nameSearch}
+                onChange={handleSearchChange}
+                name="name"
             />
         </form>
     )

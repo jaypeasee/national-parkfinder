@@ -46,6 +46,7 @@ export interface CurrentPark {
   images: Images
   id: string
   url: string
+  parkCode: string
 }
 
 export interface CurrentParkContainer {
