@@ -33,7 +33,8 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
   }, [parkCode])
 
   const addToVisited = (addedPark: LocalParkData) => {
-    setVisitedList(...[vistedList, addedPark])
+    addedPark.visited = true
+    setVisitedList([...visitedList, addedPark])
   }
 
   return (
@@ -42,7 +43,9 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
         <Switch>
           <Fragment>
             <Banner 
-              currentPark={currentPark} />
+              currentPark={currentPark} 
+              addToVisited={addToVisited}
+              />
             <UserNav 
               currentPark={currentPark} />
             <Route 

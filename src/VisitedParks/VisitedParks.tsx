@@ -1,11 +1,25 @@
 import { LocalParkContainer } from '../interfaces'
+import SavedCard from '../SavedCard/SavedCard'
+
+
+
 
 const VisitedParks: React.FC<LocalParkContainer> = props => {
-  const { visitedList } = props
-  
+  const { visitedList } = props as LocalParkContainer
+
+
+    const visitedCards = visitedList.map(visited => {
+      return <SavedCard 
+        key={visited.parkCode}
+        name={visited.name}
+        image={visited.image}
+      />
+    })
+
+   
   return (
     <section>
-      <h1>yay saved parks</h1>
+      {visitedCards}
     </section>
   )
 }

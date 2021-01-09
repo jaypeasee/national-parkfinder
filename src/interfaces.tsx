@@ -1,6 +1,9 @@
 export interface LocalParkData {
   name: string
   parkCode: string
+  image: string
+  state: string
+  visited: boolean | undefined
 }
 
 export interface ParkCode {
