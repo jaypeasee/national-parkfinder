@@ -13,7 +13,6 @@ type BannerIconsProps = AddToVisited | LocalParkContainer
 
 
 const BannerIcons: React.FC<BannerIconsProps> = props => {
-  // const [addedToVisited, setAddedToVisited] = useState(false)
   const { addToVisited } = props as AddToVisited
 
     return (

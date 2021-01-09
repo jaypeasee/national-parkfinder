@@ -1,16 +1,17 @@
 import './Banner.scss'
-import { CurrentParkContainer, LocalParkContainer, LocalParkData } from '../interfaces'
+import { CurrentParkContainer, LocalParkContainer, LocalParkData, ParkCode } from '../interfaces'
 import BannerIcons from '../BannerIcons/BannerIcons'
 
 interface AddToVisited {
   addToVisited: (addedPark: LocalParkData) =>  void
 }
 
-type BannerIconsProps = AddToVisited | LocalParkContainer | CurrentParkContainer
+type BannerIconsProps = AddToVisited | LocalParkContainer | CurrentParkContainer | ParkCode
 
 const Banner: React.FC<BannerIconsProps> = props => {
     const { currentPark } = props as CurrentParkContainer
     const { images } = currentPark as any
+    const { parkCode } = props as ParkCode
     const { addToVisited } = props as AddToVisited
 
     return(
@@ -23,7 +24,7 @@ const Banner: React.FC<BannerIconsProps> = props => {
             <h1>{currentPark.fullName}, {currentPark.states}</h1>
             <BannerIcons 
               addToVisited={addToVisited}
-
+              parkCode={currentPark.parkCode}
             />
         </section>
     )
