@@ -7,11 +7,12 @@ import { Switch, Route } from 'react-router-dom'
 import { AddToVisited, CurrentParkContainer, LocalParkData } from '../interfaces'
 import { RouteComponentProps } from 'react-router-dom'
 
-type ParkInfoProps = CurrentParkContainer | RouteComponentProps | AddToVisited | { localPark: () => any | void}
+type ParkInfoProps = CurrentParkContainer | RouteComponentProps | AddToVisited | { deleteFromVisited: (parkCode: string) => void } | { localPark: () => any | void}
 
 const ParkInfo: React.FC<ParkInfoProps> = props => {
   const { currentPark } = props as CurrentParkContainer
   const { addToVisited } = props as AddToVisited
+  const { deleteFromVisited } = props as any
   const { localPark } = props as any
   
   return (
@@ -51,6 +52,7 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
       </Switch>
       <BannerIcons
         addToVisited={addToVisited}
+        deleteFromVisited={deleteFromVisited}
         localPark={localPark}
       />
     </section>

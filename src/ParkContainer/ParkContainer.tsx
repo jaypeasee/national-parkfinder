@@ -44,6 +44,11 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
     }
   }
 
+  const deleteFromVisited = (parkCode: string) => {
+    const updatedParks = visitedList.filter(park => park.parkCode !== parkCode)
+    setVisitedList(updatedParks)
+  }
+
   return (
     <section className='park-container'>
       {currentPark &&
@@ -61,7 +66,8 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                   <ParkInfo
                     currentPark={currentPark}
                     localPark={findChosenPark(currentPark.parkCode)}
-                    addToVisited={addToVisited} />
+                    addToVisited={addToVisited}
+                    deleteFromVisited={deleteFromVisited} />
                 )
               }}
             />

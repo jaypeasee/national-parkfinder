@@ -1,37 +1,51 @@
 import './BannerIcons.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { LocalParkContainer, LocalParkData, CurrentParkContainer, AddToVisited } from '../interfaces'
 import bucketBlack from './icons/bucket-black.png'
 import bucketGreen from './icons/bucket-green.png'
 import checkBlack from './icons/check-black.png'
 import checkGreen from './icons/check-green.png'
 
-type BannerIconsProps = AddToVisited | LocalParkContainer | LocalParkData | CurrentParkContainer | { localPark: () => any | void }
+type BannerIconsProps = AddToVisited | LocalParkContainer | LocalParkData | CurrentParkContainer | { localPark: () => any | void } | { deleteFromVisited: () => void }
 
 
 const BannerIcons: React.FC<BannerIconsProps> = props => {
   const { addToVisited } = props as AddToVisited
+  const { deleteFromVisited } = props as any
   const { localPark } = props as any
 
-  const [checkColor, setCheckColor] = useState<any>(checkBlack)
+  const [checkColor, setCheckColor] = useState<any>()
 
-  const handleParkAddition = () => {
-    addToVisited(localPark.parkCode)
-    localPark.visited = true
-    setCheckColor(checkGreen)
+  useEffect(() => {
+    if (localPark.visited) {
+      setCheckColor(checkGreen)
+    } else {
+      setCheckColor(checkBlack)
+    }
+  })
+
+  const handleVisitedPark = () => {
+    if (!localPark.visited) {
+      addToVisited(localPark.parkCode)
+      localPark.visited = true
+    } else {
+      deleteFromVisited(localPark.parkCode)
+      localPark.visited = false
+    }
   }
 
   return (
     <section className="banner-icons">
       <div role="button"
-        onClick={ handleParkAddition }
+        onClick={ handleVisitedPark }
         className="banner-btn-container">
         <img
           src={checkColor}
           alt="not checked"
           className="saved-icon"
         />
-        <h2>Add To Visited</h2>
+        {!localPark.visited && <h2>Add To Visited</h2>}
+        {localPark.visited && <h2>Remove From Visited</h2>}
       </div>
       <div className="banner-btn-container">
         <img

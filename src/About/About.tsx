@@ -6,7 +6,7 @@ const About: React.FC<CurrentParkContainer> = props => {
   const { activities } = currentPark as any
 
   const parkActivities = activities.map((activity: any) => {
-    return <li>{activity.name}</li>
+    return <li key={activity.id}>{activity.name}</li>
   })
 
   return (

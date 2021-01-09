@@ -84,6 +84,7 @@ export interface CurrentParkContainer {
 }
 
 export interface LocalParkContainer {
+  parkCode?: string
   visitedList: Array<LocalParkData> | any
   // bucketList: Array<LocalParkData> | any
 }
