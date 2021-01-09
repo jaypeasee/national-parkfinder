@@ -1,14 +1,12 @@
 import './Banner.scss'
-import { CurrentParkContainer, LocalParkContainer, LocalParkData, AddToVisited } from '../interfaces'
+import { CurrentParkContainer, LocalParkContainer } from '../interfaces'
 import BannerIcons from '../BannerIcons/BannerIcons'
 
-type BannerIconsProps = AddToVisited | LocalParkContainer | CurrentParkContainer | { parkCode: string }
+type BannerIconsProps = LocalParkContainer | CurrentParkContainer | { parkCode: string }
 
 const Banner: React.FC<BannerIconsProps> = props => {
   const { currentPark } = props as CurrentParkContainer
   const { images } = currentPark as any
-  const { parkCode } = props as any
-  const { addToVisited } = props as AddToVisited
 
   const randomIndex = Math.floor(Math.random() * images.length)
 

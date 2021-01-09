@@ -38,8 +38,10 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
 
   const addToVisited = (parkCode: string) => {
     const addedPark = findChosenPark(parkCode)
-    addedPark.visited = true
-    setVisitedList([...visitedList, addedPark])
+
+    if (!visitedList.includes(addedPark)) {
+      setVisitedList([...visitedList, addedPark])
+    }
   }
 
   return (
@@ -49,7 +51,6 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
           <Fragment>
             <Banner
               currentPark={currentPark}
-              addToVisited={addToVisited}
             />
             <UserNav
               currentPark={currentPark} />
@@ -59,6 +60,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                 return (
                   <ParkInfo
                     currentPark={currentPark}
+                    localPark={findChosenPark(currentPark.parkCode)}
                     addToVisited={addToVisited} />
                 )
               }}

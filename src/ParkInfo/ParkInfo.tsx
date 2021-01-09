@@ -4,14 +4,16 @@ import Location from '../Location/Location'
 import Contact from '../Contact/Contact'
 import BannerIcons from '../BannerIcons/BannerIcons'
 import { Switch, Route } from 'react-router-dom'
-import { AddToVisited, CurrentParkContainer } from '../interfaces'
+import { AddToVisited, CurrentParkContainer, LocalParkData } from '../interfaces'
 import { RouteComponentProps } from 'react-router-dom'
 
-type ParkInfoProps = CurrentParkContainer | RouteComponentProps | AddToVisited
+type ParkInfoProps = CurrentParkContainer | RouteComponentProps | AddToVisited | { localPark: () => any | void}
 
 const ParkInfo: React.FC<ParkInfoProps> = props => {
   const { currentPark } = props as CurrentParkContainer
   const { addToVisited } = props as AddToVisited
+  const { localPark } = props as any
+  
   return (
     <section className='park-info'>
       <Switch>
@@ -49,7 +51,7 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
       </Switch>
       <BannerIcons
         addToVisited={addToVisited}
-        parkCode={currentPark.parkCode}
+        localPark={localPark}
       />
     </section>
   )
