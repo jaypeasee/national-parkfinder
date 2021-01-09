@@ -7,9 +7,13 @@ export interface ParkCode {
   parkCode: string
 }
 
-export interface Activities {
+export interface Activity {
   id: string
   name: string
+}
+
+export interface Activities {
+  activities: Array<Activity>
 }
 
 export interface Contacts {
