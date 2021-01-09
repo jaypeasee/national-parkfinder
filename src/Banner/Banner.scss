@@ -1,22 +1,30 @@
-@import '../mixins.scss';
+@import "../mixins.scss";
 
 .banner {
   width: 70vw;
 }
 
+.header {
+  text-align: center;
+  font-size: 36px;
+  color: white;
+  margin-top: -82px;
+  text-shadow: 5px 5px 5px black;
+}
+
 .banner-img {
-    height: 300px;
-    width: 100%;
+  height: 300px;
+  width: 100%;
 }
 
 .banner-btn-container {
-    @include row-wrap;
+  @include row-wrap;
 }
 
 .saved-icon {
-    height: 50px;
+  height: 50px;
 }
 
 .banner-icons {
-    @include row-wrap;
+  @include row-wrap;
 }

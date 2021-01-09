@@ -17,11 +17,7 @@ const Banner: React.FC<BannerIconsProps> = props => {
         src={images[0].url}
         alt={images[0].altText}
       />}
-      <h1>{currentPark.fullName}, {currentPark.states}</h1>
-      <BannerIcons
-        addToVisited={addToVisited}
-        parkCode={parkCode}
-      />
+      <h1 className='header'>{currentPark.fullName}, {currentPark.states}</h1>
     </section>
   )
 }

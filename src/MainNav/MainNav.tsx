@@ -55,13 +55,13 @@ const MainNav: React.FC<NavProps> = (props) => {
   }
 
   return (
-    <nav className="main-nav">
+    <nav className='main-nav'>
       <img
-        className="logo"
+        className='logo'
         src={parkfinderLogo}
-        alt="National Parkfinder Logo"
+        alt='National Parkfinder Logo'
       />
-      <h1>National Parkfinder</h1>
+      <h1 className='site-header'>National Parkfinder</h1>
       <NavSearch
         filterButtonsByName={filterButtonsByName}
       />

@@ -1,10 +1,17 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 .main-nav {
-    background-color: $dark-green;
-    color: $gray;
+  background-color: $dark-green;
+  color: $gray;
+}
+
+.site-header {
+  text-align: center;
+  font-size: 24px;
+  color: white;
 }
 
 .logo {
-    width: 30vw;
+  width: 30vw;
+  margin: 15px 15px -10px 15px;
 }

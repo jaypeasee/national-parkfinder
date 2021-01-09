@@ -58,7 +58,8 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
               render={() => {
                 return (
                   <ParkInfo
-                    currentPark={currentPark} />
+                    currentPark={currentPark}
+                    addToVisited={addToVisited} />
                 )
               }}
             />

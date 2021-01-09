@@ -16,6 +16,7 @@ const NavSearch: React.FC<FilterButtonsByName> = (props) => {
   return (
     <form className='nav-search'>
       <input
+        className='search-bar'
         placeholder='search by name'
         value={nameSearch}
         onChange={handleSearchChange}
