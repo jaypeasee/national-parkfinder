@@ -18,7 +18,6 @@ export interface Activities {
 
 export interface Contacts {
   phoneNumber: string
-  description: string
   extension: string
   type: string
 }

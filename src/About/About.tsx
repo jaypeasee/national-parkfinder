@@ -1,4 +1,4 @@
-import { CurrentParkContainer, Activities } from '../interfaces'
+import { CurrentParkContainer } from '../interfaces'
 import './About.scss'
 
 const About: React.FC<CurrentParkContainer> = props => {
@@ -11,8 +11,8 @@ const About: React.FC<CurrentParkContainer> = props => {
 
   return (
     <section className="about">
-      <p><b>About {currentPark.name}:</b>{currentPark.description}</p>
-      <p><b>Weather Info:</b>{currentPark.weatherInfo}</p>
+      <p><b>About {currentPark.name}: </b>{currentPark.description}</p>
+      <p><b>Weather Info: </b>{currentPark.weatherInfo}</p>
       <p><b>Activities:</b></p>
       <ul>
         {parkActivities}

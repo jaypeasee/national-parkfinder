@@ -5,18 +5,29 @@ import './Contact.scss'
 const Contact: React.FC<CurrentParkContainer> = props => {
   console.log(props)
   const { currentPark } = props as CurrentParkContainer
-  const { contacts, emailAddresses } = currentPark as any
   const { addresses } = currentPark as any
 
-  const parsedPhoneNumber: any = parsePhoneNumber(`+1${currentPark.contacts.phoneNumbers[0].phoneNumber}`)
-  console.log(parsePhoneNumber)
+  const parsedPhoneNumber = (phoneNumber: string) => {
+    const addUS: any = parsePhoneNumber(`+1${phoneNumber}`)
+    return addUS.format("NATIONAL")
+  }
+
+  const parkContactNumbers = currentPark.contacts.phoneNumbers.map(phone => {
+    return <p>{parsedPhoneNumber(phone.phoneNumber)}</p>
+  })
 
   return (
     <section>
-      <p><b>Email: </b>{currentPark.contacts.emailAddresses[0].emailAddress}</p>
-      <p><b>PhoneNumber: </b>{parsedPhoneNumber.format("NATIONAL")}</p>
-      <p><b>Mailing Address: </b></p>
-      <p>{addresses[0].city}</p>
+      <p><b>Address: </b></p>
+      <p>{`${addresses[0].line1},`}</p>
+      {addresses[0].line2 !== "" && <p>{`${addresses[0].line2},`}</p>}
+      {addresses[0].line3 !== "" && <p>{`${addresses[0].line3},`}</p>}
+      <p>{`${addresses[0].city},
+      ${addresses[0].stateCode} 
+      ${addresses[0].postalCode}`}</p>
+      <p><b>Email Address: </b>{currentPark.contacts.emailAddresses[0].emailAddress}</p>
+      <p><b>Phone Numbers: </b></p>
+      {parkContactNumbers}
     </section>
   )
 }
