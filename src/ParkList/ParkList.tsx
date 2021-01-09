@@ -8,15 +8,23 @@ interface ParksOnDisplay {
    parksOnDisplay: Array<object>
 }
 
-type ParkListProps = ChoosePark | ParksOnDisplay
+interface GenerateRandomParkCode {
+  generateRandomParkCode: () => void
+}
+
+type ParkListProps = GenerateRandomParkCode | ParksOnDisplay
 
 const ParkList: React.FC<ParkListProps> = props => {
-  const { choosePark } = props as ChoosePark
+  const { generateRandomParkCode } = props as GenerateRandomParkCode
   const { parksOnDisplay } = props as ParksOnDisplay
 
   return (
     <section className="park-list">
-      <button className="park-button">randomize</button>
+      <button 
+        className="park-button"
+        onClick={() => generateRandomParkCode()}>
+          randomize
+      </button>
       {parksOnDisplay}
     </section>
   )

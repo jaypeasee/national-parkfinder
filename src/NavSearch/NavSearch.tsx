@@ -1,5 +1,4 @@
-import React, { useState, FormEvent } from 'react'
-import { unstable_renderSubtreeIntoContainer } from 'react-dom'
+import React, { useState } from 'react'
 import './NavSearch.scss'
 
 interface FilterButtonsByName {
@@ -11,7 +10,6 @@ const NavSearch: React.FC<FilterButtonsByName> = (props) => {
 
     const handleSearchChange = (event: any) => {
         setNameSearch(event.target.value)
-        console.log(event.target.value)
         props.filterButtonsByName(event.currentTarget.value)
     }
 

@@ -15,14 +15,19 @@ interface FilterButtonsByName {
   filterButtonsByName: (searchTerm: string) => void
 }
 
+interface GenerateRandomParkCode {
+  generateRandomParkCode: () => void
+}
+
 interface ParksOnDisplay {
   parks: Array<LocalParkData>
 }
 
-type NavProps = ChoosePark | LocalParkData | FilterButtonsByName
+type NavProps = ChoosePark | LocalParkData | FilterButtonsByName | GenerateRandomParkCode
 
 const MainNav: React.FC<NavProps> = (props) => {
   const { choosePark } = props as ChoosePark
+  const { generateRandomParkCode } = props as GenerateRandomParkCode
   const [nameSearch, setNameSearch] = useState<string>('')
   const [parksOnDisplay, setParksOnDisplay] = useState<Array<JSX.Element>>()
 
@@ -64,7 +69,8 @@ const MainNav: React.FC<NavProps> = (props) => {
         filterButtonsByName={filterButtonsByName}
       />
       <ParkList
-        choosePark={choosePark}
+        // choosePark={choosePark}
+        generateRandomParkCode={ generateRandomParkCode }
         parksOnDisplay={parksOnDisplay}
       />
       <div className="main-nav-saved-btn-container">
