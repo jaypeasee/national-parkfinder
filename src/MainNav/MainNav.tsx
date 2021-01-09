@@ -6,6 +6,7 @@ import parkfinderLogo from './landscape.png'
 import { nationalParks } from '../ParkData'
 import ParkBtn from '../ParkBtn/ParkBtn'
 import { LocalParkData } from '../interfaces'
+import { Link } from 'react-router-dom'
 
 interface ChoosePark {
   choosePark: (parkCode: string) => void
@@ -69,13 +70,18 @@ const MainNav: React.FC<NavProps> = (props) => {
         filterButtonsByName={filterButtonsByName}
       />
       <ParkList
-        // choosePark={choosePark}
         generateRandomParkCode={ generateRandomParkCode }
         parksOnDisplay={parksOnDisplay}
       />
       <div className="main-nav-saved-btn-container">
-        <button className="main-nav-saved-btn">Visited</button>
-        <button className="main-nav-saved-btn">Bucket List</button>
+        <Link
+        to='/visited'>
+            <button className="main-nav-saved-btn">Visited</button>
+        </Link>
+        <Link
+          to="/bucket-list">
+          <button className="main-nav-saved-btn">Bucket List</button>
+        </Link>
       </div>
     </nav>
   )
