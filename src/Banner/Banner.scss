@@ -1,15 +1,25 @@
 @import "../mixins.scss";
 
 .banner {
-  width: 70vw;
+  width: 100%;
+  margin-bottom: -5px;
+}
+
+.header-container {
+  text-align: center;
+  color: black;
+  height: 100px;
 }
 
 .header {
-  text-align: center;
   font-size: 36px;
-  color: white;
-  margin-top: -82px;
-  text-shadow: 5px 5px 5px black;
+  margin-bottom: -10px;
+  font-family: $primaryFont;
+}
+
+.caption {
+  font-family: $paragraphFont;
+  padding-bottom: 10px;
 }
 
 .banner-img {

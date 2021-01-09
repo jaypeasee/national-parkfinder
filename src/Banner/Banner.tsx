@@ -10,14 +10,21 @@ const Banner: React.FC<BannerIconsProps> = props => {
   const { parkCode } = props as any
   const { addToVisited } = props as AddToVisited
 
+  const randomIndex = Math.floor(Math.random() * images.length)
+
   return (
     <section className='banner'>
-      {<img
-        className='banner-img'
-        src={images[0].url}
-        alt={images[0].altText}
-      />}
-      <h1 className='header'>{currentPark.fullName}, {currentPark.states}</h1>
+      <div className='header-container'>
+        <h1 className='header'>{currentPark.fullName}, {currentPark.states}</h1>
+        <p className='caption'><i>{images[randomIndex].caption}</i></p>
+      </div>
+      <div>
+        {<img
+          className='banner-img'
+          src={images[randomIndex].url}
+          alt={images[randomIndex].altText}
+        />}
+      </div>
     </section>
   )
 }
