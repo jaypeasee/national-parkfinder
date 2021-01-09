@@ -13,7 +13,7 @@ const Banner: React.FC<CurrentParkContainer> = props => {
                 src={images[0].url}
                 alt={images[0].altText}
             /> }
-            <h1>{currentPark.fullName}</h1>
+            <h1>{currentPark.fullName}, {currentPark.states}</h1>
             <BannerIcons />
         </section>
     )

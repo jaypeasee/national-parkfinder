@@ -21,20 +21,23 @@ const App: React.FC = () => {
     }
   }, [parkCode])
 
-  const generateRandomParkCode = () => {
+  const generateRandomParkCode = (): void => {
     let index = Math.floor(Math.random() * nationalParks.length)
     setParkCode(nationalParks[index].parkCode)
   }
 
   return (
     <main className="body">
-      <MainNav choosePark={choosePark}/>
+      <MainNav 
+        choosePark={choosePark}
+        generateRandomParkCode={generateRandomParkCode}/>
       <Switch>
         <Route
           path={location.pathname}
           render={ () => {
             return (
-              <ParkContainer parkCode={parkCode}/>
+              <ParkContainer 
+                parkCode={parkCode}/>
             )
           }}
         />

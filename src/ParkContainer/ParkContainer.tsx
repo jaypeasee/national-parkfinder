@@ -36,13 +36,9 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
               currentPark={currentPark} />
             <UserNav 
               currentPark={currentPark} />
-            <Route
-              exact 
-              path='/:matchedCode/about'
-              render={({match}) => {
-                const matchedCode = nationalParks.find(park => {
-                  return park.parkCode === match.params.parkCode})
-                  console.log(matchedCode)
+            <Route 
+              path={`/${currentPark.parkCode}`}
+              render={() => {
                 return (
                   <ParkInfo 
                   currentPark={currentPark} />
