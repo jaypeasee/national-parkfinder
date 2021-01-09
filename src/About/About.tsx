@@ -5,7 +5,7 @@ const About: React.FC<CurrentParkContainer> = props => {
   const { currentPark } = props as CurrentParkContainer
   const { activities } = currentPark as any
 
-  const parkActivities =  activities.map((activity: any) => {
+  const parkActivities = activities.map((activity: any) => {
     return <li>{activity.name}</li>
   })
 

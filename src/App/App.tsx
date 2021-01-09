@@ -9,7 +9,7 @@ const App: React.FC = () => {
   const [parkCode, setParkCode] = useState<string>('')
   const location = useLocation()
   const choosePark = (parkCodeId: string) => {
-   setParkCode(parkCodeId)
+    setParkCode(parkCodeId)
   }
 
   useEffect(() => {
@@ -27,15 +27,15 @@ const App: React.FC = () => {
 
   return (
     <main className="body">
-      <MainNav 
+      <MainNav
         choosePark={choosePark}
-        generateRandomParkCode={generateRandomParkCode}/>
+        generateRandomParkCode={generateRandomParkCode} />
       <Switch>
         <Route
           path={location.pathname}
-          render={ () => {
+          render={() => {
             return (
-              <ParkContainer 
+              <ParkContainer
                 parkCode={parkCode} />
             )
           }}

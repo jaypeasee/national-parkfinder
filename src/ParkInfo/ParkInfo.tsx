@@ -29,7 +29,7 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
           path={`/${currentPark.parkCode}/location`}
           render={() => {
             return (
-              <Location 
+              <Location
                 currentPark={currentPark} />
             )
           }}
@@ -39,7 +39,7 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
           path={`/${currentPark.parkCode}/contact`}
           render={() => {
             return (
-              <Contact 
+              <Contact
                 currentPark={currentPark} />
             )
           }}

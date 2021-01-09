@@ -67,16 +67,16 @@ const MainNav: React.FC<NavProps> = (props) => {
       />
       <h1>National Parkfinder</h1>
       <NavSearch
-        filterButtonsByName={ filterButtonsByName }
+        filterButtonsByName={filterButtonsByName}
       />
       <ParkList
-        generateRandomParkCode={ generateRandomParkCode }
+        generateRandomParkCode={generateRandomParkCode}
         parksOnDisplay={parksOnDisplay}
       />
       <div className="main-nav-saved-btn-container">
         <Link
-        to='/user/visited'>
-            <button className="main-nav-saved-btn">Visited</button>
+          to='/user/visited'>
+          <button className="main-nav-saved-btn">Visited</button>
         </Link>
         <Link
           to="/user/bucket-list">

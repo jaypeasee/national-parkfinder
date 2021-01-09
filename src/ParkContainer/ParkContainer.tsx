@@ -9,12 +9,6 @@ import { parkRequest } from './npsApiCall'
 import { Switch, Route } from 'react-router-dom'
 import './ParkContainer.scss'
 
-//create a function in ParkContainer that adds/deletes new park object to visitedList
-//create a local toggle on Banner for visitedList icon to pass actions back up to ParkContainer
-//create property "visited: false" on local park data objects
-//in VisitedParks map through visited list to create sections
-//render the sections with ability to remove
-
 type ParkContainerProps = CurrentPark | LocalParkData | LocalParkContainer | CurrentParkContainer | { parkCode: string }
 
 const ParkContainer: React.FC<ParkContainerProps> = props => {
@@ -26,11 +20,11 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
   useEffect(() => {
     if (parkCode !== '') {
       parkRequest(parkCode)
-      .then(data => {
-        setCurrentPark(data.data[0])
-      })    
-      .catch(error => setCurrentPark(error.message))
-    } 
+        .then(data => {
+          setCurrentPark(data.data[0])
+        })
+        .catch(error => setCurrentPark(error.message))
+    }
   }, [parkCode])
 
   const findChosenPark = (parkCode: string): any | void => {
@@ -50,34 +44,34 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
 
   return (
     <section>
-      {currentPark && 
+      {currentPark &&
         <Switch>
           <Fragment>
-            <Banner 
-              currentPark={currentPark} 
+            <Banner
+              currentPark={currentPark}
               addToVisited={addToVisited}
             />
-            <UserNav 
+            <UserNav
               currentPark={currentPark} />
-            <Route 
+            <Route
               path={`/${currentPark.parkCode}`}
               render={() => {
                 return (
-                  <ParkInfo 
-                  currentPark={currentPark} />
+                  <ParkInfo
+                    currentPark={currentPark} />
                 )
               }}
             />
-              <Route
-                path='/user/visited-list'
-                render={() => {
-                  return (
-                  <VisitedParks 
-                      visitedList={visitedList}
+            <Route
+              path='/user/visited-list'
+              render={() => {
+                return (
+                  <VisitedParks
+                    visitedList={visitedList}
                   />
-                  )
-                }}
-              />
+                )
+              }}
+            />
           </Fragment>
         </Switch>
       }

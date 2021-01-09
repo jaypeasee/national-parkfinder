@@ -6,10 +6,6 @@ export interface LocalParkData {
   visited?: boolean
 }
 
-// export interface ParkCode {
-//   parkCode: string
-// }
-
 export interface Activity {
   id: string
   name: string
@@ -89,6 +85,7 @@ export interface CurrentParkContainer {
 
 export interface LocalParkContainer {
   visitedList: Array<LocalParkData> | any
+  // bucketList: Array<LocalParkData> | any
 }
 
 export interface AddToVisited {

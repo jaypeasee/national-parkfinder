@@ -12,15 +12,15 @@ const ParkBtn: React.FC<ParkBtnProps> = props => {
   const { name } = props as LocalParkData
   const { parkCode } = props as LocalParkData
   const { choosePark } = props as ChoosePark
-    return (
-      <Link
+  return (
+    <Link
       to={`/${parkCode}/about`}>
-        <button 
-          className="park-button" 
-          onClick={() => choosePark(parkCode)}
-        >{name}</button>
-      </Link>
-    )
+      <button
+        className="park-button"
+        onClick={() => choosePark(parkCode)}
+      >{name}</button>
+    </Link>
+  )
 }
 
 export default ParkBtn
