@@ -22,7 +22,7 @@ const ParkList: React.FC<ParkListProps> = props => {
   return (
     <section className="park-list">
       <button
-        className="park-button"
+        className="randomize-button"
         onClick={() => generateRandomParkCode()}>
         <img 
           src={randomizeIcon}

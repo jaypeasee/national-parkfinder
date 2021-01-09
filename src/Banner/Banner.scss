@@ -1,7 +1,12 @@
 @import '../mixins.scss';
 
+.banner {
+  width: 70vw;
+}
+
 .banner-img {
     height: 300px;
+    width: 100%;
 }
 
 .banner-btn-container {

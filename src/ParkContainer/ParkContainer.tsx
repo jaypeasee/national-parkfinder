@@ -43,7 +43,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
   }
 
   return (
-    <section>
+    <section className='park-container'>
       {currentPark &&
         <Switch>
           <Fragment>

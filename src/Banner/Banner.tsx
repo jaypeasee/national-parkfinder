@@ -11,9 +11,9 @@ const Banner: React.FC<BannerIconsProps> = props => {
   const { addToVisited } = props as AddToVisited
 
   return (
-    <section>
+    <section className='banner'>
       {<img
-        className="banner-img"
+        className='banner-img'
         src={images[0].url}
         alt={images[0].altText}
       />}

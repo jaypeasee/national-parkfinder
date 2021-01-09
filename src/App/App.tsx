@@ -27,7 +27,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <main>
+    <main className='app'>
       <body className='body'>
         <MainNav
           choosePark={choosePark}

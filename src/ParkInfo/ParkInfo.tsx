@@ -11,7 +11,7 @@ type ParkInfoProps = CurrentParkContainer | RouteComponentProps
 const ParkInfo: React.FC<ParkInfoProps> = props => {
   const { currentPark } = props as CurrentParkContainer
   return (
-    <section>
+    <section className='park-info'>
       <Switch>
         <Route
           exact
