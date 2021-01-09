@@ -6,7 +6,7 @@ import { Route, Switch, useLocation } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
 
 const App: React.FC = () => {
-  const [parkCode, setParkCode] = useState('')
+  const [parkCode, setParkCode] = useState<string>('')
   const location = useLocation()
   const choosePark = (parkCodeId: string) => {
    setParkCode(parkCodeId)
@@ -36,7 +36,7 @@ const App: React.FC = () => {
           render={ () => {
             return (
               <ParkContainer 
-                parkCode={parkCode}/>
+                parkCode={parkCode} />
             )
           }}
         />

@@ -1,21 +1,21 @@
 import './BannerIcons.scss'
-import { LocalParkContainer, LocalParkData, CurrentParkContainer } from '../interfaces'
+import { LocalParkContainer, LocalParkData, CurrentParkContainer, AddToVisited } from '../interfaces'
 import bucketBlack from './icons/bucket-black.png'
 import bucketGreen from './icons/bucket-green.png'
 import checkBlack from './icons/check-black.png'
 import checkGreen from './icons/check-green.png'
 
-interface AddToVisited {
-  addToVisited: (addedPark: LocalParkData) =>  void
-}
+// interface AddToVisited {
+//   addToVisited: (parkCode: string) =>  void
+// }
 
-type BannerIconsProps = AddToVisited | LocalParkContainer | LocalParkData | CurrentParkContainer
+type BannerIconsProps = AddToVisited | LocalParkContainer | LocalParkData | CurrentParkContainer | { parkCode: string }
 
 
 const BannerIcons: React.FC<BannerIconsProps> = props => {
   const { addToVisited } = props as AddToVisited
   const { currentPark } = props as CurrentParkContainer
-  const { parkCode } = currentPark as any
+  const { parkCode } = props as any
   
     return (
         <section className="banner-icons">

@@ -13,4 +13,4 @@ const SavedCard: React.FC<LocalParkData> = (props) => {
   
 }
 
-export default SavedCard;
+export default SavedCard

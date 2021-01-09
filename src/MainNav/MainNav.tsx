@@ -67,7 +67,7 @@ const MainNav: React.FC<NavProps> = (props) => {
       />
       <h1>National Parkfinder</h1>
       <NavSearch
-        filterButtonsByName={filterButtonsByName}
+        filterButtonsByName={ filterButtonsByName }
       />
       <ParkList
         generateRandomParkCode={ generateRandomParkCode }
