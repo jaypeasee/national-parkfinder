@@ -1,0 +1,9 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.footer-btn-container {
+  width: 100vw;
+  height: 15vh;
+  background-color: $light-green;
+  position: relative;
+}

@@ -2,6 +2,7 @@ import './App.scss'
 import React, { useState, useEffect } from 'react'
 import MainNav from '../MainNav/MainNav'
 import ParkContainer from '../ParkContainer/ParkContainer'
+import Footer from '../Footer/Footer'
 import { Route, Switch, useLocation } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
 
@@ -26,21 +27,24 @@ const App: React.FC = () => {
   }
 
   return (
-    <main className="body">
-      <MainNav
-        choosePark={choosePark}
-        generateRandomParkCode={generateRandomParkCode} />
-      <Switch>
-        <Route
-          path={location.pathname}
-          render={() => {
-            return (
-              <ParkContainer
-                parkCode={parkCode} />
-            )
-          }}
-        />
-      </Switch>
+    <main>
+      <body className='body'>
+        <MainNav
+          choosePark={choosePark}
+          generateRandomParkCode={generateRandomParkCode} />
+        <Switch>
+          <Route
+            path={location.pathname}
+            render={() => {
+              return (
+                <ParkContainer
+                  parkCode={parkCode} />
+              )
+            }}
+          />
+        </Switch>
+      </body>
+      <Footer />
     </main>
   )
 }

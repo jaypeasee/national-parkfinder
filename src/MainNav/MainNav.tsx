@@ -20,10 +20,6 @@ interface GenerateRandomParkCode {
   generateRandomParkCode: () => void
 }
 
-interface ParksOnDisplay {
-  parks: Array<LocalParkData>
-}
-
 type NavProps = ChoosePark | LocalParkData | FilterButtonsByName | GenerateRandomParkCode
 
 const MainNav: React.FC<NavProps> = (props) => {
@@ -73,16 +69,6 @@ const MainNav: React.FC<NavProps> = (props) => {
         generateRandomParkCode={generateRandomParkCode}
         parksOnDisplay={parksOnDisplay}
       />
-      <div className="main-nav-saved-btn-container">
-        <Link
-          to='/user/visited'>
-          <button className="main-nav-saved-btn">Visited</button>
-        </Link>
-        <Link
-          to="/user/bucket-list">
-          <button className="main-nav-saved-btn">Bucket List</button>
-        </Link>
-      </div>
     </nav>
   )
 }
