@@ -73,6 +73,7 @@ export interface CurrentPark {
   directionsInfo: string
   directionsUrl: string
   weatherInfo: string
+  states: string
   images: Images
   id: string
   url: string
