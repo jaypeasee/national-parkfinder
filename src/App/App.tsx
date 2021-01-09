@@ -4,7 +4,6 @@ import MainNav from '../MainNav/MainNav'
 import ParkContainer from '../ParkContainer/ParkContainer'
 import { Route, Switch, useLocation } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
-import { parkRequest } from '../ParkContainer/npsApiCall'
 
 const App: React.FC = () => {
   const [parkCode, setParkCode] = useState('')

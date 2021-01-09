@@ -83,3 +83,8 @@ export interface CurrentPark {
 export interface CurrentParkContainer {
   currentPark: CurrentPark
 }
+
+export interface LocalParkContainer {
+  visitedList: Array<LocalParkData>
+  bucketList: Array<LocalParkData>
+}

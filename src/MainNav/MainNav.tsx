@@ -75,11 +75,11 @@ const MainNav: React.FC<NavProps> = (props) => {
       />
       <div className="main-nav-saved-btn-container">
         <Link
-        to='/visited'>
+        to='/user/visited'>
             <button className="main-nav-saved-btn">Visited</button>
         </Link>
         <Link
-          to="/bucket-list">
+          to="/user/bucket-list">
           <button className="main-nav-saved-btn">Bucket List</button>
         </Link>
       </div>
