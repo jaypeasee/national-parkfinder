@@ -11,7 +11,7 @@ type BannerIconsProps = AddToVisited | LocalParkContainer | CurrentParkContainer
 const Banner: React.FC<BannerIconsProps> = props => {
     const { currentPark } = props as CurrentParkContainer
     const { images } = currentPark as any
-    const { parkCode } = props as ParkCode
+    const { parkCode } = currentPark as any
     const { addToVisited } = props as AddToVisited
 
     return(
@@ -24,7 +24,7 @@ const Banner: React.FC<BannerIconsProps> = props => {
             <h1>{currentPark.fullName}, {currentPark.states}</h1>
             <BannerIcons 
               addToVisited={addToVisited}
-              parkCode={currentPark.parkCode}
+              parkCode={parkCode}
             />
         </section>
     )

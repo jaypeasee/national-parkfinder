@@ -1,5 +1,5 @@
 import './BannerIcons.scss'
-import { LocalParkContainer, LocalParkData } from '../interfaces'
+import { LocalParkContainer, LocalParkData, CurrentParkContainer } from '../interfaces'
 import bucketBlack from './icons/bucket-black.png'
 import bucketGreen from './icons/bucket-green.png'
 import checkBlack from './icons/check-black.png'
@@ -9,15 +9,19 @@ interface AddToVisited {
   addToVisited: (addedPark: LocalParkData) =>  void
 }
 
-type BannerIconsProps = AddToVisited | LocalParkContainer
+type BannerIconsProps = AddToVisited | LocalParkContainer | LocalParkData | CurrentParkContainer
 
 
 const BannerIcons: React.FC<BannerIconsProps> = props => {
   const { addToVisited } = props as AddToVisited
-
+  const { currentPark } = props as CurrentParkContainer
+  const { parkCode } = currentPark as any
+  
     return (
         <section className="banner-icons">
-            <div  role="button" onClick={() => addToVisited} className="banner-btn-container">
+            <div  role="button" 
+              onClick={() => addToVisited(parkCode)} 
+              className="banner-btn-container">
               <img 
                   src={checkBlack}
                   alt="not checked"

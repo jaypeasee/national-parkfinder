@@ -1,9 +1,9 @@
 export interface LocalParkData {
   name: string
-  parkCode: string
+  parkCode: ParkCode
   image: string
   state: string
-  visited: boolean | undefined
+  visited?: boolean
 }
 
 export interface ParkCode {
@@ -80,7 +80,7 @@ export interface CurrentPark {
   images: Images
   id: string
   url: string
-  parkCode: string
+  parkCode: ParkCode
 }
 
 export interface CurrentParkContainer {

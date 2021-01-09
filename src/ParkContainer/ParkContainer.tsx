@@ -3,7 +3,8 @@ import Banner from '../Banner/Banner'
 import UserNav from '../UserNav/UserNav'
 import ParkInfo from '../ParkInfo/ParkInfo'
 import VisitedParks from '../VisitedParks/VisitedParks'
-import { ParkCode, CurrentPark, LocalParkData, LocalParkContainer } from '../interfaces'
+import { nationalParks } from '../ParkData'
+import { ParkCode, CurrentPark, LocalParkData, LocalParkContainer, CurrentParkContainer } from '../interfaces'
 import { parkRequest } from './npsApiCall'
 import { Switch, Route } from 'react-router-dom'
 import './ParkContainer.scss'
@@ -14,7 +15,7 @@ import './ParkContainer.scss'
 //in VisitedParks map through visited list to create sections
 //render the sections with ability to remove
 
-type ParkContainerProps = ParkCode | CurrentPark | LocalParkData | LocalParkContainer
+type ParkContainerProps = ParkCode | CurrentPark | LocalParkData | LocalParkContainer | CurrentParkContainer
 
 const ParkContainer: React.FC<ParkContainerProps> = props => {
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
@@ -32,7 +33,19 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
     } 
   }, [parkCode])
 
-  const addToVisited = (addedPark: LocalParkData) => {
+  const findChosenPark = (parkCode: ParkCode): any | void => {
+    const chosenPark = nationalParks.find(park => {
+      console.log('park', park)
+      console.log('code', parkCode)
+      return park.parkCode === parkCode
+    })
+    if (chosenPark) {
+      return chosenPark
+    }
+  }
+
+  const addToVisited = (parkId: ParkCode) => {
+    const addedPark = findChosenPark(parkId)
     addedPark.visited = true
     setVisitedList([...visitedList, addedPark])
   }
