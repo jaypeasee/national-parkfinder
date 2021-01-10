@@ -22,6 +22,7 @@ const ParkList: React.FC<ParkListProps> = props => {
         onClick={generateRandomParkCode}>
         <img 
           src={randomizeIcon}
+          alt="randomize-icon"
           className='randomize-icon'
         />
       </button>
