@@ -1,22 +1,29 @@
 import './Banner.scss'
-import { CurrentParkContainer } from '../interfaces'
-import BannerIcons from '../BannerIcons/BannerIcons'
+import { CurrentParkContainer, LocalParkContainer } from '../interfaces'
 
-const Banner: React.FC<CurrentParkContainer> = props => {
-    const { currentPark } = props as CurrentParkContainer
-    const { images } = currentPark as any
-  
-    return(
-        <section>
-            {<img 
-                className="banner-img"
-                src={images[0].url}
-                alt={images[0].altText}
-            /> }
-            <h1>{currentPark.fullName}, {currentPark.states}</h1>
-            <BannerIcons />
-        </section>
-    )
+type BannerIconsProps = LocalParkContainer | CurrentParkContainer | { parkCode: string }
+
+const Banner: React.FC<BannerIconsProps> = props => {
+  const { currentPark } = props as CurrentParkContainer
+  const { images } = currentPark as any
+
+  const randomIndex = Math.floor(Math.random() * images.length)
+
+  return (
+    <section className='banner'>
+      <div className='header-container'>
+        <h1 className='header'>{currentPark.fullName}, {currentPark.states}</h1>
+        <p className='caption'><i>{images[randomIndex].caption}</i></p>
+      </div>
+      <div>
+        {<img
+          className='banner-img'
+          src={images[randomIndex].url}
+          alt={images[randomIndex].altText}
+        />}
+      </div>
+    </section>
+  )
 }
 
 export default Banner

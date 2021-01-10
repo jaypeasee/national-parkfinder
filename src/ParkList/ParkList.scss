@@ -3,6 +3,16 @@
 
 .park-list {
   @include flex-column-center;
-  overflow: scroll;
-  height: 80vh;
+  @include content-scroll;
+  margin-top: 20px;
+  height: 100vh;
+  position: relative;
+}
+
+.randomize-button {
+  cursor: pointer;
+}
+
+.randomize-icon {
+  width: 5vw;
 }

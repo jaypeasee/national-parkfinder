@@ -1,3 +1,14 @@
+@import '../variables.scss';
+
+.app {
+  width: 100vw;
+}
+
 .body {
   display: flex;
+  background-color: $gray;
 }
+
+ p {
+   padding: 10px;
+ }

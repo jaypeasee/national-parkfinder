@@ -19,17 +19,13 @@ interface GenerateRandomParkCode {
   generateRandomParkCode: () => void
 }
 
-interface ParksOnDisplay {
-  parks: Array<LocalParkData>
-}
-
 type NavProps = ChoosePark | LocalParkData | FilterButtonsByName | GenerateRandomParkCode
 
 const MainNav: React.FC<NavProps> = (props) => {
   const { choosePark } = props as ChoosePark
   const { generateRandomParkCode } = props as GenerateRandomParkCode
   const [nameSearch, setNameSearch] = useState<string>('')
-  const [parksOnDisplay, setParksOnDisplay] = useState<Array<JSX.Element>>()
+  const [parksOnDisplay, setParksOnDisplay] = useState<Array<JSX.Element>>([])
 
   useEffect(() => {
     if (!nameSearch) {
@@ -58,25 +54,20 @@ const MainNav: React.FC<NavProps> = (props) => {
   }
 
   return (
-    <nav className="main-nav">
+    <nav className='main-nav'>
       <img
-        className="logo"
+        className='logo'
         src={parkfinderLogo}
-        alt="National Parkfinder Logo"
+        alt='National Parkfinder Logo'
       />
-      <h1>National Parkfinder</h1>
+      <h1 className='site-header'>National Parkfinder</h1>
       <NavSearch
         filterButtonsByName={filterButtonsByName}
       />
       <ParkList
-        // choosePark={choosePark}
-        generateRandomParkCode={ generateRandomParkCode }
+        generateRandomParkCode={generateRandomParkCode}
         parksOnDisplay={parksOnDisplay}
       />
-      <div className="main-nav-saved-btn-container">
-        <button className="main-nav-saved-btn">Visited</button>
-        <button className="main-nav-saved-btn">Bucket List</button>
-      </div>
     </nav>
   )
 }

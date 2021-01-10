@@ -1,17 +1,40 @@
-@import '../mixins.scss';
+@import "../mixins.scss";
+
+.banner {
+  width: 100%;
+  margin-bottom: -5px;
+}
+
+.header-container {
+  text-align: center;
+  color: black;
+  height: 100px;
+}
+
+.header {
+  font-size: 36px;
+  margin-bottom: -10px;
+  font-family: $primaryFont;
+}
+
+.caption {
+  font-family: $paragraphFont;
+  padding-bottom: 10px;
+}
 
 .banner-img {
-    height: 300px;
+  height: auto;
+  width: 100%;
 }
 
 .banner-btn-container {
-    @include row-wrap;
+  @include row-wrap;
 }
 
 .saved-icon {
-    height: 50px;
+  height: 50px;
 }
 
 .banner-icons {
-    @include row-wrap;
+  @include row-wrap;
 }

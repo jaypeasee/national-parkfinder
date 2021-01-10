@@ -3,7 +3,6 @@ import parsePhoneNumber from 'libphonenumber-js'
 import './Contact.scss'
 
 const Contact: React.FC<CurrentParkContainer> = props => {
-  console.log(props)
   const { currentPark } = props as CurrentParkContainer
   const { addresses } = currentPark as any
 
