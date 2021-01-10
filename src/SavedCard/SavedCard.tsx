@@ -1,15 +1,21 @@
 import { LocalParkData } from '../interfaces'
+import './SavedCard.scss'
 
 const SavedCard: React.FC<LocalParkData> = ({ name, parkCode, image, state }) => {
-  // const { name } = props
-  // const { parkCode } = props
-  // const { image } = props
-  // const { key } = props as LocalParkData
   
   return (
-    <div>
-      <h1>{name}</h1>
-    </div>
+    <section 
+      id={parkCode}
+      className="saved-park-card"
+    >
+      <img 
+        src={image}
+        alt={`photograph of ${name}`}
+        className="saved-park-img"
+      />
+      <h2>{name}, {state}</h2>
+      <button>X</button>
+    </section>
   )
 }
 
