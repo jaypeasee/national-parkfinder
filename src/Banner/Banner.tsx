@@ -1,6 +1,5 @@
 import './Banner.scss'
 import { CurrentParkContainer, LocalParkContainer } from '../interfaces'
-
 type BannerIconsProps = LocalParkContainer | CurrentParkContainer | { parkCode: string }
 
 const Banner: React.FC<BannerIconsProps> = props => {

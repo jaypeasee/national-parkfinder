@@ -60,7 +60,7 @@ const BannerIcons: React.FC<BannerIconsProps> = props => {
         className="banner-btn-container">
         <img
           src={checkColor}
-          alt="not checked"
+          alt="visited"
           className="saved-icon"
         />
         {!localPark.visited && <h2>Add To Visited</h2>}
@@ -72,7 +72,7 @@ const BannerIcons: React.FC<BannerIconsProps> = props => {
         className="banner-btn-container">
         <img
           src={bucketColor}
-          alt="not added to bucket list"
+          alt="bucket list"
           className="saved-icon"
         />
         {!localPark.bucketList && <h2>Add To Bucket List</h2>}
