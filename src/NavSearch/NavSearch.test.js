@@ -14,4 +14,14 @@ describe('NavSearch', () => {
     )
     searchInput = screen.getByPlaceholderText('search by name')
   })
+
+  it('should render a search bar', () => {
+    expect(searchInput).toBeInTheDocument()
+  })
+
+  it('should call filterButtonsByName with the typed value', () => {
+    userEvent.type(searchInput, 'Grand')
+    expect(filterButtonsByName).toHaveBeenCalledTimes(5)
+    expect(filterButtonsByName).toHaveBeenCalledWith('Grand')
+  }) 
 })
