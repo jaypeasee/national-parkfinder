@@ -24,6 +24,8 @@ const VisitedParks: React.FC<VisitedParkProps> = props => {
           image={savedPark.image}
           parkCode={savedPark.parkCode}
           state={savedPark.state}
+          bucketList={savedPark.bucketList}
+          visited={savedPark.visited}
           //need a way to tell SavedCard if this is bucket list or saved.
           //so that we can have different button options on each card.
           //maybe location.pathname? that threw an error though.
