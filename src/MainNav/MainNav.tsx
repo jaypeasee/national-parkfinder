@@ -25,7 +25,7 @@ const MainNav: React.FC<NavProps> = (props) => {
   const { choosePark } = props as ChoosePark
   const { generateRandomParkCode } = props as GenerateRandomParkCode
   const [nameSearch, setNameSearch] = useState<string>('')
-  const [parksOnDisplay, setParksOnDisplay] = useState<Array<JSX.Element>>()
+  const [parksOnDisplay, setParksOnDisplay] = useState<Array<JSX.Element>>([])
 
   useEffect(() => {
     if (!nameSearch) {

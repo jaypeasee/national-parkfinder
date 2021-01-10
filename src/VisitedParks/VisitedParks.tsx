@@ -6,10 +6,11 @@ type VisitedParkProps = LocalParkContainer |  LocalParkData
 
 const VisitedParks: React.FC<VisitedParkProps> = props => {
   const { visitedList, bucketList} = props as LocalParkContainer
-  const [cardsOnDisplay, setCardsOnDisplay] = useState<Array<JSX.Element>>()
+  const [visitedListDisplay, setVisitedListDisplay] = useState<Array<JSX.Element>>([])
+  console.log(visitedListDisplay)
+
 
   useEffect(() => {
-    if (visitedList) {
       const visitedCards = visitedList.map((savedPark: LocalParkData) => {
         return <SavedCard
           key={savedPark.parkCode}
@@ -19,13 +20,12 @@ const VisitedParks: React.FC<VisitedParkProps> = props => {
           state={savedPark.state}
         />
       })
-      setCardsOnDisplay(visitedCards)
-    }
+      setVisitedListDisplay(visitedCards)
   }, [visitedList])
 
   return (
     <section>
-      {visitedList.length > 0 && { cardsOnDisplay }}
+      {visitedListDisplay}
     </section>
   )
 }
