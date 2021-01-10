@@ -23,7 +23,17 @@ describe('ParkBtn', () => {
     parkBtn = screen.getByText('Grand Canyon')
   })
 
-  it('should should render a component', () => {
+  it('should should render the button', () => {
     expect(parkBtn).toBeInTheDocument()
+  })
+
+  it('should call choosePark with the parkCode', () => {
+    userEvent.click(parkBtn)
+    expect(choosePark).toHaveBeenCalledWith("grca")
+  })
+
+  it('should change the pathname on click', () => {
+    userEvent.click(parkBtn)
+    expect(history.location.pathname).toBe('/grca/about')
   })
 })
