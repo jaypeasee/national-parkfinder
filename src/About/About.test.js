@@ -5,11 +5,11 @@ import '@testing-library/jest-dom'
 
 describe('About', () => {
 
-  beforeEach(() => { 
+  beforeEach(() => {
     render(
-        <About 
-          currentPark={samplePark}
-        />
+      <About
+        currentPark={samplePark}
+      />
     )
   })
 

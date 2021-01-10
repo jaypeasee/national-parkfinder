@@ -7,9 +7,9 @@ describe('Contact', () => {
 
   beforeEach(() => {
     render(
-        <Contact 
-          currentPark={samplePark}
-        />
+      <Contact
+        currentPark={samplePark}
+      />
     )
   })
 

@@ -24,13 +24,13 @@ describe('ParkInfo', () => {
   beforeEach(() => {
     render(
       <Router history={history}>
-        <ParkInfo 
+        <ParkInfo
           currentPark={samplePark}
           localPark={localPark}
           addToVisited={addToVisited}
           deleteFromVisited={deleteFromVisited}
           addToBucketList={addToBucketList}
-          deleteFromBucketList={deleteFromBucketList} 
+          deleteFromBucketList={deleteFromBucketList}
         />
       </Router>
     )
