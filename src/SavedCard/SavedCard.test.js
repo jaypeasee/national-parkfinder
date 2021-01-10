@@ -11,8 +11,6 @@ describe('SavedCard', () => {
   const addToBucketList = jest.fn()
   const deleteFromBucketList = jest.fn()
 
-
-
   describe('Visited', () => {
     const visitedPark = {
       name: 'Denali',
@@ -23,11 +21,12 @@ describe('SavedCard', () => {
       bucketList: false
     }
     const history = createMemoryHistory()
+
     beforeEach(() => {
       history.location.pathname = '/user/visited'
       render(
         <Router history={history}>
-          <SavedCard 
+          <SavedCard
             key={visitedPark.parkCode}
             name={visitedPark.name}
             image={visitedPark.image}
@@ -40,7 +39,7 @@ describe('SavedCard', () => {
             addToBucketList={addToBucketList}
             deleteFromBucketList={deleteFromBucketList}
           />
-          </Router>
+        </Router>
       )
     })
 
@@ -67,11 +66,12 @@ describe('SavedCard', () => {
       visited: false,
       bucketList: true
     }
+
     beforeEach(() => {
       history.location.pathname = '/user/bucket-list'
       render(
         <Router history={history}>
-          <SavedCard 
+          <SavedCard
             key={bucketListPark.parkCode}
             name={bucketListPark.name}
             image={bucketListPark.image}
@@ -84,7 +84,7 @@ describe('SavedCard', () => {
             addToBucketList={addToBucketList}
             deleteFromBucketList={deleteFromBucketList}
           />
-          </Router>
+        </Router>
       )
     })
 
@@ -99,5 +99,5 @@ describe('SavedCard', () => {
       expect(deleteFromBucketList).toHaveBeenCalledTimes(1)
       expect(deleteFromBucketList).toHaveBeenCalledWith('dena')
     })
-  })  
+  })
 })

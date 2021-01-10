@@ -4,12 +4,11 @@ import { samplePark } from '../samplePark'
 import '@testing-library/jest-dom'
 
 describe('Contact', () => {
-
   beforeEach(() => {
     render(
-        <Contact 
-          currentPark={samplePark}
-        />
+      <Contact
+        currentPark={samplePark}
+      />
     )
   })
 
