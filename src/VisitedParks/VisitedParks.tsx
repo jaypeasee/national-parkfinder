@@ -2,19 +2,10 @@ import { useEffect, useState } from 'react'
 import { LocalParkContainer, LocalParkData } from '../interfaces'
 import SavedCard from '../SavedCard/SavedCard'
 
-interface VisitedList {
-  visitedList: any
-}
-
-interface BucketList {
-  bucketList: any
-}
-
-type VisitedParkProps = VisitedList | BucketList | LocalParkData
+type VisitedParkProps = LocalParkContainer |  LocalParkData
 
 const VisitedParks: React.FC<VisitedParkProps> = props => {
-  const { visitedList} = props as VisitedList
-  const { bucketList } = props as BucketList
+  const { visitedList, bucketList} = props as LocalParkContainer
   const [cardsOnDisplay, setCardsOnDisplay] = useState<Array<JSX.Element>>()
 
   useEffect(() => {

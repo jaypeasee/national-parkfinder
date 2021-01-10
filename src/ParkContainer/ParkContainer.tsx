@@ -9,20 +9,12 @@ import { parkRequest } from './npsApiCall'
 import { Switch, Route } from 'react-router-dom'
 import './ParkContainer.scss'
 
-interface VisitedList {
-  visitedList: any
-}
-
-interface BucketList {
-  bucketList: any
-}
-
-type ParkContainerProps = VisitedList | BucketList | CurrentPark | LocalParkData | CurrentParkContainer | { parkCode: string }
+type ParkContainerProps = LocalParkContainer | CurrentPark | LocalParkData | CurrentParkContainer | { parkCode: string }
 
 const ParkContainer: React.FC<ParkContainerProps> = props => {
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
-  const [visitedList, setVisitedList] = useState<VisitedList[]>([])
-  const [bucketList, setBucketList] = useState<BucketList[]>([])
+  const [visitedList, setVisitedList] = useState<LocalParkContainer[]>([])
+  const [bucketList, setBucketList] = useState<LocalParkContainer[]>([])
   const { parkCode } = props as any
 
 
@@ -101,7 +93,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                 return (
                   <VisitedParks
                     visitedList={visitedList}
-                    // bucketList={bucketList}
+                    bucketList={bucketList}
                   />
                 )
               }}
