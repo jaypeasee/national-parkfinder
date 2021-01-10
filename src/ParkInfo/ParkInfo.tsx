@@ -4,10 +4,9 @@ import Location from '../Location/Location'
 import Contact from '../Contact/Contact'
 import BannerIcons from '../BannerIcons/BannerIcons'
 import { Switch, Route } from 'react-router-dom'
-import { AddRemoveFunctionality, CurrentParkContainer, LocalParkData } from '../interfaces'
-import { RouteComponentProps } from 'react-router-dom'
+import { AddRemoveFunctionality, CurrentParkContainer } from '../interfaces'
 
-type ParkInfoProps = CurrentParkContainer | RouteComponentProps | AddRemoveFunctionality | { localPark: () => any | void}
+type ParkInfoProps = CurrentParkContainer | AddRemoveFunctionality | { localPark: () => any | void}
 
 const ParkInfo: React.FC<ParkInfoProps> = props => {
   const { currentPark } = props as CurrentParkContainer

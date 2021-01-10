@@ -74,8 +74,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                 return (
                   <section>
                     <Banner
-                      currentPark={currentPark}
-                    />
+                      currentPark={currentPark} />
                     <UserNav
                       currentPark={currentPark} />
                     <ParkInfo
@@ -111,6 +110,10 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                   <SavedParks
                     visitedList={visitedList}
                     bucketList={bucketList}
+                    addToVisited={addToVisited}
+                    deleteFromVisited={deleteFromVisited}
+                    addToBucketList={addToBucketList}
+                    deleteFromBucketList={deleteFromBucketList}
                   />
                 )
               }}
