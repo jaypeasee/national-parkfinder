@@ -12,6 +12,7 @@ describe('ParkInfo', () => {
   const deleteFromVisited = jest.fn()
   const addToBucketList = jest.fn()
   const deleteFromBucketList = jest.fn()
+
   const localPark = {
     name: 'Denali',
     state: 'AK',
