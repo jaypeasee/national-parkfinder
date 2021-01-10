@@ -5,14 +5,15 @@ import '@testing-library/jest-dom'
 
 describe('ParkList', () => {
   let randomBtn
+  const generateRandomParkCode = jest.fn()
+
   beforeEach(() => {
-    const generateRandomParkCode = jest.fn()
     render(
       <ParkList 
         generateRandomParkCode={generateRandomParkCode}
       />
     )
-    randomBtn = screen.getByAltText("randomize-icon")
+    randomBtn = screen.getByTestId("randomize-button")
   })
 
   it('should render with a randomize button', () => {

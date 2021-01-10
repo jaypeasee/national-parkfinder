@@ -18,6 +18,7 @@ const ParkList: React.FC<ParkListProps> = props => {
   return (
     <section className="park-list">
       <button
+        data-testid="randomize-button"
         className="randomize-button"
         onClick={generateRandomParkCode}>
         <img 
