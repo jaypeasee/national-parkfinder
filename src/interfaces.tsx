@@ -85,10 +85,13 @@ export interface CurrentParkContainer {
 
 export interface LocalParkContainer {
   parkCode?: string
-  visitedList: Array<LocalParkData> | any
-  // bucketList: Array<LocalParkData> | any
+  visitedList?: Array<LocalParkData> | any
+  bucketList?: Array<LocalParkData> | any
 }
 
-export interface AddToVisited {
+export interface AddRemoveFunctionality {
   addToVisited: (parkCode: string) => void
+  deleteFromVisited: (parkCode: string) => void
+  addToBucketList: (parkCode: string) => void
+  deleteFromBucketList: (parkCode: string) => void
 }

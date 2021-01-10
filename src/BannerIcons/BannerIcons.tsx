@@ -1,20 +1,23 @@
 import './BannerIcons.scss'
 import { useEffect, useState } from 'react'
-import { LocalParkContainer, LocalParkData, CurrentParkContainer, AddToVisited } from '../interfaces'
+import { AddRemoveFunctionality } from '../interfaces'
 import bucketBlack from './icons/bucket-black.png'
 import bucketGreen from './icons/bucket-green.png'
 import checkBlack from './icons/check-black.png'
 import checkGreen from './icons/check-green.png'
 
-type BannerIconsProps = AddToVisited | LocalParkContainer | LocalParkData | CurrentParkContainer | { localPark: () => any | void } | { deleteFromVisited: () => void }
+type BannerIconsProps = AddRemoveFunctionality | { localPark: () => any | void } 
 
 
 const BannerIcons: React.FC<BannerIconsProps> = props => {
-  const { addToVisited } = props as AddToVisited
-  const { deleteFromVisited } = props as any
+  const { addToVisited } = props as AddRemoveFunctionality
+  const { deleteFromVisited } = props as AddRemoveFunctionality
+  const { addToBucketList } = props as AddRemoveFunctionality
+  const { deleteFromBucketList } = props as AddRemoveFunctionality
   const { localPark } = props as any
 
   const [checkColor, setCheckColor] = useState<any>()
+  const [bucketColor, setBucketColor] = useState<any>()
 
   useEffect(() => {
     if (localPark.visited) {
@@ -49,11 +52,12 @@ const BannerIcons: React.FC<BannerIconsProps> = props => {
       </div>
       <div className="banner-btn-container">
         <img
-          src={bucketBlack}
+          src={bucketColor}
           alt="not added to bucket list"
           className="saved-icon"
         />
-        <h2>Add To Bucket List</h2>
+        {!localPark.bucketList && <h2>Add To Bucket List</h2>}
+        {localPark.bucketList && <h2>Remove From Bucket List</h2>}
       </div>
     </section>
   )

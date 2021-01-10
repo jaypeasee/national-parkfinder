@@ -14,7 +14,7 @@ type ParkContainerProps = CurrentPark | LocalParkData | LocalParkContainer | Cur
 const ParkContainer: React.FC<ParkContainerProps> = props => {
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
   const [visitedList, setVisitedList] = useState<LocalParkContainer[]>([])
-  // const [bucketList, setBucketList] = useState<LocalParkContainer>([])
+  const [bucketList, setBucketList] = useState<LocalParkContainer[]>([])
   const { parkCode } = props as any
 
   useEffect(() => {
@@ -49,6 +49,19 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
     setVisitedList(updatedParks)
   }
 
+  const addToBucketList = (parkCode: string) => {
+    const addedPark = findChosenPark(parkCode)
+
+    if (!bucketList.includes(addedPark)) {
+      setBucketList([...bucketList, addedPark])
+    }
+  }
+
+  const deleteFromBucketList = (parkCode: string) => {
+    const updatedParks = bucketList.filter(park => park.parkCode !== parkCode)
+    setVisitedList(updatedParks)
+  }
+
   return (
     <section className='park-container'>
       {currentPark &&
@@ -66,8 +79,10 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                   <ParkInfo
                     currentPark={currentPark}
                     localPark={findChosenPark(currentPark.parkCode)}
-                    addToVisited={addToVisited}
-                    deleteFromVisited={deleteFromVisited} />
+                    addToVisited={addToVisited} 
+                    deleteFromVisited={deleteFromVisited}
+                    addToBucketList={addToBucketList}
+                    deleteFromBucketList={deleteFromBucketList}/>
                 )
               }}
             />
