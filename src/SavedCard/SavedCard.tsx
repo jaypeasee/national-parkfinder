@@ -7,7 +7,7 @@ type SavedCardProps = LocalParkData | AddRemoveFunctionality
 const SavedCard: React.FC<SavedCardProps> = props => {
   const location = useLocation()
   const { name, parkCode, image, state, bucketList, visited } = props as LocalParkData
-  const { addToVisited, deleteFromVisited, addToBucketList, deleteFromBucketList } = props as AddRemoveFunctionality
+  const { addToVisited, deleteFromVisited, deleteFromBucketList } = props as AddRemoveFunctionality
 
   const moveParkToVisited = () => {
     addToVisited(parkCode)
