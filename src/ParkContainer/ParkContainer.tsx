@@ -13,8 +13,8 @@ type ParkContainerProps = CurrentPark | LocalParkData | LocalParkContainer | Cur
 
 const ParkContainer: React.FC<ParkContainerProps> = props => {
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
-  const [visitedList, setVisitedList] = useState<LocalParkContainer[]>([])
-  const [bucketList, setBucketList] = useState<LocalParkContainer[]>([])
+  const [visitedList, setVisitedList] = useState<LocalParkContainer>()
+  const [bucketList, setBucketList] = useState<LocalParkContainer>()
   const { parkCode } = props as any
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
   }
 
   const deleteFromVisited = (parkCode: string) => {
-    const updatedParks = visitedList.filter(park => park.parkCode !== parkCode)
+    const updatedParks = visitedList.filter((park: any) => park.parkCode !== parkCode)
     setVisitedList(updatedParks)
   }
 
@@ -58,7 +58,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
   }
 
   const deleteFromBucketList = (parkCode: string) => {
-    const updatedParks = bucketList.filter(park => park.parkCode !== parkCode)
+    const updatedParks = bucketList.filter((park: any) => park.parkCode !== parkCode)
     setVisitedList(updatedParks)
   }
 
@@ -87,11 +87,12 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
               }}
             />
             <Route
-              path='/user/visited-list'
+              path='/user/visited'
               render={() => {
                 return (
                   <VisitedParks
                     visitedList={visitedList}
+                    bucketList={bucketList}
                   />
                 )
               }}

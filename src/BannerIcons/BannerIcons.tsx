@@ -25,6 +25,12 @@ const BannerIcons: React.FC<BannerIconsProps> = props => {
     } else {
       setCheckColor(checkBlack)
     }
+
+    if (localPark.bucketList) {
+      setBucketColor(bucketGreen)
+    } else {
+      setBucketColor(bucketBlack)
+    }
   })
 
   const handleVisitedPark = () => {
@@ -34,6 +40,16 @@ const BannerIcons: React.FC<BannerIconsProps> = props => {
     } else {
       deleteFromVisited(localPark.parkCode)
       localPark.visited = false
+    }
+  }
+
+  const handleBucketListPark = () => {
+    if (!localPark.bucketList) {
+      addToBucketList(localPark.parkCode)
+      localPark.bucketList = true
+    } else {
+      deleteFromBucketList(localPark.parkCode)
+      localPark.bucketList = false
     }
   }
 
@@ -50,7 +66,10 @@ const BannerIcons: React.FC<BannerIconsProps> = props => {
         {!localPark.visited && <h2>Add To Visited</h2>}
         {localPark.visited && <h2>Remove From Visited</h2>}
       </div>
-      <div className="banner-btn-container">
+      <div
+        role="button"
+        onClick={ handleBucketListPark }
+        className="banner-btn-container">
         <img
           src={bucketColor}
           alt="not added to bucket list"

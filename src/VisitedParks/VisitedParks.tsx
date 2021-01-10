@@ -1,25 +1,32 @@
-import { LocalParkContainer } from '../interfaces'
+import { useEffect, useState } from 'react'
+import { LocalParkContainer, LocalParkData } from '../interfaces'
 import SavedCard from '../SavedCard/SavedCard'
 
+type VisitedParkProps = LocalParkContainer | LocalParkData
 
-const VisitedParks: React.FC<LocalParkContainer> = props => {
-  const { visitedList } = props as LocalParkContainer
+const VisitedParks: React.FC<VisitedParkProps> = props => {
+  const { visitedList, bucketList } = props as LocalParkContainer
+  const [cardsOnDisplay, setCardsOnDisplay] = useState<Array<JSX.Element>>()
 
-
-  const visitedCards = visitedList.map((visited: any) => {
-    return <SavedCard
-      key={visited.parkCode}
-      name={visited.name}
-      image={visited.image}
-      parkCode={visited.parkCode}
-      state={visited.state}
-    />
-  })
-
+  useEffect(() => {
+    if (visitedList) {
+      const visitedCards = visitedList.map((savedPark: LocalParkContainer): any => {
+        console.log('single park', savedPark)
+        return <SavedCard
+          key={savedPark.parkCode}
+          name={savedPark.name}
+          image={savedPark.image}
+          parkCode={savedPark.parkCode}
+          state={savedPark.state}
+        />
+      })
+      setCardsOnDisplay(visitedCards)
+    }
+  }, [visitedList])
 
   return (
     <section>
-      {visitedList.length > 0 && { visitedCards }}
+      {visitedList.length > 0 && { cardsOnDisplay }}
     </section>
   )
 }

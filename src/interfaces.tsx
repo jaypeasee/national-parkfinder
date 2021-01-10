@@ -1,10 +1,17 @@
 export interface LocalParkData {
-  name: string
+  name: string 
   parkCode: string
   image: string
   state: string
   visited?: boolean
+  bucketList?: boolean
 }
+
+export interface LocalParkContainer {
+  visitedList: Array<LocalParkData> | undefined
+  bucketList: Array<LocalParkData> | undefined
+}
+
 
 export interface Activity {
   id: string
@@ -81,12 +88,6 @@ export interface CurrentPark {
 
 export interface CurrentParkContainer {
   currentPark: CurrentPark
-}
-
-export interface LocalParkContainer {
-  parkCode?: string
-  visitedList?: Array<LocalParkData> | any
-  bucketList?: Array<LocalParkData> | any
 }
 
 export interface AddRemoveFunctionality {
