@@ -6,7 +6,7 @@ import { createMemoryHistory } from 'history'
 
 describe('MainNav', () => {
   const history = createMemoryHistory()
-  it('should render a title and image', () => {
+  beforeEach(() => {
     render(
       <Router history={history}>
         <MainNav
@@ -15,7 +15,16 @@ describe('MainNav', () => {
         />
       </Router>
     )
+  })
+  it('should render a title and image', () => {
     expect(screen.getByAltText('National Parkfinder Logo')).toBeInTheDocument()
     expect(screen.getByText('National Parkfinder')).toBeInTheDocument()
   })
+
+  it('should render a list of park buttons', () => {
+    expect(screen.getByText('Grand Canyon')).toBeInTheDocument()
+    const allButtons = screen.getAllByRole("button")
+    expect(allButtons.length).toBe(56)
+  })
 })
+
