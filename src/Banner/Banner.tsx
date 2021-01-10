@@ -1,6 +1,5 @@
 import './Banner.scss'
 import { CurrentParkContainer, LocalParkContainer } from '../interfaces'
-import BannerIcons from '../BannerIcons/BannerIcons'
 
 type BannerIconsProps = LocalParkContainer | CurrentParkContainer | { parkCode: string }
 

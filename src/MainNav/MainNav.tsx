@@ -6,7 +6,6 @@ import parkfinderLogo from './landscape.png'
 import { nationalParks } from '../ParkData'
 import ParkBtn from '../ParkBtn/ParkBtn'
 import { LocalParkData } from '../interfaces'
-import { Link } from 'react-router-dom'
 
 interface ChoosePark {
   choosePark: (parkCode: string) => void

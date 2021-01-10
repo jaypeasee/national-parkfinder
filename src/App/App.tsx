@@ -16,14 +16,15 @@ const App: React.FC = () => {
   useEffect(() => {
     if (location.pathname === '/') {
       generateRandomParkCode()
+      location.pathname = `/${parkCode}/about`
     } else {
       setParkCode(location.pathname.split('/')[1])
     }
   }, [parkCode])
 
   const generateRandomParkCode = (): void => {
-    let index = Math.floor(Math.random() * nationalParks.length)
-    setParkCode(nationalParks[index].parkCode)
+      let index = Math.floor(Math.random() * nationalParks.length)
+      setParkCode(nationalParks[index].parkCode)
   }
 
   return (

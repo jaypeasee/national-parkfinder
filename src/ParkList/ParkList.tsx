@@ -1,12 +1,8 @@
 import randomizeIcon from './randomize.png'
 import './ParkList.scss'
 
-interface ChoosePark {
-  choosePark: (parkCode: string) => void;
-}
-
 interface ParksOnDisplay {
-  parksOnDisplay: Array<object>
+  parksOnDisplay: Array<JSX.Element>
 }
 
 interface GenerateRandomParkCode {
@@ -23,11 +19,11 @@ const ParkList: React.FC<ParkListProps> = props => {
     <section className="park-list">
       <button
         className="randomize-button"
-        onClick={() => generateRandomParkCode()}>
+        onClick={generateRandomParkCode}>
         <img 
           src={randomizeIcon}
-          className='randomize-icon'>
-          </img>
+          className='randomize-icon'
+        />
       </button>
       {parksOnDisplay}
     </section>
