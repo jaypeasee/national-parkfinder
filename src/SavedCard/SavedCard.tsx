@@ -1,21 +1,28 @@
-import { LocalParkData } from '../interfaces'
+import { LocalParkData, AddRemoveFunctionality } from '../interfaces'
 import './SavedCard.scss'
 
-const SavedCard: React.FC<LocalParkData> = ({ name, parkCode, image, state, bucketList, visited }) => {
-  
+type SavedCardProps = LocalParkData | AddRemoveFunctionality
+
+const SavedCard: React.FC<SavedCardProps> = props => {
+  const { name, parkCode, image, state, bucketList, visited } = props as LocalParkData
+  const { addToVisited, deleteFromVisited, addToBucketList, deleteFromBucketList } = props as AddRemoveFunctionality
   return (
-    <section 
+    <section
       id={parkCode}
       className="saved-park-card"
     >
-      <img 
+      <img
         src={image}
         alt={`photograph of ${name}`}
         className="saved-park-img"
       />
       <h2>{name}, {state}</h2>
       <button>X</button>
-      {bucketList && !visited && <button>Add to Visited</button>}
+      {bucketList && !visited &&
+        <button
+          onClick={() => addToVisited(parkCode)}>
+          Add to Visited
+      </button>}
     </section>
   )
 }

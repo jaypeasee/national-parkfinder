@@ -74,21 +74,21 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                 return (
                   <section>
                     <Banner
-                    currentPark={currentPark}
-                  />
-                  <UserNav
-                    currentPark={currentPark} />
-                  <ParkInfo
-                    currentPark={currentPark}
-                    localPark={findChosenPark(currentPark.parkCode)}
-                    addToVisited={addToVisited} 
-                    deleteFromVisited={deleteFromVisited}
-                    addToBucketList={addToBucketList}
-                    deleteFromBucketList={deleteFromBucketList}/>
+                      currentPark={currentPark}
+                    />
+                    <UserNav
+                      currentPark={currentPark} />
+                    <ParkInfo
+                      currentPark={currentPark}
+                      localPark={findChosenPark(currentPark.parkCode)}
+                      addToVisited={addToVisited}
+                      deleteFromVisited={deleteFromVisited}
+                      addToBucketList={addToBucketList}
+                      deleteFromBucketList={deleteFromBucketList} />
                   </section>
-                  )
-                  }}
-              />
+                )
+              }}
+            />
             <Route
               path='/user/visited'
               render={() => {
@@ -96,11 +96,15 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                   <SavedParks
                     visitedList={visitedList}
                     bucketList={bucketList}
+                    addToVisited={addToVisited}
+                    deleteFromVisited={deleteFromVisited}
+                    addToBucketList={addToBucketList}
+                    deleteFromBucketList={deleteFromBucketList}
                   />
                 )
               }}
             />
-            <Route 
+            <Route
               path='/user/bucket-list'
               render={() => {
                 return (

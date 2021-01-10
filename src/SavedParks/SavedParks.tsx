@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
-import { LocalParkContainer, LocalParkData } from '../interfaces'
+import { LocalParkContainer, LocalParkData, AddRemoveFunctionality } from '../interfaces'
 import SavedCard from '../SavedCard/SavedCard'
 import { useLocation } from 'react-router-dom'
 
-type VisitedParkProps = LocalParkContainer |  LocalParkData
+type SavedParkProps = LocalParkContainer | LocalParkData | AddRemoveFunctionality
 
-const VisitedParks: React.FC<VisitedParkProps> = props => {
+const SavedParks: React.FC<SavedParkProps> = props => {
   const location = useLocation()
   const { visitedList, bucketList} = props as LocalParkContainer
+  const { addToVisited, deleteFromVisited, addToBucketList, deleteFromBucketList } = props as AddRemoveFunctionality
   const [visitedListDisplay, setVisitedListDisplay] = useState<Array<JSX.Element>>([])
 
   useEffect(() => {
@@ -26,9 +27,10 @@ const VisitedParks: React.FC<VisitedParkProps> = props => {
           state={savedPark.state}
           bucketList={savedPark.bucketList}
           visited={savedPark.visited}
-          //need a way to tell SavedCard if this is bucket list or saved.
-          //so that we can have different button options on each card.
-          //maybe location.pathname? that threw an error though.
+          addToVisited={addToVisited}
+          deleteFromVisited={deleteFromVisited}
+          addToBucketList={addToBucketList}
+          deleteFromBucketList={deleteFromBucketList}
         />
       })
       setVisitedListDisplay(visitedCards)
@@ -41,4 +43,4 @@ const VisitedParks: React.FC<VisitedParkProps> = props => {
   )
 }
 
-export default VisitedParks
+export default SavedParks
