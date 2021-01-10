@@ -9,8 +9,6 @@ const VisitedParks: React.FC<VisitedParkProps> = props => {
   const location = useLocation()
   const { visitedList, bucketList} = props as LocalParkContainer
   const [visitedListDisplay, setVisitedListDisplay] = useState<Array<JSX.Element>>([])
-  console.log(bucketList)
-
 
   useEffect(() => {
     let parkList = []
@@ -26,6 +24,9 @@ const VisitedParks: React.FC<VisitedParkProps> = props => {
           image={savedPark.image}
           parkCode={savedPark.parkCode}
           state={savedPark.state}
+          //need a way to tell SavedCard if this is bucket list or saved.
+          //so that we can have different button options on each card.
+          //maybe location.pathname? that threw an error though.
         />
       })
       setVisitedListDisplay(visitedCards)
