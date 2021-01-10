@@ -2,7 +2,7 @@ import { useState, useEffect, Fragment } from 'react'
 import Banner from '../Banner/Banner'
 import UserNav from '../UserNav/UserNav'
 import ParkInfo from '../ParkInfo/ParkInfo'
-import VisitedParks from '../VisitedParks/SavedParks'
+import SavedParks from '../SavedParks/SavedParks'
 import { nationalParks } from '../ParkData'
 import { CurrentPark, LocalParkData, LocalParkContainer, CurrentParkContainer } from '../interfaces'
 import { parkRequest } from './npsApiCall'
@@ -91,7 +91,18 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
               path='/user/visited'
               render={() => {
                 return (
-                  <VisitedParks
+                  <SavedParks
+                    visitedList={visitedList}
+                    bucketList={bucketList}
+                  />
+                )
+              }}
+            />
+            <Route 
+              path='/user/bucket-list'
+              render={() => {
+                return (
+                  <SavedParks
                     visitedList={visitedList}
                     bucketList={bucketList}
                   />
