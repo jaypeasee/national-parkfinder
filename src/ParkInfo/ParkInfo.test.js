@@ -1,5 +1,4 @@
 import { screen, render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import ParkInfo from './ParkInfo'
 import { samplePark } from '../samplePark'
 import { Router } from 'react-router-dom'
