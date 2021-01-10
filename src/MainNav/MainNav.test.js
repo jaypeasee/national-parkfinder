@@ -9,7 +9,10 @@ describe('MainNav', () => {
   it('should render a title and image', () => {
     render(
       <Router history={history}>
-        <MainNav/>
+        <MainNav
+          filterButtonsByName={jest.fn()}
+          generateRandomParkCode={jest.fn()}
+        />
       </Router>
     )
     expect(screen.getByAltText('National Parkfinder Logo')).toBeInTheDocument()
