@@ -6,7 +6,8 @@ import { createMemoryHistory } from 'history'
 import '@testing-library/jest-dom'
 
 describe('Footer', () => {
-  let footer
+  let visitedLink
+  let bucketListLink
   const history = createMemoryHistory()
 
   beforeEach(() => {
@@ -15,15 +16,20 @@ describe('Footer', () => {
         <Footer />
       </Router>
     )
-    footer = screen.getByText('Visited')
+    visitedLink = screen.getByText('Visited')
+    bucketListLink = screen.getByText('Bucket List')
   })
 
   it('should render the footer', () => {
-    expect(footer).toBeInTheDocument()
+    expect(visitedLink).toBeInTheDocument()
+    expect(bucketListLink).toBeInTheDocument()
   })
 
   it('should redirect to a new url', () => {
-    userEvent.click(footer)
+    userEvent.click(visitedLink)
     expect(history.location.pathname).toBe('/user/visited')
+    
+    userEvent.click(bucketListLink)
+    expect(history.location.pathname).toBe('/user/bucket-list')
   })
 })
