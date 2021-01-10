@@ -33,7 +33,7 @@ const VisitedParks: React.FC<VisitedParkProps> = props => {
   }, [visitedList])
 
   return (
-    <section>
+    <section id={location.pathname === '/user/visited' ? "visited" : "bucket-list"}>
       {visitedListDisplay}
     </section>
   )

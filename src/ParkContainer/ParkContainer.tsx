@@ -68,15 +68,16 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
       {currentPark &&
         <Switch>
           <Fragment>
-            <Banner
-              currentPark={currentPark}
-            />
-            <UserNav
-              currentPark={currentPark} />
             <Route
               path={`/${currentPark.parkCode}`}
               render={() => {
                 return (
+                  <section>
+                    <Banner
+                    currentPark={currentPark}
+                  />
+                  <UserNav
+                    currentPark={currentPark} />
                   <ParkInfo
                     currentPark={currentPark}
                     localPark={findChosenPark(currentPark.parkCode)}
@@ -84,9 +85,10 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                     deleteFromVisited={deleteFromVisited}
                     addToBucketList={addToBucketList}
                     deleteFromBucketList={deleteFromBucketList}/>
-                )
-              }}
-            />
+                  </section>
+                  )
+                  }}
+              />
             <Route
               path='/user/visited'
               render={() => {

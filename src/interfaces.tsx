@@ -12,7 +12,6 @@ export interface LocalParkContainer {
   bucketList: any
 }
 
-
 export interface Activity {
   id: string
   name: string
