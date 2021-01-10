@@ -30,6 +30,7 @@ describe('ParkBtn', () => {
   it('should call choosePark with the parkCode', () => {
     userEvent.click(parkBtn)
     expect(choosePark).toHaveBeenCalledWith("grca")
+    expect(choosePark).toHaveBeenCalledTimes(1)
   })
 
   it('should change the pathname on click', () => {
