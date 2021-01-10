@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import './Footer.scss'
 
+// pass in buttons as props to generate links for footer
+
 const Footer: React.FC = () => {
   return (
     <footer className="footer-btn-container">
