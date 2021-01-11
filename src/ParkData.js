@@ -438,5 +438,13 @@ export const nationalParks = [
     parkCode: 'zion',
     visited: false,
     bucketList: false
+  },
+  {
+    name: 'New River Gorge',
+    state: 'WV',
+    image: 'https://www.nps.gov/npgallery/GetAsset/3f422525-8835-462a-8cbf-8d701c066ac0/proxy/hires?',
+    parkCode: 'neri',
+    visited: false,
+    bucketList: false
   }
 ]
