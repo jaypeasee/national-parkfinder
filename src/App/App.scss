@@ -1,7 +1,6 @@
 @import '../variables.scss';
 
 .app {
-  // width: 100vw;
   height: 100vh;
 }
 
@@ -33,4 +32,8 @@
  h3 {
   font-family: $secondaryFont;
   font-size: 1.5em;
+ }
+
+ @media screen and (max-width: 576px) {
+   
  }
