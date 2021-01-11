@@ -23,12 +23,11 @@ describe('App', () => {
     expect(acadiaPark).toBeInTheDocument()
   })
 
-  it('should be able to add and remove a park to the bucket list', () => {
-    const acadiaButton = screen.getByTestId('acad button')
+  it('should be able to add and remove a park to the bucket list', async () => {
+    const acadiaButton = screen.getByText('Acadia')
     userEvent.click(acadiaButton)
-    // history.location.pathname="/acad/about"
     const bucketListLink = screen.getByText('Bucket List')
-    const bucketListBtn = screen.getByTestId('bucket list')
+    const bucketListBtn = await waitFor(() => screen.getByAltText('bucket list'))
     userEvent.click(bucketListBtn)
     userEvent.click(bucketListLink)
     expect(screen.getByText('Acadia, ME')).toBeInTheDocument()
