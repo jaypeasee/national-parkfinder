@@ -1,9 +1,8 @@
-import { screen, render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import SavedParks from './SavedParks'
-import { Route, Router } from 'react-router-dom'
-import { createMemoryHistory } from 'history'
+import { screen, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { Router } from 'react-router-dom'
+import { createMemoryHistory } from 'history'
 
 describe('SavedParks', () => {
   const addToVisited = jest.fn()

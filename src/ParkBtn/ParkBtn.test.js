@@ -1,9 +1,9 @@
-import { screen, render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import ParkBtn from './ParkBtn'
+import { screen, render } from '@testing-library/react'
+import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-import '@testing-library/jest-dom'
 
 describe('ParkBtn', () => {
   let parkBtn

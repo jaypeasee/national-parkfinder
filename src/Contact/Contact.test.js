@@ -1,7 +1,7 @@
-import { screen, render } from '@testing-library/react'
 import Contact from './Contact'
-import { samplePark } from '../samplePark'
+import { screen, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { samplePark } from '../samplePark'
 
 describe('Contact', () => {
 

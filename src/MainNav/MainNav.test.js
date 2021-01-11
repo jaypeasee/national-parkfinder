@@ -1,5 +1,5 @@
-import { screen, render } from '@testing-library/react'
 import MainNav from './MainNav'
+import { screen, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
