@@ -19,7 +19,7 @@ const Banner: React.FC<BannerIconsProps> = props => {
       <div>
         {<img
           className='banner-img'
-          data-testId='banner-img'
+          data-testid='banner-img'
           src={images[randomIndex].url}
           alt={images[randomIndex].altText}
         />}
