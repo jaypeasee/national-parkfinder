@@ -50,6 +50,19 @@ describe('App', () => {
     expect(screen.getByText('Acadia, ME')).toBeInTheDocument()
   })
 
+  it('should allow a user to move parks from bucket list into visited', async () => {
+    userEvent.click(acadiaButton)
+    const bucketListLink = screen.getByTestId('footer-bucket-btn')
+    const visitedLink = screen.getByTestId('footer-visited-btn')
+    const bucketBtn = await waitFor(() => screen.getByTestId('bucket-list'))
+    userEvent.click(bucketBtn)
+    userEvent.click(bucketListLink)
+    const addToVisitedBtn = await waitFor(() => screen.getByTestId('add-to-visited-from-bucket-list'))
+    userEvent.click(addToVisitedBtn)
+    expect(addToVisitedBtn).not.toBeInTheDocument()
+    
+  })
+
   //should be move a bucket list park into visited
     //assert that when it's added
       //the it's no longer in the document

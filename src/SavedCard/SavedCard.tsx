@@ -39,7 +39,8 @@ const SavedCard: React.FC<SavedCardProps> = props => {
       </button>}
       {bucketList && !visited &&
         <button
-          onClick={moveParkToVisited}>
+          onClick={moveParkToVisited}
+          data-testid='add-to-visited-from-bucket-list'>
           Add to Visited
       </button>}
     </section>

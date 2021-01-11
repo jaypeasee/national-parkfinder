@@ -8,11 +8,14 @@ const Footer: React.FC = () => {
     <footer className="footer-btn-container">
       <Link
         to='/user/visited'>
-        <button className="footer-btn">Visited</button>
+        <button className="footer-btn"
+        data-testid="footer-visited-btn">Visited</button>
       </Link>
       <Link
         to="/user/bucket-list">
-        <button className="footer-btn">Bucket List</button>
+        <button 
+          className="footer-btn"
+          data-testid="footer-bucket-btn">Bucket List</button>
       </Link>
     </footer>
   )
