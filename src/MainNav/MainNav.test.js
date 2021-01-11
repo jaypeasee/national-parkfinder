@@ -16,6 +16,7 @@ describe('MainNav', () => {
       </Router>
     )
   })
+
   it('should render a title and image', () => {
     expect(screen.getByAltText('National Parkfinder Logo')).toBeInTheDocument()
     expect(screen.getByText('National Parkfinder')).toBeInTheDocument()
@@ -24,7 +25,7 @@ describe('MainNav', () => {
   it('should render a list of park buttons', () => {
     expect(screen.getByText('Grand Canyon')).toBeInTheDocument()
     const allButtons = screen.getAllByRole("button")
-    expect(allButtons.length).toBe(56)
+    expect(allButtons.length).toBe(63)
   })
 })
 

@@ -446,5 +446,53 @@ export const nationalParks = [
     parkCode: 'neri',
     visited: false,
     bucketList: false
+  },
+  {
+    name: 'White Sands',
+    state: 'NM',
+    image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2019%2F12%2Fwhite-sands-national-monument-WHITESANDS1219.jpg&q=85',
+    parkCode: 'whsa',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'Pinnacles',
+    state: 'CA',
+    image: 'https://www.gannett-cdn.com/media/USATODAY/USATODAY/2013/05/30/1369970481002-XXX-HIGH-PEAKS-PINNACLES-NATIONAL-PARK-jy-7896-1305302324_16_9.jpg?width=660&height=373&fit=crop&format=pjpg&auto=webp',
+    parkCode: 'pinn',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'Indiana Dunes',
+    state: 'IN',
+    image: 'https://assets.nrdc.org/sites/default/files/styles/header_background/public/runningthroughtheblowout_1200.jpg?itok=StX_JQc7',
+    parkCode: 'indu',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'Gateway Arch',
+    state: 'MO',
+    image: 'https://www.gatewayarch.com/wp-content/uploads/2020/01/Capture-e1578063684447.jpg',
+    parkCode: 'jeff',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'Congaree',
+    state: 'SC',
+    image: 'https://www.nationalgeographic.com/content/dam/travel/photos/000/929/92934.ngsversion.1483650025298.adapt.1900.1.jpg',
+    parkCode: 'cong',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'Theodore Roosevelt',
+    state: 'ND',
+    image: 'https://cdn.britannica.com/85/115485-050-91FE0364/Little-Missouri-River-Theodore-Roosevelt-National-Park.jpg',
+    parkCode: 'thro',
+    visited: false,
+    bucketList: false
   }
 ]
