@@ -1,5 +1,5 @@
 import ParkContainer from './ParkContainer';
-import { screen, render, waitFor } from '@testing-library/react'
+import { screen, render, waitFor, act } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { samplePark } from '../samplePark'
 import { Router } from 'react-router-dom'

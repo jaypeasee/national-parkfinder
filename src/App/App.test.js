@@ -3,13 +3,21 @@ import { screen, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-import userEvent from '@testing-library/user-event';
+import userEvent from '@testing-library/user-event'
+import { act } from 'react-dom/test-utils';
+import { samplePark } from '../samplePark'
+import { parkRequest } from '../ParkContainer/npsApiCall'
+jest.mock('../ParkContainer/npsApiCall')
 
 describe('App', () => {
   let acadiaButton
   const history = createMemoryHistory()
+  
   beforeEach(() => {
-    history.location.pathName='/acad'
+    parkRequest.mockResolvedValue(samplePark)
+    act(() => {
+      history.location.pathName='/acad'
+    })
     render(
       <Router history={history}>
         <App />
@@ -17,7 +25,7 @@ describe('App', () => {
     )
     acadiaButton = screen.getByText('Acadia')
   })
-
+  
   it('should render a park when user clicks a park button', async () => {
     userEvent.click(acadiaButton)
     const acadiaPark = await waitFor(() => screen.getByText('Acadia National Park, ME'))

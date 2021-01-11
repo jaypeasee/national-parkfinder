@@ -53,6 +53,12 @@ describe('SavedCard', () => {
       expect(deleteFromVisited).toHaveBeenCalledWith('dena')
     })
 
+    it('should redirect user to park page when link is clicked', () => {
+      const redirectLink = screen.getByText('Go to Denali\'s page')
+      userEvent.click(redirectLink)
+      expect(history.location.pathname).toBe('/dena/about')
+    })
+
   })
 
   describe('BucketList', () => {

@@ -27,7 +27,7 @@ const SavedCard: React.FC<SavedCardProps> = props => {
       <Link
         to={`/${parkCode}/about`}
       >
-        <p>{`See the ${name} National Park page`}</p>
+        <p>{`Go to ${name}'s page`}</p>
       </Link>
       {location.pathname === '/user/visited' && <button
         onClick={() => deleteFromVisited(parkCode)}>
