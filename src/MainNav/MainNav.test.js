@@ -34,6 +34,7 @@ describe('MainNav', () => {
     userEvent.type(searchInput, 'grand')
     const allButtons = screen.getAllByRole("button")
     expect(allButtons.length).toBe(3)
+    expect(screen.getByText('Grand Canyon')).toBeInTheDocument()
   })
 })
 
