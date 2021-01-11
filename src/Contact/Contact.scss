@@ -1,0 +1,6 @@
+@import '../mixins.scss';
+
+.contact-container {
+  @include row-wrap;
+  justify-content: space-around;
+}
