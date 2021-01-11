@@ -6,7 +6,7 @@ import Banner from './Banner'
 describe('Banner', () => {
   beforeEach(() => {
     render(
-      <Banner currentPark={samplePark}/>
+      <Banner currentPark={samplePark.data[0]}/>
     )
   })
   

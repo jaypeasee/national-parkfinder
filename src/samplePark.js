@@ -1,4 +1,5 @@
-export const samplePark = 
+export const samplePark = {
+  "data": [
     {
       "id": "6DA17C86-088E-4B4D-B862-7C1BD5CF236B",
       "url": "https://www.nps.gov/acad/index.htm",
@@ -453,4 +454,6 @@ export const samplePark =
       "name": "Acadia",
       "designation": "National Park"
     }
+  ]
+}
 

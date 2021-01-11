@@ -8,7 +8,7 @@ describe('About', () => {
   beforeEach(() => {
     render(
       <About
-        currentPark={samplePark}
+        currentPark={samplePark.data[0]}
       />
     )
   })

@@ -25,7 +25,7 @@ describe('ParkInfo', () => {
     render(
       <Router history={history}>
         <ParkInfo
-          currentPark={samplePark}
+          currentPark={samplePark.data[0]}
           localPark={localPark}
           addToVisited={addToVisited}
           deleteFromVisited={deleteFromVisited}

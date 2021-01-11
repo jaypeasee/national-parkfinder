@@ -16,7 +16,7 @@ describe('UserNav', () => {
       <Router
         history={history}>
         <UserNav 
-          currentPark={samplePark}
+          currentPark={samplePark.data[0]}
         />
       </Router>
     )

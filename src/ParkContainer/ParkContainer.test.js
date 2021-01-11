@@ -11,7 +11,9 @@ describe('ParkContainer', () => {
   const history = createMemoryHistory()
 
   beforeEach(() => {
+    
     parkRequest.mockResolvedValueOnce(samplePark)
+    history.location.pathname = '/acad/about'
     render(
       <Router history={history}>
         <ParkContainer  parkCode={'acad'} />
@@ -20,7 +22,6 @@ describe('ParkContainer', () => {
   })
 
   it('should render the container for parks and user view', async ()  => {
-    screen.debug()
     const acadiaPark = await waitFor(() => screen.getByText('Acadia National Park, ME'))
     expect(acadiaPark).toBeInTheDocument()
   })
