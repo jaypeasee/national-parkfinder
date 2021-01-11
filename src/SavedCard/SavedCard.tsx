@@ -24,9 +24,7 @@ const SavedCard: React.FC<SavedCardProps> = props => {
         className="saved-park-img"
       />
       <h2>{name}, {state}</h2>
-      <Link
-        to={`/${parkCode}/about`}
-      >
+      <Link to={`/${parkCode}/about`}>
         <p>{`See the ${name} National Park page`}</p>
       </Link>
       {location.pathname === '/user/visited' && <button

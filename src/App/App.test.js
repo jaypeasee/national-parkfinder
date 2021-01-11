@@ -51,5 +51,5 @@ describe('App', () => {
 
   //should be able to toggle the bucket list and visited list?
 
-  
+  //should be able to remove from the bucket list and visited list?
 })
