@@ -6,6 +6,7 @@ import { createMemoryHistory } from 'history'
 import userEvent from '@testing-library/user-event';
 
 describe('App', () => {
+  let acadiaButton
   const history = createMemoryHistory()
   beforeEach(() => {
     history.location.pathName='/acad'
@@ -14,17 +15,16 @@ describe('App', () => {
         <App />
       </Router>
     )
+    acadiaButton = screen.getByText('Acadia')
   })
 
   it('should render a park when user clicks a park button', async () => {
-    const acadiaButton = screen.getByText('Acadia')
     userEvent.click(acadiaButton)
     const acadiaPark = await waitFor(() => screen.getByText('Acadia National Park, ME'))
     expect(acadiaPark).toBeInTheDocument()
   })
 
   it('should be able to add a park to the bucket list', async () => {
-    const acadiaButton = screen.getByText('Acadia')
     userEvent.click(acadiaButton)
     const bucketListLink = screen.getByText('Bucket List')
     const bucketListBtn = await waitFor(() => screen.getByTestId('bucket-list'))
@@ -34,7 +34,6 @@ describe('App', () => {
   })
 
   it('should be able to add a park to the visited list', async () => {
-    const acadiaButton = screen.getByText('Acadia')
     userEvent.click(acadiaButton)
     const visitedLink = screen.getByText('Visited')
     const visitedBtn = await waitFor(() => screen.getByTestId('visited'))
