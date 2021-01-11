@@ -41,4 +41,15 @@ describe('App', () => {
     userEvent.click(visitedLink)
     expect(screen.getByText('Acadia, ME')).toBeInTheDocument()
   })
+
+  //should be move a bucket list park into visited
+    //assert that when it's added
+      //the it's no longer in the document
+      //when you go to the visited list, it's in the document
+  
+  //do we need to assert that we have a random park on load?
+
+  //should be able to toggle the bucket list and visited list?
+
+  
 })
