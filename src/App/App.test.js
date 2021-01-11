@@ -49,4 +49,17 @@ describe('App', () => {
     userEvent.click(visitedLink)
     expect(screen.getByText('Acadia, ME')).toBeInTheDocument()
   })
+
+  // NOTE: Return to this to test to ensure parks get moved to visited. Has something to do with ParkContainer not rendering / getting props.
+  // it('should allow a user to move parks from bucket list into visited', async () => {
+  //   userEvent.click(acadiaButton)
+  //   const bucketListLink = screen.getByTestId('footer-bucket-btn')
+  //   const visitedLink = screen.getByTestId('footer-visited-btn')
+  //   const bucketBtn = await waitFor(() => screen.getByTestId('bucket-list'))
+  //   userEvent.click(bucketBtn)
+  //   userEvent.click(bucketListLink)
+  //   const addToVisitedBtn = await waitFor(() => screen.getByTestId('add-to-visited-from-bucket-list'))
+  //   userEvent.click(addToVisitedBtn)
+  //   expect(addToVisitedBtn).not.toBeInTheDocument()
+  // })
 })
