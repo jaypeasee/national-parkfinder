@@ -1,4 +1,5 @@
 @import "../mixins.scss";
+@import "../variables.scss";
 
 .banner {
   width: 100%;
@@ -22,9 +23,18 @@
   padding-bottom: 10px;
 }
 
+.image-container {
+  background-color: $olive-green;
+  height: 570px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .banner-img {
-  height: auto;
-  width: 100%;
+  height: 500px;
+  border: white 10px solid;
+  box-shadow: 5px 5px 5px black;
 }
 
 .banner-btn-container {
