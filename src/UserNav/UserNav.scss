@@ -9,3 +9,12 @@
     width: 100%;
     z-index: 1;
 }
+
+.user-nav h2 {
+  color: white;
+  text-decoration: white underline solid;
+  &:hover {
+    color: $light-green;
+    text-decoration: $light-green underline solid;
+  }
+}
