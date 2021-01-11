@@ -17,4 +17,5 @@ describe('About', () => {
     const aboutInfo = screen.getByText(/about acadia:/i)
     expect(aboutInfo).toBeInTheDocument()
   })
+
 })

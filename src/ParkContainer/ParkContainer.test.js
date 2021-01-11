@@ -5,13 +5,13 @@ import { samplePark } from '../samplePark'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import { parkRequest } from './npsApiCall'
+import userEvent from '@testing-library/user-event';
 jest.mock('./npsApiCall.js')
 
 describe('ParkContainer', () => {
   const history = createMemoryHistory()
 
   beforeEach(() => {
-    
     parkRequest.mockResolvedValueOnce(samplePark)
     history.location.pathname = '/acad/about'
     render(

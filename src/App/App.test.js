@@ -6,9 +6,9 @@ import { createMemoryHistory } from 'history'
 import userEvent from '@testing-library/user-event';
 
 describe('App', () => {
-  
+  const history = createMemoryHistory()
   beforeEach(() => {
-    const history = createMemoryHistory()
+    history.location.pathName='/acad'
     render(
       <Router history={history}>
         <App />
@@ -23,21 +23,14 @@ describe('App', () => {
     expect(acadiaPark).toBeInTheDocument()
   })
 
-  // it('should randomly generate a park code on load', async () => {
-  //   // generateRandomParkCode.mockResolvedValueOnce('acad')
-  //   // generateRandomParkCode = jest.fn().mockImplementationOnce(() => 'acad')
-  //   const history = createMemoryHistory()
-  //   history.location.pathname='/acad/about'
-  //   render(
-  //     <Router history={history}>
-  //       <App />
-  //     </Router>
-  //   )
-  //   screen.debug()
-  //   const acadiaPark = await waitFor(() => screen.getByText('Acadia National Park, ME'))
-  //   expect(acadiaPark).toBeInTheDocument()
-  // })
-
-// can we add adn remove from bucket list and visited
-//
+  it('should be able to add and remove a park to the bucket list', () => {
+    const acadiaButton = screen.getByTestId('acad button')
+    userEvent.click(acadiaButton)
+    // history.location.pathname="/acad/about"
+    const bucketListLink = screen.getByText('Bucket List')
+    const bucketListBtn = screen.getByTestId('bucket list')
+    userEvent.click(bucketListBtn)
+    userEvent.click(bucketListLink)
+    expect(screen.getByText('Acadia, ME')).toBeInTheDocument()
+  })
 })
