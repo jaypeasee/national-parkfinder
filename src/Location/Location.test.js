@@ -1,14 +1,14 @@
-import { screen, render } from '@testing-library/react'
 import Location from './Location'
-import { samplePark } from '../samplePark'
+import { screen, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { samplePark } from '../samplePark'
 
 describe('Location', () => {
 
   beforeEach(() => {
     render(
       <Location
-        currentPark={samplePark}
+        currentPark={samplePark.data[0]}
       />
     )
   })

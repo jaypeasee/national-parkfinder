@@ -1,9 +1,9 @@
-import { screen, render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import SavedCard from './SavedCard'
+import { screen, render } from '@testing-library/react'
+import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-import '@testing-library/jest-dom'
 
 describe('SavedCard', () => {
   const addToVisited = jest.fn()
@@ -51,6 +51,12 @@ describe('SavedCard', () => {
       userEvent.click(screen.getByText('Delete from Visited'))
       expect(deleteFromVisited).toHaveBeenCalledTimes(1)
       expect(deleteFromVisited).toHaveBeenCalledWith('dena')
+    })
+
+    it('should redirect user to park page when link is clicked', () => {
+      const redirectLink = screen.getByText('Go to Denali\'s page')
+      userEvent.click(redirectLink)
+      expect(history.location.pathname).toBe('/dena/about')
     })
 
   })

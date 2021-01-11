@@ -1,7 +1,7 @@
-import { screen, render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import NavSearch from './NavSearch'
+import { screen, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event'
 
 describe('NavSearch', () => {
   const filterButtonsByName = jest.fn()

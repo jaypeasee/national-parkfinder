@@ -1,9 +1,9 @@
-import { screen, render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import Footer from './Footer'
+import { screen, render } from '@testing-library/react'
+import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-import '@testing-library/jest-dom'
 
 describe('Footer', () => {
   let visitedLink

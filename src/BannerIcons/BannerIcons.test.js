@@ -1,7 +1,7 @@
-import '@testing-library/jest-dom'
-import { screen, render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import BannerIcons from './BannerIcons'
+import { screen, render } from '@testing-library/react'
+import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event'
 
 describe('BannerIcons', () => {
   let visitedBtn

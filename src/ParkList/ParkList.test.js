@@ -1,7 +1,7 @@
-import { screen, render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import ParkList from './ParkList'
+import { screen, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event'
 
 describe('ParkList', () => {
   let randomBtn

@@ -14,6 +14,7 @@ const ParkBtn: React.FC<ParkBtnProps> = props => {
   const { choosePark } = props as ChoosePark
   return (
     <Link
+      data-testid={`${parkCode} button`}
       to={`/${parkCode}/about`}>
       <button
         role="button"

@@ -1,9 +1,9 @@
-import { screen, render } from '@testing-library/react'
 import ParkInfo from './ParkInfo'
+import { screen, render } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { samplePark } from '../samplePark'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-import '@testing-library/jest-dom'
 
 describe('ParkInfo', () => {
   const history = createMemoryHistory()
@@ -25,7 +25,7 @@ describe('ParkInfo', () => {
     render(
       <Router history={history}>
         <ParkInfo
-          currentPark={samplePark}
+          currentPark={samplePark.data[0]}
           localPark={localPark}
           addToVisited={addToVisited}
           deleteFromVisited={deleteFromVisited}

@@ -56,6 +56,7 @@ const BannerIcons: React.FC<BannerIconsProps> = props => {
   return (
     <section className="banner-icons">
       <div role="button"
+        data-testid="visited"
         onClick={ handleVisitedPark }
         className="banner-btn-container">
         <img
@@ -67,6 +68,7 @@ const BannerIcons: React.FC<BannerIconsProps> = props => {
         {localPark.visited && <h2>Remove From Visited</h2>}
       </div>
       <div
+        data-testid="bucket-list"
         role="button"
         onClick={ handleBucketListPark }
         className="banner-btn-container">

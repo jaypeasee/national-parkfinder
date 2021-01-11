@@ -1,14 +1,14 @@
-import { screen, render } from '@testing-library/react'
 import About from './About'
-import { samplePark } from '../samplePark'
+import { screen, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { samplePark } from '../samplePark'
 
 describe('About', () => {
 
   beforeEach(() => {
     render(
       <About
-        currentPark={samplePark}
+        currentPark={samplePark.data[0]}
       />
     )
   })
@@ -17,4 +17,5 @@ describe('About', () => {
     const aboutInfo = screen.getByText(/about acadia:/i)
     expect(aboutInfo).toBeInTheDocument()
   })
+
 })
