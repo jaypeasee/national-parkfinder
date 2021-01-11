@@ -25,14 +25,15 @@
 
 .image-container {
   background-color: $olive-green;
-  height: 570px;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .banner-img {
-  height: 500px;
+  height: 80%;
+  max-width: 65vw;
   border: white 10px solid;
   box-shadow: 5px 5px 5px black;
 }
