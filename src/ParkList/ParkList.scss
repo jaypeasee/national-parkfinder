@@ -13,6 +13,8 @@
   cursor: pointer;
   width: 80%;
   margin-bottom: 4%;
+  background-color: $gray;
+  box-shadow: 5px 5px 5px black;
   &:hover {
     transform: scale(1.05);
     transition-duration: .4s;
@@ -20,5 +22,5 @@
 }
 
 .randomize-icon {
-  width: 22%;
+  width: 20%;
 }

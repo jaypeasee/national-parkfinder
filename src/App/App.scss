@@ -1,13 +1,16 @@
 @import '../variables.scss';
 
 .app {
-  // width: 100vw;
   height: 100vh;
 }
 
 .body {
   display: flex;
   background-color: $gray;
+}
+
+body {
+  margin: 0;
 }
 
  p, li {

@@ -2,23 +2,26 @@
 @import '../mixins.scss';
 
 .footer-btn-container {
-  // width: 100vw;
+  @include row-wrap;
   height: 15vh;
-  background-color: $light-green;
+  background-color: $brown;
   position: relative;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .footer-btn {
   cursor: pointer;
+  width: 200px;
   font-size: 18px;
-  width: 60%;
   border: none;
-  padding: 10px;
-  margin: 0px 60px;
+  padding: 5%;
+  margin: 0 5%;
   text-align: center;
   background-color: $gray;
-  box-shadow: 5px 5px 5px $dark-green;
+  box-shadow: 5px 5px 5px black;
+  &:hover {
+    transform: scale(1.1);
+    transition-duration: .4s;
+  }
 }

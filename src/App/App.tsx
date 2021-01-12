@@ -29,7 +29,7 @@ const App: React.FC = () => {
 
   return (
     <main className='app'>
-      <body className='body'>
+      <section className='body'>
         <MainNav
           choosePark={choosePark}
           generateRandomParkCode={generateRandomParkCode} />
@@ -44,7 +44,7 @@ const App: React.FC = () => {
             }}
           />
         </Switch>
-      </body>
+      </section>
       <Footer />
     </main>
   )

@@ -5,10 +5,11 @@
   padding: 5% 0;
   width: 100%;
   cursor: pointer;
+  background-color: $gray;
+  box-shadow: 5px 5px 5px black;
   &:hover {
     transform: scale(1.05);
     transition-duration: .4s;
-
   }
 }
 
