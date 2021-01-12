@@ -4,19 +4,19 @@ import SavedCard from '../SavedCard/SavedCard'
 import { useLocation } from 'react-router-dom'
 
 const SavedParks: React.FC<LocalParkContainer & AddRemoveFunctionality> = props => {
+  const [pageTitle, setPageTitle] = useState<string>('My Parks')
   const location = useLocation()
   const { visitedList, bucketList } = props as LocalParkContainer
   const { addToVisited, deleteFromVisited, addToBucketList, deleteFromBucketList } = props as AddRemoveFunctionality
   const [visitedListDisplay, setVisitedListDisplay] = useState<Array<JSX.Element>>([])
-  const [parkList, setParkList] = useState([])
-  const [pageTitle, setPageTitle] = useState('')
 
   useEffect(() => {
+    let parkList = []
     if (location.pathname === '/user/visited') {
-      setParkList(visitedList)
+      parkList = visitedList
       setPageTitle('My Visited Parks')
     } else if (location.pathname === '/user/bucket-list') {
-      setParkList(bucketList)
+      parkList = bucketList
       setPageTitle('My Bucket List Parks')
     }
       const visitedCards = parkList.map((savedPark: LocalParkData) => {
@@ -35,13 +35,15 @@ const SavedParks: React.FC<LocalParkContainer & AddRemoveFunctionality> = props 
         />
       })
       setVisitedListDisplay(visitedCards)
+
   }, [visitedList])
 
   return (
-    <section id={location.pathname === '/user/visited' ? "visited" : "bucket-list"}>
+    <section>
       <h1>
         {pageTitle}
       </h1>
+
         {visitedListDisplay}
     </section>
   )

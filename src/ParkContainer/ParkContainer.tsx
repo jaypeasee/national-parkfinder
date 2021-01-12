@@ -99,7 +99,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                     deleteFromVisited={deleteFromVisited}
                     addToBucketList={addToBucketList}
                     deleteFromBucketList={deleteFromBucketList}
-                  />
+                    />
                 )
               }}
             />
