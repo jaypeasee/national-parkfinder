@@ -4,12 +4,12 @@ import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 
 describe('NavSearch', () => {
-  const filterButtonsByName = jest.fn()
+  const setSearch = jest.fn()
   let searchInput
   beforeEach(() => {
     render(
       <NavSearch 
-        filterButtonsByName={filterButtonsByName}
+        setSearch={setSearch}
       />
     )
     searchInput = screen.getByPlaceholderText('search by name')
@@ -21,7 +21,7 @@ describe('NavSearch', () => {
 
   it('should call filterButtonsByName with the typed value', () => {
     userEvent.type(searchInput, 'Grand')
-    expect(filterButtonsByName).toHaveBeenCalledTimes(5)
-    expect(filterButtonsByName).toHaveBeenCalledWith('Grand')
+    expect(setSearch).toHaveBeenCalledTimes(5)
+    expect(setSearch).toHaveBeenCalledWith('Grand')
   }) 
 })
