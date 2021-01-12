@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event'
 
 describe('StateDropdown', () => {
   let dropdown
+  let selectForm
   const setStateSelect = jest.fn()
   
   beforeEach(() => {
@@ -14,6 +15,7 @@ describe('StateDropdown', () => {
       />
     )
     dropdown = screen.getByTestId('dropdown-form')
+    selectForm = screen.getByTestId('select-form')
   })
 
   it('should render a dropdown form', () => {
@@ -21,7 +23,10 @@ describe('StateDropdown', () => {
   })
 
   it('should select a state with the associated value', () => {
-    userEvent.click(screen.getByText('Minnesota'))
-    // need to figure out how to do the user event for a dropdown form
+    const minnesota = screen.getByText('Minnesota')
+    userEvent.selectOptions(selectForm, [minnesota])
+    expect(minnesota).toHaveValue('MN')
+    expect(setStateSelect).toHaveBeenCalledWith('MN')
+    expect(setStateSelect).toHaveBeenCalledTimes(1)
   })
 })

@@ -1,3 +1,25 @@
+@import '../mixins.scss';
+@import '../variables.scss';
+
 .dropdown-form {
-  color: black;
+  @include flex-column-center;
+  color: $light-gray;
+  font-family: $paragraphFont;
+}
+
+fieldset {
+  @include flex-column-center;
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+
+select {
+  height: 50px;
+  padding: 0 4%;
+  width: 80%;
+  margin: 5% 0 5% 4px;
+  outline: none;
+  color: gray;
+  box-shadow: inset 0px 0px 5px 0px black;
 }

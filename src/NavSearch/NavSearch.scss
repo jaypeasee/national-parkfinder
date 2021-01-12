@@ -1,6 +1,9 @@
+@import '../variables.scss';
+
 .nav-search {
   display: flex;
   justify-content: center;
+  color: $dark-green;
 }
 
 .search-bar {
