@@ -1,20 +1,18 @@
-import { useState } from 'react'
-
 type StateDropdownProps = { setStateSelect: (stateSelection: string) => void }
 
 const StateDropdown: React.FC<StateDropdownProps> = props => {
-  const [stateSelection, setStateSelection] = useState('')
   const { setStateSelect } = props as StateDropdownProps
 
   const handleSelect = (event: any) => {
     setStateSelect(event.target.value)
-    setStateSelection(event.target.value)
   }
 
   return (
-    <form onChange={handleSelect}>
+    <form 
+      onChange={handleSelect}
+      className='dropdown-form'>
       <fieldset>
-        <label aria-label="state">State</label>
+        <label aria-label="state">State: </label>
         <select
           id="state"
           name="state">
@@ -65,7 +63,6 @@ const StateDropdown: React.FC<StateDropdownProps> = props => {
           <option value="UT">Utah</option>
           <option value="VT">Vermont</option>
           <option value="VA">Virginia</option>
-          <option value="VI">Virgin Islands</option>
           <option value="WA">Washington</option>
           <option value="WV">West Virginia</option>
           <option value="WI">Wisconsin</option>
