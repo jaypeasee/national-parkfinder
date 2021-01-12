@@ -121,7 +121,7 @@ export const nationalParks = [
   },
   {
     name: 'Death Valley',
-    state: 'CA',
+    state: 'CA, NV',
     image: 'https://sgl-assets.imgix.net/files/article_hero/death-valley-national-park-winter-via-magazine-shutterstock_385947175.jpg?w=1440&h=720&crop=faces,edges',
     parkCode: 'deva',
     visited: false,
