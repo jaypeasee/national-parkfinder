@@ -21,7 +21,7 @@ const StateDropdown: React.FC<StateDropdownProps> = props => {
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>
-          <option value="AS">Arkansas</option>
+          <option value="AR">Arkansas</option>
           <option value="CA">California</option>
           <option value="CO">Colorado</option>
           <option value="CT">Connecticut</option>

@@ -88,6 +88,14 @@ export const nationalParks = [
     bucketList: false
   },
   {
+    name: 'Congaree',
+    state: 'SC',
+    image: 'https://www.nationalgeographic.com/content/dam/travel/photos/000/929/92934.ngsversion.1483650025298.adapt.1900.1.jpg',
+    parkCode: 'cong',
+    visited: false,
+    bucketList: false
+  },
+  {
     name: 'Crater Lake',
     state: 'OR',
     image: 'https://thumbor.thedailymeal.com/MA_8kLI3UOyIqDi6-Gn7bIyx0q0=/870x565/https://www.theactivetimes.com/sites/default/files/uploads/c/crater_lake_2_shutterstock_p.jpg',
@@ -144,6 +152,14 @@ export const nationalParks = [
     bucketList: false
   },
   {
+    name: 'Gateway Arch',
+    state: 'MO',
+    image: 'https://www.gatewayarch.com/wp-content/uploads/2020/01/Capture-e1578063684447.jpg',
+    parkCode: 'jeff',
+    visited: false,
+    bucketList: false
+  },
+  {
     name: 'Glacier',
     state: 'MT',
     image: 'https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=1600&h=1067&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F01%2Fglacier-national-park-GLACIERSIGNS0120.jpg',
@@ -185,7 +201,7 @@ export const nationalParks = [
   },
   {
     name: 'Great Smoky Mountains',
-    state: 'TN',
+    state: 'TN, NC',
     image: 'https://thumbor.thedailymeal.com/kYVFwevEyDu6BOU7vRKD3HHNZ7w=/870x565/https://www.theactivetimes.com/sites/default/files/uploads/r/rsz_shutterstock_356855126.jpg',
     parkCode: 'grsm',
     visited: false,
@@ -228,6 +244,14 @@ export const nationalParks = [
     state: 'AR',
     image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F01%2Fwaterfall-HOTSPRINGS0117.jpg&q=85',
     parkCode: 'hosp',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'Indiana Dunes',
+    state: 'IN',
+    image: 'https://assets.nrdc.org/sites/default/files/styles/header_background/public/runningthroughtheblowout_1200.jpg?itok=StX_JQc7',
+    parkCode: 'indu',
     visited: false,
     bucketList: false
   },
@@ -320,18 +344,26 @@ export const nationalParks = [
     bucketList: false
   },
   {
-    name: 'North Cascades',
-    state: 'WA',
-    image: 'https://www.nationalparks.org/sites/default/files/northcascades_istock-839368842_banner.jpg',
-    parkCode: 'noca',
-    visited: false,
-    bucketList: false
-  },
-  {
     name: 'National Park of the American Samoa',
     state: 'American Samoa',
     image: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Pola_Islands_Tutuila_NPS.jpg',
     parkCode: 'npsa',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'New River Gorge',
+    state: 'WV',
+    image: 'https://www.nps.gov/npgallery/GetAsset/3f422525-8835-462a-8cbf-8d701c066ac0/proxy/hires?',
+    parkCode: 'neri',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'North Cascades',
+    state: 'WA',
+    image: 'https://www.nationalparks.org/sites/default/files/northcascades_istock-839368842_banner.jpg',
+    parkCode: 'noca',
     visited: false,
     bucketList: false
   },
@@ -348,6 +380,14 @@ export const nationalParks = [
     state: 'AZ',
     image: 'https://www.mygrandcanyonpark.com/.image/t_share/MTc0MzA5MDgyMjM5MzQ2NTU2/petrifiedforest-sandstoneformations-expansionlands_flickrandrewkearns_700.jpg',
     parkCode: 'pefo',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'Pinnacles',
+    state: 'CA',
+    image: 'https://www.gannett-cdn.com/media/USATODAY/USATODAY/2013/05/30/1369970481002-XXX-HIGH-PEAKS-PINNACLES-NATIONAL-PARK-jy-7896-1305302324_16_9.jpg?width=660&height=373&fit=crop&format=pjpg&auto=webp',
+    parkCode: 'pinn',
     visited: false,
     bucketList: false
   },
@@ -384,6 +424,14 @@ export const nationalParks = [
     bucketList: false
   },
   {
+    name: 'Theodore Roosevelt',
+    state: 'ND',
+    image: 'https://cdn.britannica.com/85/115485-050-91FE0364/Little-Missouri-River-Theodore-Roosevelt-National-Park.jpg',
+    parkCode: 'thro',
+    visited: false,
+    bucketList: false
+  },
+  {
     name: 'Virgin Islands',
     state: 'Virgin Islands',
     image: 'https://www.national-park.com/wp-content/uploads/2016/04/Welcome-to-Virgin-Islands-National-Park.jpg',
@@ -396,6 +444,14 @@ export const nationalParks = [
     state: 'MN',
     image: 'https://images.squarespace-cdn.com/content/v1/586e92a19de4bbf6c852b6e0/1587125673420-M8J031HUZBS10IN6OU7Q/ke17ZwdGBToddI8pDm48kA_SSaoz4elkj-HsZd8gX3Z7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UWPwZyNcweDIvdeL5kotwkIXjs9g0WibSO_cU-Ijy4Pwg6poS-6WGGnXqDacZer4yQ/70168516_10157836106475229_1103314520668897280_o.jpg',
     parkCode: 'voya',
+    visited: false,
+    bucketList: false
+  },
+  {
+    name: 'White Sands',
+    state: 'NM',
+    image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2019%2F12%2Fwhite-sands-national-monument-WHITESANDS1219.jpg&q=85',
+    parkCode: 'whsa',
     visited: false,
     bucketList: false
   },
@@ -417,7 +473,7 @@ export const nationalParks = [
   },
   {
     name: 'Yellowstone',
-    state: 'WY',
+    state: 'WY, ID, MT',
     image: 'https://www.planetware.com/wpimages/2020/01/yellowstone-national-park-best-time-to-visit-best-time-of-year-to-visit.jpg',
     parkCode: 'yell',
     visited: false,
@@ -436,62 +492,6 @@ export const nationalParks = [
     state: 'UT',
     image: 'https://img.travelawaits.com/quill/1/8/1/b/3/8/181b38e00192a6977130d5681de1da2f7a17f0a4.jpg',
     parkCode: 'zion',
-    visited: false,
-    bucketList: false
-  },
-  {
-    name: 'New River Gorge',
-    state: 'WV',
-    image: 'https://www.nps.gov/npgallery/GetAsset/3f422525-8835-462a-8cbf-8d701c066ac0/proxy/hires?',
-    parkCode: 'neri',
-    visited: false,
-    bucketList: false
-  },
-  {
-    name: 'White Sands',
-    state: 'NM',
-    image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2019%2F12%2Fwhite-sands-national-monument-WHITESANDS1219.jpg&q=85',
-    parkCode: 'whsa',
-    visited: false,
-    bucketList: false
-  },
-  {
-    name: 'Pinnacles',
-    state: 'CA',
-    image: 'https://www.gannett-cdn.com/media/USATODAY/USATODAY/2013/05/30/1369970481002-XXX-HIGH-PEAKS-PINNACLES-NATIONAL-PARK-jy-7896-1305302324_16_9.jpg?width=660&height=373&fit=crop&format=pjpg&auto=webp',
-    parkCode: 'pinn',
-    visited: false,
-    bucketList: false
-  },
-  {
-    name: 'Indiana Dunes',
-    state: 'IN',
-    image: 'https://assets.nrdc.org/sites/default/files/styles/header_background/public/runningthroughtheblowout_1200.jpg?itok=StX_JQc7',
-    parkCode: 'indu',
-    visited: false,
-    bucketList: false
-  },
-  {
-    name: 'Gateway Arch',
-    state: 'MO',
-    image: 'https://www.gatewayarch.com/wp-content/uploads/2020/01/Capture-e1578063684447.jpg',
-    parkCode: 'jeff',
-    visited: false,
-    bucketList: false
-  },
-  {
-    name: 'Congaree',
-    state: 'SC',
-    image: 'https://www.nationalgeographic.com/content/dam/travel/photos/000/929/92934.ngsversion.1483650025298.adapt.1900.1.jpg',
-    parkCode: 'cong',
-    visited: false,
-    bucketList: false
-  },
-  {
-    name: 'Theodore Roosevelt',
-    state: 'ND',
-    image: 'https://cdn.britannica.com/85/115485-050-91FE0364/Little-Missouri-River-Theodore-Roosevelt-National-Park.jpg',
-    parkCode: 'thro',
     visited: false,
     bucketList: false
   }
