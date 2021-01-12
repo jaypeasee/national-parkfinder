@@ -16,7 +16,7 @@ const Banner: React.FC<BannerIconsProps> = props => {
           {images[randomIndex].caption}
         </p>
       </div>
-      <div>
+      <div className='image-container'>
         {<img
           className='banner-img'
           data-testid='banner-img'

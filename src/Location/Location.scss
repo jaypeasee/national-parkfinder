@@ -1,4 +1,10 @@
+.map-container {
+  display: flex;
+  justify-content: center;
+}
+
 .map {
   width: 60vw;
   height: 300px;
+  box-shadow: black 5px 5px 5px;
 }

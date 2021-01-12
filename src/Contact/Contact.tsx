@@ -16,17 +16,24 @@ const Contact: React.FC<CurrentParkContainer> = props => {
   })
 
   return (
-    <section>
-      <p><b>Address: </b></p>
-      <p>{`${addresses[0].line1},`}</p>
-      {addresses[0].line2 !== "" && <p>{`${addresses[0].line2},`}</p>}
-      {addresses[0].line3 !== "" && <p>{`${addresses[0].line3},`}</p>}
-      <p>{`${addresses[0].city},
-      ${addresses[0].stateCode} 
-      ${addresses[0].postalCode}`}</p>
-      <p><b>Email Address: </b>{currentPark.contacts.emailAddresses[0].emailAddress}</p>
-      <p><b>Phone Numbers: </b></p>
-      {parkContactNumbers}
+    <section className='contact-container'>
+      <div>
+        <h3>Address: </h3>
+        <p>{`${addresses[0].line1},`}</p>
+        {addresses[0].line2 !== "" && <p>{`${addresses[0].line2},`}</p>}
+        {addresses[0].line3 !== "" && <p>{`${addresses[0].line3},`}</p>}
+        <p>{`${addresses[0].city},
+        ${addresses[0].stateCode} 
+        ${addresses[0].postalCode}`}</p>
+      </div>
+      <div>
+        <h3>Email Address: </h3>
+        <p>
+          {currentPark.contacts.emailAddresses[0].emailAddress}
+        </p>
+        <h3>Phone Number(s): </h3>
+        {parkContactNumbers}
+      </div>
     </section>
   )
 }

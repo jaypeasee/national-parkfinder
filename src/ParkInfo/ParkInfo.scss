@@ -1,5 +1,6 @@
+@import "../variables.scss";
+
 .park-info {
-  width: 100%;
-  background-color: white;
-  margin-top: -15px;
+  background-color: $light-gray;
+  padding: 1em;
 }
