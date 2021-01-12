@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { LocalParkContainer, LocalParkData, AddRemoveFunctionality } from '../interfaces'
 import SavedCard from '../SavedCard/SavedCard'
 import { useLocation } from 'react-router-dom'
+import './SavedParks.scss'
 
 const SavedParks: React.FC<LocalParkContainer & AddRemoveFunctionality> = props => {
   const [pageTitle, setPageTitle] = useState<string>('My Parks')
@@ -40,11 +41,12 @@ const SavedParks: React.FC<LocalParkContainer & AddRemoveFunctionality> = props 
 
   return (
     <section>
-      <h1>
+      <h1 style={{textAlign: "center"}}>
         {pageTitle}
       </h1>
-
+      <section className="saved-parks-container">
         {visitedListDisplay}
+      </section>
     </section>
   )
 }

@@ -1,0 +1,5 @@
+@import '../mixins.scss';
+
+.saved-parks-container {
+  @include row-wrap;
+}
