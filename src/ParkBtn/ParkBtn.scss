@@ -2,7 +2,17 @@
 @import '../variables.scss';
 
 .park-button {
+  padding: 5% 0;
+  width: 100%;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    transition-duration: .4s;
+
+  }
+}
+
+.main-nav-link {
   width: 80%;
-  padding: 15px 0;
-  margin: 10px;
+  margin: 4%;
 }

@@ -11,8 +11,14 @@
 
 .randomize-button {
   cursor: pointer;
+  width: 80%;
+  margin-bottom: 4%;
+  &:hover {
+    transform: scale(1.05);
+    transition-duration: .4s;
+  }
 }
 
 .randomize-icon {
-  width: 5vw;
+  width: 22%;
 }

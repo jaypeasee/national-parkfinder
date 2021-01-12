@@ -15,7 +15,9 @@ const ParkBtn: React.FC<ParkBtnProps> = props => {
   return (
     <Link
       data-testid={`${parkCode} button`}
-      to={`/${parkCode}/about`}>
+      to={`/${parkCode}/about`}
+      className="main-nav-link"
+      >
       <button
         role="button"
         className="park-button"
