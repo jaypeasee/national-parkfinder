@@ -22,5 +22,6 @@ describe('StateDropdown', () => {
 
   it('should select a state with the associated value', () => {
     userEvent.click(screen.getByText('Minnesota'))
+    // need to figure out how to do the user event for a dropdown form
   })
 })
