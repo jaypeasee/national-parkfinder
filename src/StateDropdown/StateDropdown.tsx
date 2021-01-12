@@ -10,7 +10,8 @@ const StateDropdown: React.FC<StateDropdownProps> = props => {
   return (
     <form 
       onChange={handleSelect}
-      className='dropdown-form'>
+      className='dropdown-form'
+      data-testid='dropdown-form'>
       <fieldset>
         <label aria-label="state">State: </label>
         <select
