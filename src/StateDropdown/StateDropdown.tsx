@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import './StateDropdown.scss'
 
 type StateDropdownProps = { setStateSelect: (stateSelection: string) => void }
 
@@ -14,13 +14,12 @@ const StateDropdown: React.FC<StateDropdownProps> = props => {
       className='dropdown-form'
       data-testid='dropdown-form'>
       <fieldset>
-        <label aria-label="state">State: </label>
         <select
           id="state"
           name="state"
           onChange={handleChange}
           data-testid="select-form">
-          <option value="---">---</option>
+          <option value="---">Select a state</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>

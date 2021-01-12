@@ -16,7 +16,7 @@ const NavSearch: React.FC<NavSearchProps> = props => {
     <form className='nav-search'>
       <input
         className='search-bar'
-        placeholder='search by name'
+        placeholder='Search by name'
         value={nameSearch}
         onChange={handleSearchChange}
         name="name"

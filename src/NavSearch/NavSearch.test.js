@@ -12,7 +12,7 @@ describe('NavSearch', () => {
         setSearch={setSearch}
       />
     )
-    searchInput = screen.getByPlaceholderText('search by name')
+    searchInput = screen.getByPlaceholderText('Search by name')
   })
 
   it('should render a search bar', () => {
