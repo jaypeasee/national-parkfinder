@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import './NavSearch.scss'
 
-interface FilterButtonsByName {
-  filterButtonsByName: (searchTerm: string) => void
-}
+type NavSearchProps = { setSearch: (searchTerm: string) => void }
 
-const NavSearch: React.FC<FilterButtonsByName> = (props) => {
+const NavSearch: React.FC<NavSearchProps> = props => {
   const [nameSearch, setNameSearch] = useState<string>('')
+  const { setSearch } = props as NavSearchProps
 
   const handleSearchChange = (event: any) => {
     setNameSearch(event.target.value)
-    props.filterButtonsByName(event.currentTarget.value)
+    setSearch(event.target.value)
   }
 
   return (

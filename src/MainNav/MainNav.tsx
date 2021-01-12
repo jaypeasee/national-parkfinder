@@ -6,6 +6,7 @@ import parkfinderLogo from './landscape.png'
 import { nationalParks } from '../ParkData'
 import ParkBtn from '../ParkBtn/ParkBtn'
 import { LocalParkData } from '../interfaces'
+import StateDropdown from '../StateDropdown/StateDropdown';
 
 interface ChoosePark {
   choosePark: (parkCode: string) => void
@@ -19,19 +20,18 @@ interface GenerateRandomParkCode {
   generateRandomParkCode: () => void
 }
 
-type NavProps = ChoosePark | LocalParkData | FilterButtonsByName | GenerateRandomParkCode
+type NavProps = ChoosePark | LocalParkData | FilterButtonsByName | GenerateRandomParkCode | {filterButtons: () => void}
 
 const MainNav: React.FC<NavProps> = (props) => {
   const { choosePark } = props as ChoosePark
   const { generateRandomParkCode } = props as GenerateRandomParkCode
   const [nameSearch, setNameSearch] = useState<string>('')
+  const [stateSelection, setStateSelection] = useState<string>('')
   const [parksOnDisplay, setParksOnDisplay] = useState<Array<JSX.Element>>([])
 
   useEffect(() => {
-    if (!nameSearch) {
-      createNavBtns(nationalParks)
-    }
-  }, [nameSearch])
+    filterButtons(nameSearch, stateSelection)
+  }, [nameSearch, stateSelection])
 
   const createNavBtns = (parks: Array<LocalParkData>): void => {
     const parkButtons = parks.map(park => {
@@ -45,12 +45,26 @@ const MainNav: React.FC<NavProps> = (props) => {
     setParksOnDisplay(parkButtons)
   }
 
-  const filterButtonsByName = (searchTerm: string) => {
+  const setSearch = (searchTerm: string) => {
     setNameSearch(searchTerm)
+  }
+
+   const setStateSelect = (stateSelection: string) => {
+    setStateSelection(stateSelection)
+  }
+
+  const filterButtons = (searchTerm: string, stateSelection: string) => {
+    setNameSearch(searchTerm)
+    setStateSelection(stateSelection)
     const filteredParks = nationalParks.filter(park => {
-      return park.name.toLowerCase().includes(searchTerm.toLowerCase())
+      return park.name.toLowerCase().includes(searchTerm.toLowerCase()) && park.state.includes(stateSelection)
     })
-    createNavBtns(filteredParks)
+
+    if (filteredParks.length > 0) {
+      createNavBtns(filteredParks)
+    } else {
+      createNavBtns(nationalParks)
+    }
   }
 
   return (
@@ -61,9 +75,8 @@ const MainNav: React.FC<NavProps> = (props) => {
         alt='National Parkfinder Logo'
       />
       <h1 className='site-header'>National Parkfinder</h1>
-      <NavSearch
-        filterButtonsByName={filterButtonsByName}
-      />
+      <NavSearch setSearch={setSearch}/>
+      <StateDropdown setStateSelect={setStateSelect}/>
       <ParkList
         generateRandomParkCode={generateRandomParkCode}
         parksOnDisplay={parksOnDisplay}
