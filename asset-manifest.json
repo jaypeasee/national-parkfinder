@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/national-parkfinder.git/static/css/main.fe0728f2.chunk.css",
+    "main.js": "/national-parkfinder.git/static/js/main.428f2547.chunk.js",
+    "main.js.map": "/national-parkfinder.git/static/js/main.428f2547.chunk.js.map",
+    "runtime-main.js": "/national-parkfinder.git/static/js/runtime-main.ff0cd85b.js",
+    "runtime-main.js.map": "/national-parkfinder.git/static/js/runtime-main.ff0cd85b.js.map",
+    "static/js/2.2bb846f2.chunk.js": "/national-parkfinder.git/static/js/2.2bb846f2.chunk.js",
+    "static/js/2.2bb846f2.chunk.js.map": "/national-parkfinder.git/static/js/2.2bb846f2.chunk.js.map",
+    "index.html": "/national-parkfinder.git/index.html",
+    "static/css/main.fe0728f2.chunk.css.map": "/national-parkfinder.git/static/css/main.fe0728f2.chunk.css.map",
+    "static/js/2.2bb846f2.chunk.js.LICENSE.txt": "/national-parkfinder.git/static/js/2.2bb846f2.chunk.js.LICENSE.txt",
+    "static/media/bucket-black.96c7e115.png": "/national-parkfinder.git/static/media/bucket-black.96c7e115.png",
+    "static/media/bucket-green.06ac31cf.png": "/national-parkfinder.git/static/media/bucket-green.06ac31cf.png",
+    "static/media/landscape.352f23ba.png": "/national-parkfinder.git/static/media/landscape.352f23ba.png",
+    "static/media/randomize.7553aa6f.png": "/national-parkfinder.git/static/media/randomize.7553aa6f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff0cd85b.js",
+    "static/js/2.2bb846f2.chunk.js",
+    "static/css/main.fe0728f2.chunk.css",
+    "static/js/main.428f2547.chunk.js"
+  ]
+}
