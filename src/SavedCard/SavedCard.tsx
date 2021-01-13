@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { LocalParkData, AddRemoveFunctionality } from '../interfaces'
 import './SavedCard.scss'
 import { useLocation, Link } from 'react-router-dom'
