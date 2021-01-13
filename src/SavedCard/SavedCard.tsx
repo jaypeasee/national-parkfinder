@@ -10,8 +10,8 @@ const SavedCard: React.FC<SavedCardProps> = props => {
   const { addToVisited, deleteFromVisited, deleteFromBucketList } = props as AddRemoveFunctionality
 
   const moveParkToVisited = () => {
-    addToVisited(parkCode)
     deleteFromBucketList(parkCode)
+    addToVisited(parkCode)
   }
 
   return (

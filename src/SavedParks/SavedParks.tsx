@@ -36,8 +36,7 @@ const SavedParks: React.FC<LocalParkContainer & AddRemoveFunctionality> = props 
         />
       })
       setVisitedListDisplay(visitedCards)
-
-  }, [visitedList])
+  }, [visitedList, bucketList])
 
   return (
     <section>
