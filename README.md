@@ -12,7 +12,7 @@ National Parkfinder is an application that allows you to explore all 63 of the n
 *On your terminal:*
 
 + `git clone git@github.com:jaypeasee/national-parkfinder.git`
-+ ``cd national-parkfinder`
++ `cd national-parkfinder`
 + `npm start` (to start the server)
 + `npm test` (to run the test suite)
 
