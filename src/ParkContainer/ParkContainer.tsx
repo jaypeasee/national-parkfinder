@@ -39,26 +39,30 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
 
   const addToVisited = (parkCode: string) => {
     const addedPark = findChosenPark(parkCode)
-
+    addedPark.visited = true
     if (!visitedList.includes(addedPark)) {
       setVisitedList([...visitedList, addedPark])
     }
   }
 
   const deleteFromVisited = (parkCode: string) => {
+    const removedPark = findChosenPark(parkCode)
+    removedPark.visited = false
     const updatedParks = visitedList.filter((park: any) => park.parkCode !== parkCode)
     setVisitedList(updatedParks)
   }
 
   const addToBucketList = (parkCode: string) => {
     const addedPark = findChosenPark(parkCode)
-
+    addedPark.bucketList = true
     if (!bucketList.includes(addedPark)) {
       setBucketList([...bucketList, addedPark])
     }
   }
 
   const deleteFromBucketList = (parkCode: string) => {
+    const removedPark = findChosenPark(parkCode)
+    removedPark.bucketList = false
     const updatedParks = bucketList.filter((park: any) => park.parkCode !== parkCode)
     setBucketList(updatedParks)
   }

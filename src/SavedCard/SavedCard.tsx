@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { LocalParkData, AddRemoveFunctionality } from '../interfaces'
 import './SavedCard.scss'
 import { useLocation, Link } from 'react-router-dom'
@@ -9,9 +10,13 @@ const SavedCard: React.FC<SavedCardProps> = props => {
   const { name, parkCode, image, state, bucketList, visited } = props as LocalParkData
   const { addToVisited, deleteFromVisited, deleteFromBucketList } = props as AddRemoveFunctionality
 
+  useEffect(() => {
+    
+  }, [location.pathname])
+
   const moveParkToVisited = () => {
-    addToVisited(parkCode)
     deleteFromBucketList(parkCode)
+    addToVisited(parkCode)
   }
 
   return (
