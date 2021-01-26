@@ -1,45 +1,38 @@
 import './App.scss'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import MainNav from '../MainNav/MainNav'
 import ParkContainer from '../ParkContainer/ParkContainer'
 import Footer from '../Footer/Footer'
-import { Route, Switch, useLocation } from 'react-router-dom'
+import { Route, Switch, useLocation, useHistory } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
 
 const App: React.FC = () => {
-  const [parkCode, setParkCode] = useState<string>('')
   const location = useLocation()
-  const choosePark = (parkCodeId: string) => {
-    setParkCode(parkCodeId)
-  }
+  const history = useHistory()
 
   useEffect(() => {
     if (location.pathname === '/') {
       generateRandomParkCode()
-    } else {
-      setParkCode(location.pathname.split('/')[1])
-    }
-  }, [parkCode])
+    } 
+  })
 
   const generateRandomParkCode = (): void => {
-      let index = Math.floor(Math.random() * nationalParks.length)
-      setParkCode(nationalParks[index].parkCode)
-      location.pathname = `/${nationalParks[index].parkCode}`
+    let index = Math.floor(Math.random() * nationalParks.length)
+    history.push(`/${nationalParks[index].parkCode}`)
   }
 
   return (
     <main className='app'>
       <section className='body'>
         <MainNav
-          choosePark={choosePark}
           generateRandomParkCode={generateRandomParkCode} />
         <Switch>
           <Route
-            path={location.pathname}
-            render={() => {
+            path='/:parkCode'
+            render={({match}) => {
               return (
                 <ParkContainer
-                  parkCode={parkCode} />
+                  parkCode={match.params.parkCode} />
               )
             }}
           />
