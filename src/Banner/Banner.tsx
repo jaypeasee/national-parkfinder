@@ -11,7 +11,8 @@ const Banner: React.FC<BannerIconsProps> = props => {
   const [displayImage, setDisplayImage] = useState(images[imageIndex])
 
   useEffect(() => {
-    setDisplayImage(images[0])
+    setImageIndex(0)
+    setDisplayImage(images[imageIndex])
     setNumImages(images.length - 1)
   }, [currentPark])
 

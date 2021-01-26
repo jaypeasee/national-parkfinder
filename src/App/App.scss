@@ -13,35 +13,30 @@ body {
   margin: 0;
 }
 
- p, li {
-   font-family: $paragraphFont;
-   font-size: 1em;
-   b {
-     color: $dark-green;
-   }
- }
+p, li {
+  font-family: $paragraphFont;
+  font-size: 1em;
+  b {
+    color: $dark-green;
+  }
+}
 
+button, a {
+font-family: $secondaryFont;
+font-size: 1.2em;
+}
 
- button, a {
-  font-family: $secondaryFont;
-  font-size: 1.2em;
- }
+h1 {
+font-family: $primaryFont;
+font-size: 2.5em;
+}
 
- h1 {
-  font-family: $primaryFont;
-  font-size: 2.5em;
- }
+h2 {
+font-family: $secondaryFont;
+font-size: 1.7em;
+}
 
- h2 {
-  font-family: $secondaryFont;
-  font-size: 1.7em;
- }
-
- h3 {
-  font-family: $secondaryFont;
-  font-size: 1.5em;
- }
-
- @media screen and (max-width: 576px) {
-   
- }
+h3 {
+font-family: $secondaryFont;
+font-size: 1.5em;
+}
