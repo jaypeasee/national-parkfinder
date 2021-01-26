@@ -29,10 +29,14 @@ const App: React.FC = () => {
         <Switch>
           <Route
             path='/:parkCode'
-            render={({match}) => {
+            render={({ match }) => {
+              const chosenPark = nationalParks.find(park => {
+                return park.parkCode === match.params.parkCode
+              })
+              let parkCode = !chosenPark ? generateRandomParkCode() : match.params.parkCode
               return (
                 <ParkContainer
-                  parkCode={match.params.parkCode} />
+                  parkCode={parkCode} />
               )
             }}
           />
