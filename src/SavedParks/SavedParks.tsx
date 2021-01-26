@@ -4,22 +4,26 @@ import SavedCard from '../SavedCard/SavedCard'
 import { useLocation } from 'react-router-dom'
 import './SavedParks.scss'
 
-const SavedParks: React.FC<LocalParkContainer & AddRemoveFunctionality> = props => {
+type SavedParksProps = LocalParkContainer & AddRemoveFunctionality | { retrieveFromStorage: () => void }
+
+const SavedParks: React.FC<SavedParksProps> = props => {
   const [pageTitle, setPageTitle] = useState<string>('My Parks')
   const location = useLocation()
+  const [parkList, setParkList] = useState<Array<any>>([])
   const { visitedList, bucketList } = props as LocalParkContainer
   const { addToVisited, deleteFromVisited, addToBucketList, deleteFromBucketList } = props as AddRemoveFunctionality
   const [visitedListDisplay, setVisitedListDisplay] = useState<Array<JSX.Element>>([])
-
+  const { retrieveFromStorage } = props as any
+  
   useEffect(() => {
-    let parkList = []
     if (location.pathname === '/user/visited') {
-      parkList = visitedList
+      setParkList(visitedList)
       setPageTitle('My Visited Parks')
     } else if (location.pathname === '/user/bucket-list') {
-      parkList = bucketList
+      setParkList(bucketList)
       setPageTitle('My Bucket List Parks')
     }
+
       const visitedCards = parkList.map((savedPark: LocalParkData) => {
         return <SavedCard
           key={savedPark.parkCode}
@@ -37,6 +41,10 @@ const SavedParks: React.FC<LocalParkContainer & AddRemoveFunctionality> = props 
       })
       setVisitedListDisplay(visitedCards)
   }, [visitedList, bucketList])
+
+  useEffect(() => {
+    retrieveFromStorage()
+  }, [])
 
   return (
     <section>

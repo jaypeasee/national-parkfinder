@@ -20,9 +20,9 @@ const App: React.FC<LocalParkContainer> = () => {
     } 
   })
 
-  useEffect(() => {
-    retrieveFromStorage()
-  }, [])
+  // useEffect(() => {
+  //   retrieveFromStorage()
+  // }, [])
 
   useEffect(() => {
     saveToStorage()
@@ -122,6 +122,7 @@ const App: React.FC<LocalParkContainer> = () => {
                   deleteFromVisited={deleteFromVisited}
                   addToBucketList={addToBucketList}
                   deleteFromBucketList={deleteFromBucketList}
+                  retrieveFromStorage={retrieveFromStorage}
                 />
               )
             }}
