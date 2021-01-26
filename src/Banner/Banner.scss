@@ -35,6 +35,7 @@
 .banner-img {
   height: 80%;
   max-width: 90%;
+  margin: 3%;
   border: white 10px solid;
   box-shadow: 5px 5px 5px black;
 }
@@ -50,4 +51,17 @@
 
 .banner-icons {
   @include row-wrap;
+}
+
+.nav-img-btn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 3em;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    color: $dark-green;
+  }
 }

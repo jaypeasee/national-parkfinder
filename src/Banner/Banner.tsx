@@ -33,7 +33,11 @@ const Banner: React.FC<BannerIconsProps> = props => {
       </div>
       <div className='image-container'>
         {imageIndex > 0 &&
-          <button onClick={() => navigateToImage(imageIndex - 1)}>❮</button>}
+          <button 
+            onClick={() => navigateToImage(imageIndex - 1)}
+            className='nav-img-btn'>
+            ❮
+          </button>}
         <img
           className='banner-img'
           data-testid='banner-img'
@@ -41,7 +45,11 @@ const Banner: React.FC<BannerIconsProps> = props => {
           alt={displayImage.altText}
         />
         {imageIndex !== numImages &&
-          <button onClick={() => navigateToImage(imageIndex + 1)}>❯</button>}
+          <button
+            onClick={() => navigateToImage(imageIndex + 1)}
+            className='nav-img-btn'>
+            ❯
+          </button>}
       </div>
     </section>
   )
