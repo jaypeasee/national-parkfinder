@@ -33,7 +33,7 @@ const App: React.FC = () => {
               const chosenPark = nationalParks.find(park => {
                 return park.parkCode === match.params.parkCode
               })
-              // let parkCode = !chosenPark ? generateRandomParkCode() : match.params.parkCode
+              let parkCode = !chosenPark ? generateRandomParkCode() : match.params.parkCode
               return (
                 <ParkContainer
                   parkCode={match.params.parkCode} />

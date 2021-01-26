@@ -8,10 +8,6 @@ import ParkBtn from '../ParkBtn/ParkBtn'
 import { LocalParkData } from '../interfaces'
 import StateDropdown from '../StateDropdown/StateDropdown';
 
-// interface ChoosePark {
-//   choosePark: (parkCode: string) => void
-// }
-
 interface FilterButtonsByName {
   filterButtonsByName: (searchTerm: string) => void
 }
@@ -60,11 +56,7 @@ const MainNav: React.FC<NavProps> = (props) => {
       return park.name.toLowerCase().includes(searchTerm.toLowerCase()) && park.state.includes(stateSelection)
     })
 
-    if (filteredParks.length > 0) {
-      createNavBtns(filteredParks)
-    } else {
-      createNavBtns(nationalParks)
-    }
+    createNavBtns(filteredParks)
   }
 
   return (

@@ -21,7 +21,7 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
       <Switch>
         <Route
           exact
-          path={`/${currentPark.parkCode}/about`}
+          path={`/park/${currentPark.parkCode}/about`}
           render={() => {
             return (
               <About
@@ -32,7 +32,7 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
         />
         <Route
           exact
-          path={`/${currentPark.parkCode}/location`}
+          path={`/park/${currentPark.parkCode}/location`}
           render={() => {
             return (
               <Location
@@ -42,7 +42,7 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
         />
         <Route
           exact
-          path={`/${currentPark.parkCode}/contact`}
+          path={`/park/${currentPark.parkCode}/contact`}
           render={() => {
             return (
               <Contact
