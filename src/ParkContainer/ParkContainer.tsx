@@ -28,6 +28,10 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
   }, [parkCode])
 
   useEffect(() => {
+    retrieveFromStorage()
+  }, [])
+
+  useEffect(() => {
     saveToStorage()
   }, [visitedList, bucketList])
 
@@ -71,10 +75,19 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
   }
 
   const saveToStorage = () => {
+    localStorage.clear()
     let stringifiedVisited = JSON.stringify(visitedList)
     let stringifiedBucketList = JSON.stringify(bucketList)
     localStorage.setItem(`visitedList`, stringifiedVisited)
     localStorage.setItem(`bucketList`, stringifiedBucketList)
+  }
+
+  const retrieveFromStorage = () => {
+    const storedVisited: any = localStorage.getItem('visitedList')
+    const parsedVisited = JSON.parse(storedVisited)
+    console.log(parsedVisited)
+    setVisitedList(parsedVisited)
+    saveToStorage()
   }
 
   return (
