@@ -17,12 +17,12 @@ const Banner: React.FC<BannerIconsProps> = props => {
         </p>
       </div>
       <div className='image-container'>
-        {<img
+        {images[randomIndex] ? <img
           className='banner-img'
           data-testid='banner-img'
           src={images[randomIndex].url}
           alt={images[randomIndex].altText}
-        />}
+        /> : <h1>Loading...</h1>}
       </div>
     </section>
   )

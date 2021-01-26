@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
   const generateRandomParkCode = (): void => {
     let index = Math.floor(Math.random() * nationalParks.length)
-    history.push(`/${nationalParks[index].parkCode}`)
+    history.push(`/park/${nationalParks[index].parkCode}`)
   }
 
   return (
@@ -28,15 +28,23 @@ const App: React.FC = () => {
           generateRandomParkCode={generateRandomParkCode} />
         <Switch>
           <Route
-            path='/:parkCode'
+            path='/park/:parkCode'
             render={({ match }) => {
               const chosenPark = nationalParks.find(park => {
                 return park.parkCode === match.params.parkCode
               })
-              let parkCode = !chosenPark ? generateRandomParkCode() : match.params.parkCode
+              // let parkCode = !chosenPark ? generateRandomParkCode() : match.params.parkCode
               return (
                 <ParkContainer
-                  parkCode={parkCode} />
+                  parkCode={match.params.parkCode} />
+              )
+            }}
+          />
+          <Route
+            path='/user/:list'
+            render={() => {
+              return (
+                <ParkContainer parkCode={''}/>
               )
             }}
           />

@@ -73,7 +73,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
         <Switch>
           <Fragment>
             <Route
-              path={`/${currentPark.parkCode}`}
+              path='/park/:parkCode'
               render={() => {
                 return (
                   <section>
@@ -103,7 +103,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
                     deleteFromVisited={deleteFromVisited}
                     addToBucketList={addToBucketList}
                     deleteFromBucketList={deleteFromBucketList}
-                    />
+                  />
                 )
               }}
             />

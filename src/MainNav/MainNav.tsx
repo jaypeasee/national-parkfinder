@@ -23,7 +23,6 @@ interface GenerateRandomParkCode {
 type NavProps = LocalParkData | FilterButtonsByName | GenerateRandomParkCode | {filterButtons: () => void}
 
 const MainNav: React.FC<NavProps> = (props) => {
-  // const { choosePark } = props as ChoosePark
   const { generateRandomParkCode } = props as GenerateRandomParkCode
   const [nameSearch, setNameSearch] = useState<string>('')
   const [stateSelection, setStateSelection] = useState<string>('')
