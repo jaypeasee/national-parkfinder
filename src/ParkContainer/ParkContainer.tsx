@@ -1,12 +1,9 @@
-import { useState, useEffect, Fragment } from 'react'
+import { useState, useEffect } from 'react'
 import Banner from '../Banner/Banner'
 import UserNav from '../UserNav/UserNav'
 import ParkInfo from '../ParkInfo/ParkInfo'
-import SavedParks from '../SavedParks/SavedParks'
-import { nationalParks } from '../ParkData'
 import { CurrentPark, LocalParkData, LocalParkContainer, CurrentParkContainer, AddRemoveFunctionality } from '../interfaces'
 import { parkRequest } from './npsApiCall'
-import { Switch, Route } from 'react-router-dom'
 import './ParkContainer.scss'
 
 type ParkContainerProps = LocalParkContainer | CurrentPark | LocalParkData | CurrentParkContainer | AddRemoveFunctionality | { parkCode: string } | {findChosenPark: (parkCode: string) => void}

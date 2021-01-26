@@ -13,16 +13,16 @@ const App: React.FC<LocalParkContainer> = () => {
   const [bucketList, setBucketList] = useState<LocalParkContainer[] | any>([])
   const location = useLocation()
   const history = useHistory()
+  
+  useEffect(() => {
+    retrieveFromStorage()
+  }, [])
 
   useEffect(() => {
     if (location.pathname === '/') {
       generateRandomParkCode()
     } 
   })
-
-  // useEffect(() => {
-  //   retrieveFromStorage()
-  // }, [])
 
   useEffect(() => {
     saveToStorage()
@@ -76,15 +76,17 @@ const App: React.FC<LocalParkContainer> = () => {
     localStorage.clear()
     let stringifiedVisited = JSON.stringify(visitedList)
     let stringifiedBucketList = JSON.stringify(bucketList)
-    localStorage.setItem(`visitedList`, stringifiedVisited)
-    localStorage.setItem(`bucketList`, stringifiedBucketList)
+    localStorage.setItem('visitedList', stringifiedVisited)
+    localStorage.setItem('bucketList', stringifiedBucketList)
   }
 
   const retrieveFromStorage = () => {
     const storedVisited: any = localStorage.getItem('visitedList')
+    const storedBucketList: any = localStorage.getItem('bucketList')
     const parsedVisited = JSON.parse(storedVisited)
-    console.log(parsedVisited)
+    const parsedBucketList = JSON.parse(storedBucketList)
     setVisitedList(parsedVisited)
+    setVisitedList(parsedBucketList)
     saveToStorage()
   }
 
@@ -122,7 +124,21 @@ const App: React.FC<LocalParkContainer> = () => {
                   deleteFromVisited={deleteFromVisited}
                   addToBucketList={addToBucketList}
                   deleteFromBucketList={deleteFromBucketList}
-                  retrieveFromStorage={retrieveFromStorage}
+                />
+              )
+            }}
+          />
+          <Route
+            path='/user/bucket-list'
+            render={() => {
+              return (
+                <SavedParks
+                  visitedList={visitedList}
+                  bucketList={bucketList}
+                  addToVisited={addToVisited}
+                  deleteFromVisited={deleteFromVisited}
+                  addToBucketList={addToBucketList}
+                  deleteFromBucketList={deleteFromBucketList}
                 />
               )
             }}
