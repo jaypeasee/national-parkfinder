@@ -18,6 +18,13 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
   
   return (
     <section className='park-info'>
+      <BannerIcons
+        addToVisited={addToVisited}
+        deleteFromVisited={deleteFromVisited}
+        addToBucketList={addToBucketList}
+        deleteFromBucketList={deleteFromBucketList}
+        localPark={localPark}
+      />
       <Switch>
         <Route
           exact
@@ -51,13 +58,6 @@ const ParkInfo: React.FC<ParkInfoProps> = props => {
           }}
         />
       </Switch>
-      <BannerIcons
-        addToVisited={addToVisited}
-        deleteFromVisited={deleteFromVisited}
-        addToBucketList={addToBucketList}
-        deleteFromBucketList={deleteFromBucketList}
-        localPark={localPark}
-      />
     </section>
   )
 }

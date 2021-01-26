@@ -19,7 +19,7 @@ const StateDropdown: React.FC<StateDropdownProps> = props => {
           name="state"
           onChange={handleChange}
           data-testid="select-form">
-          <option value="---">Select a state</option>
+          <option value="">Select a state</option>
           <option value="AL" disabled>Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>

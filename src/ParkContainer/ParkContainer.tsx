@@ -13,10 +13,9 @@ type ParkContainerProps = LocalParkContainer | CurrentPark | LocalParkData | Cur
 
 const ParkContainer: React.FC<ParkContainerProps> = props => {
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
-  const [visitedList, setVisitedList] = useState<LocalParkContainer[]>([])
-  const [bucketList, setBucketList] = useState<LocalParkContainer[]>([])
+  const [visitedList, setVisitedList] = useState<LocalParkContainer[] | any>([])
+  const [bucketList, setBucketList] = useState<LocalParkContainer[] | any>([])
   const { parkCode } = props as any
-
 
   useEffect(() => {
     if (parkCode !== '') {
@@ -27,6 +26,10 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
         .catch(error => setCurrentPark(error.message))
     }
   }, [parkCode])
+
+  useEffect(() => {
+    saveToStorage()
+  }, [visitedList, bucketList])
 
   const findChosenPark = (parkCode: string): any | void => {
     const chosenPark = nationalParks.find(park => {
@@ -65,6 +68,13 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
     removedPark.bucketList = false
     const updatedParks = bucketList.filter((park: any) => park.parkCode !== parkCode)
     setBucketList(updatedParks)
+  }
+
+  const saveToStorage = () => {
+    let stringifiedVisited = JSON.stringify(visitedList)
+    let stringifiedBucketList = JSON.stringify(bucketList)
+    localStorage.setItem(`visitedList`, stringifiedVisited)
+    localStorage.setItem(`bucketList`, stringifiedBucketList)
   }
 
   return (

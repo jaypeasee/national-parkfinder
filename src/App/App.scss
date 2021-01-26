@@ -16,7 +16,11 @@ body {
  p, li {
    font-family: $paragraphFont;
    font-size: 1em;
+   b {
+     color: $dark-green;
+   }
  }
+
 
  button, a {
   font-family: $secondaryFont;
