@@ -1,17 +1,26 @@
 import './Banner.scss'
 import { CurrentParkContainer, LocalParkContainer } from '../interfaces'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 type BannerIconsProps = LocalParkContainer | CurrentParkContainer | { parkCode: string }
 
 const Banner: React.FC<BannerIconsProps> = props => {
   const { currentPark } = props as CurrentParkContainer
   const { images } = currentPark as any
-  const [displayImage, setDisplayImage] = useState(images[0])
-  const randomIndex: number = Math.floor(Math.random() * images.length)
+  const [imageIndex, setImageIndex] = useState<number>(0)
+  const [numImages, setNumImages] = useState<number>(images.length - 1)
+  const [displayImage, setDisplayImage] = useState(images[imageIndex])
 
-  const nextImage = () => {
-    // to see how many pictures are in the array
-    // setDisplayImage to next object in array
+  useEffect(() => {
+    setDisplayImage(images[0])
+    setNumImages(images.length - 1)
+  }, [currentPark])
+
+  useEffect(() => {
+    setDisplayImage(images[imageIndex])
+  }, [imageIndex])
+
+  const navigateToImage = (index) => {
+    setImageIndex(index)
   }
 
   return (
@@ -19,16 +28,20 @@ const Banner: React.FC<BannerIconsProps> = props => {
       <div className='header-container'>
         <h1 className='header'>{currentPark.fullName}, {currentPark.states}</h1>
         <p className='caption'>
-          {images[0].caption}
+          {displayImage.caption}
         </p>
       </div>
       <div className='image-container'>
+        {imageIndex > 0 &&
+          <button onClick={() => navigateToImage(imageIndex - 1)}>❮</button>}
         <img
           className='banner-img'
           data-testid='banner-img'
-          src={images[0].url}
-          alt={images[0].altText}
+          src={displayImage.url}
+          alt={displayImage.altText}
         />
+        {imageIndex !== numImages &&
+          <button onClick={() => navigateToImage(imageIndex + 1)}>❯</button>}
       </div>
     </section>
   )
