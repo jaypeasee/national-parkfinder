@@ -1,9 +1,11 @@
 language: node_js
 node_js:
-  - "node"
+- node
 notifications:
   email: false
 deploy:
   provider: heroku
   app: national-parkfinder
   skip_cleanup: true
+  api_key:
+    secure: t5F8iFUDzitXBxNHNrOnIQJPK2XvtF6w23drlOC3hvgs0papDjowikXJ48z34+5eq84MH0CWIlSIEzkJNJxB9Qy+MQgDltfKnG4uc9zuiW/AzR/Fuce1TICxskK6Mk6UPGpGpwR89GaeKBq7cdSR68rev2E2sn0HBtWKbas/jov4Stm6IEem4OgUwuw4O8CiKNgm11/bX1VT70FuilnE/WKgWARLvcm/TpQDKLIIWaVO/W2G1q+PVgHPAPy8leYZjY8s8wWXDSd8NqPEPoaiEChv+LQIEiZFTFpwZx5pObC3oIuceFDEJq8GFk5zBgDM+mBZn7DwzLHtiLzDFcTBdCEI/nDJU2tqASw63sxe3bXs0P0j3aUJs5M60LUL9QkZQaeBxcav+h3JFiME+xV/iP+cVZvxjVJQV525nHOUQ8CbtxV0WV2g/rSw3Bcn55KddC4tOPN4qb4yf7PuzBD6Pqp30s6eRfQhxcwmiKXJvwHFrcAEy1kUe9ZvyU+EkdpfCRuTfAxp1VVU9WqFrQzvGEvkw/s9dt57C4XhXxwqthPBri6Mj1OGAa0nHL/RmUsZFiC7KvZh/JXWx4PMOdq08ABEYLIu7aYJ3vqLeSaz9uOxkcroH5Z85z0YSV1UD1NcyuS0+00aePKo4mhSdA2URgPJsR8YyAF6At5CAPrAlJ4=
