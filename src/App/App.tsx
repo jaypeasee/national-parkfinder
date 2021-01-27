@@ -85,14 +85,13 @@ const App: React.FC<LocalParkContainer> = () => {
       const storedVisited: any = localStorage.getItem('visitedList')
       const parsedVisited = JSON.parse(storedVisited)
       setVisitedList(parsedVisited)
-      saveToStorage()
     }
     if (localStorage.bucketList) {
       const storedBucketList: any = localStorage.getItem('bucketList')
       const parsedBucketList = JSON.parse(storedBucketList)
       setBucketList(parsedBucketList)
-      saveToStorage()
     }
+    saveToStorage()
   }
 
   return (
