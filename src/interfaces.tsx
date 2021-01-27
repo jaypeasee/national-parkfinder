@@ -8,8 +8,8 @@ export interface LocalParkData {
 }
 
 export interface LocalParkContainer {
-  visitedList: any
-  bucketList: any
+  visitedList: Array<any>
+  bucketList: Array<any>
 }
 
 export interface Activity {
