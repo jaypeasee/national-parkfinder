@@ -28,9 +28,9 @@ const Banner: React.FC<BannerIconsProps> = props => {
     <section className='banner'>
       <div className='header-container'>
         <h1 className='header'>{currentPark.fullName}, {currentPark.states}</h1>
-        <p className='caption'>
+        {displayImage.caption && <p className='caption'>
           {displayImage.caption}
-        </p>
+        </p>}
       </div>
       <div className='image-container'>
         {imageIndex > 0 &&
