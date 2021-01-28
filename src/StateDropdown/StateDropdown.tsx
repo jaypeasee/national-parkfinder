@@ -40,7 +40,7 @@ const StateDropdown: React.FC<StateDropdownProps> = props => {
           <option value="LA" disabled>Louisiana</option>
           <option value="ME">Maine</option>
           <option value="MD" disabled>Maryland</option>
-          <option value="MA">Massachusetts</option>
+          <option value="MA" disabled>Massachusetts</option>
           <option value="MI">Michigan</option>
           <option value="MN">Minnesota</option>
           <option value="MS" disabled>Mississippi</option>
