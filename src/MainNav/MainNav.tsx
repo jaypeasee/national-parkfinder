@@ -65,6 +65,7 @@ const MainNav: React.FC<NavProps> = (props) => {
         className='logo'
         src={parkfinderLogo}
         alt='National Parkfinder Logo'
+        onClick={() => generateRandomParkCode()}
       />
       <h1 className='site-header'>National Parkfinder</h1>
       <NavSearch setSearch={setSearch}/>
