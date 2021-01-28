@@ -32,7 +32,7 @@ const App: React.FC<LocalParkContainer> = () => {
 
   const generateRandomParkCode = (): void => {
     let index = Math.floor(Math.random() * nationalParks.length)
-    history.push(`/park/${nationalParks[index].parkCode}`)
+    history.push(`/park/${nationalParks[index].parkCode}/about`)
   }
 
   const findChosenPark = (parkCode: string): any | void => {

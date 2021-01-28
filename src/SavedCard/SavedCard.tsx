@@ -25,7 +25,7 @@ const SavedCard: React.FC<SavedCardProps> = props => {
       />
       <h2>{name}, {state}</h2>
       <Link
-        to={`/park/${parkCode}`}
+        to={`/park/${parkCode}/about`}
       >
         {`Go to ${name}'s page`}
       </Link>
