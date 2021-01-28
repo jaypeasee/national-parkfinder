@@ -16,7 +16,6 @@ const ParkBtn: React.FC<ParkBtnProps> = props => {
       className="main-nav-link"
       >
       <button
-        role="button"
         className="park-button"
       >{name}</button>
     </Link>

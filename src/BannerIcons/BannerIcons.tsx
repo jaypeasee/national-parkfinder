@@ -31,7 +31,7 @@ const BannerIcons: React.FC<BannerIconsProps> = props => {
     } else {
       setBucketColor(bucketBlack)
     }
-  })
+  }, [localPark.visited, localPark.bucketList])
 
   const handleVisitedPark = () => {
     if (!localPark.visited) {
