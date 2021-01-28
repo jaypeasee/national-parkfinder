@@ -13,16 +13,16 @@ describe('App', () => {
   let acadiaButton
   const history = createMemoryHistory()
   
-  beforeEach(() => {
+  beforeEach(async () => {
     parkRequest.mockResolvedValue(samplePark)
-    act(() => {
+    await act(async () => {
       history.location.pathName='/acad'
-    })
-    render(
-      <Router history={history}>
+      await render(
+        <Router history={history}>
         <App />
       </Router>
     )
+  })
     acadiaButton = screen.getByText('Acadia')
   })
   
