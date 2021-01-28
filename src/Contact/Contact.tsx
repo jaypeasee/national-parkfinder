@@ -12,7 +12,7 @@ const Contact: React.FC<CurrentParkContainer> = props => {
   }
 
   const parkContactNumbers = currentPark.contacts.phoneNumbers.map(phone => {
-    return <p>{parsedPhoneNumber(phone.phoneNumber)}</p>
+    return <p key={`${phone.phoneNumber}`}>{parsedPhoneNumber(phone.phoneNumber)}</p>
   })
 
   return (

@@ -22,9 +22,11 @@ const App: React.FC<LocalParkContainer> = () => {
     if (location.pathname === '/') {
       generateRandomParkCode()
     } 
-  }, [])
+  }, [location.pathname])
 
   useEffect(() => {
+    updateLocalVisitedParks()
+    updateLocalBucketListParks()
     saveToStorage()
   }, [visitedList, bucketList])
 
@@ -92,6 +94,30 @@ const App: React.FC<LocalParkContainer> = () => {
       setBucketList(parsedBucketList)
     }
     saveToStorage()
+  }
+
+  const updateLocalVisitedParks = () => {
+    if (localStorage.visitedList) {
+      return nationalParks.map(park => {
+        visitedList.forEach(visitedPark => {
+          if (visitedPark.parkCode === park.parkCode) {
+            return park.visited = true
+          }
+        })
+      }) 
+    }
+  }
+
+  const updateLocalBucketListParks = () => {
+    if (localStorage.bucketList) {
+      return nationalParks.map(park => {
+        bucketList.forEach(bucketListPark => {
+          if (bucketListPark.parkCode === park.parkCode) {
+            return park.bucketList = true
+          }
+        })
+      })
+    }
   }
 
   return (
