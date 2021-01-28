@@ -24,10 +24,18 @@ const Banner: React.FC<BannerIconsProps> = props => {
     setImageIndex(index)
   }
 
+  const returnFullName = () => {
+    if (currentPark.parkCode === 'hale') {
+      return 'Haleakala National Park'
+    } else {
+      return currentPark.fullName
+    }
+  }
+
   return (
     <section className='banner'>
       <div className='header-container'>
-        <h1 className='header'>{currentPark.fullName}, {currentPark.states}</h1>
+        <h1 className='header'>{returnFullName()}, {currentPark.states}</h1>
         {displayImage && <p className='caption'>
           {displayImage.caption}
         </p>}
