@@ -13,6 +13,7 @@
   padding: 2%;
   border-radius: 5px;
   box-shadow: 5px 5px 5px black;
+  text-align: center;
 }
 
 .saved-park-card a {
@@ -21,12 +22,12 @@
 
 .saved-park-card button {
   background-color: $brown;
-  padding: 3%;
+  padding: 4%;
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  margin: 2%;
-  width: 250px;
+  margin: 5%;
+  width: 90%;
   &:hover {
     transform: scale(1.05);
     transition-duration: 0.4s;
