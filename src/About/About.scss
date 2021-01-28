@@ -3,10 +3,13 @@
 }
 
 ul {
-  -moz-column-count: 3;
-  -moz-column-gap: 20px;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 20px;
   column-count: 3;
   column-gap: 20px;
+  @media screen and (max-width: 1000px) {
+    column-count: 2;
+  }
+  @media screen and (max-width: 700px) {
+    column-count: 1;
+    text-align: center;
+  }
 }
