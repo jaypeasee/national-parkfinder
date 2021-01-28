@@ -66,7 +66,7 @@ export const nationalParks = [
   {
     name: 'Capitol Reef',
     state: 'UT',
-    image: 'https://capitolreef.org/wp-content/uploads/2017/10/Home_Main.jpg',
+    image: 'https://www.national-park.com/wp-content/uploads/2016/04/Welcome-to-Capitol-Reef-National-Park.jpg',
     parkCode: 'care',
     visited: false,
     bucketList: false
