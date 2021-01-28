@@ -22,7 +22,7 @@ const App: React.FC<LocalParkContainer> = () => {
     if (location.pathname === '/') {
       generateRandomParkCode()
     } 
-  })
+  }, [])
 
   useEffect(() => {
     saveToStorage()
