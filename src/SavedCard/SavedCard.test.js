@@ -56,7 +56,7 @@ describe('SavedCard', () => {
     it('should redirect user to park page when link is clicked', () => {
       const redirectLink = screen.getByText('Go to Denali\'s page')
       userEvent.click(redirectLink)
-      expect(history.location.pathname).toBe('/dena/about')
+      expect(history.location.pathname).toBe('/park/dena')
     })
 
   })
