@@ -27,14 +27,8 @@ describe('ParkBtn', () => {
     expect(parkBtn).toBeInTheDocument()
   })
 
-  it('should call choosePark with the parkCode', () => {
-    userEvent.click(parkBtn)
-    expect(choosePark).toHaveBeenCalledWith("grca")
-    expect(choosePark).toHaveBeenCalledTimes(1)
-  })
-
   it('should change the pathname on click', () => {
     userEvent.click(parkBtn)
-    expect(history.location.pathname).toBe('/grca/about')
+    expect(history.location.pathname).toBe('/park/grca/about')
   })
 })

@@ -33,16 +33,16 @@ describe('UserNav', () => {
 
   it('should redirect to a new path when About is clicked', () => {
     userEvent.click(aboutLink)
-    expect(history.location.pathname).toBe('/acad/about')
+    expect(history.location.pathname).toBe('/park/acad/about')
   })
 
   it('should redirect to a new path when Contact is clicked', () => {
     userEvent.click(contactLink)
-    expect(history.location.pathname).toBe('/acad/contact')
+    expect(history.location.pathname).toBe('/park/acad/contact')
   })
 
   it('should redirect to a new path when Location is clicked', () => {
     userEvent.click(locationLink)
-    expect(history.location.pathname).toBe('/acad/location')
+    expect(history.location.pathname).toBe('/park/acad/location')
   })
 })

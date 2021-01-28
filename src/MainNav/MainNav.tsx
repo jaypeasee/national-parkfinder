@@ -8,10 +8,6 @@ import ParkBtn from '../ParkBtn/ParkBtn'
 import { LocalParkData } from '../interfaces'
 import StateDropdown from '../StateDropdown/StateDropdown';
 
-interface ChoosePark {
-  choosePark: (parkCode: string) => void
-}
-
 interface FilterButtonsByName {
   filterButtonsByName: (searchTerm: string) => void
 }
@@ -20,10 +16,9 @@ interface GenerateRandomParkCode {
   generateRandomParkCode: () => void
 }
 
-type NavProps = ChoosePark | LocalParkData | FilterButtonsByName | GenerateRandomParkCode | {filterButtons: () => void}
+type NavProps = LocalParkData | FilterButtonsByName | GenerateRandomParkCode | {filterButtons: () => void}
 
 const MainNav: React.FC<NavProps> = (props) => {
-  const { choosePark } = props as ChoosePark
   const { generateRandomParkCode } = props as GenerateRandomParkCode
   const [nameSearch, setNameSearch] = useState<string>('')
   const [stateSelection, setStateSelection] = useState<string>('')
@@ -38,8 +33,9 @@ const MainNav: React.FC<NavProps> = (props) => {
       return <ParkBtn
         key={park.parkCode}
         name={park.name}
+        image={park.image}
+        state={park.state}
         parkCode={park.parkCode}
-        choosePark={choosePark}
       />
     })
     setParksOnDisplay(parkButtons)
@@ -60,11 +56,7 @@ const MainNav: React.FC<NavProps> = (props) => {
       return park.name.toLowerCase().includes(searchTerm.toLowerCase()) && park.state.includes(stateSelection)
     })
 
-    if (filteredParks.length > 0) {
-      createNavBtns(filteredParks)
-    } else {
-      createNavBtns(nationalParks)
-    }
+    createNavBtns(filteredParks)
   }
 
   return (
