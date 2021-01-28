@@ -28,7 +28,7 @@ const Banner: React.FC<BannerIconsProps> = props => {
     <section className='banner'>
       <div className='header-container'>
         <h1 className='header'>{currentPark.fullName}, {currentPark.states}</h1>
-        {displayImage.caption && <p className='caption'>
+        {displayImage && <p className='caption'>
           {displayImage.caption}
         </p>}
       </div>
@@ -39,12 +39,12 @@ const Banner: React.FC<BannerIconsProps> = props => {
             className='nav-img-btn'>
             ❮
           </button>}
-        <img
+        {displayImage && <img
           className='banner-img'
           data-testid='banner-img'
           src={displayImage.url}
           alt={displayImage.altText}
-        />
+        />}
         {imageIndex !== numImages &&
           <button
             onClick={() => navigateToImage(imageIndex + 1)}
