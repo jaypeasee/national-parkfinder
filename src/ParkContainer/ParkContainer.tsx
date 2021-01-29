@@ -21,7 +21,7 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
     if (parkCode !== '') {
       parkRequest(parkCode)
         .then(data => {
-          setCurrentPark(data.data[0])
+          setCurrentPark(data.response.data[0])
         })
         .catch(error => setCurrentPark(error.message))
     }

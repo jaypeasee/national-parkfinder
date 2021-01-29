@@ -20,7 +20,7 @@ const Banner: React.FC<BannerIconsProps> = props => {
     setDisplayImage(images[imageIndex])
   }, [imageIndex, images])
 
-  const navigateToImage = (index) => {
+  const navigateToImage = (index: number) => {
     setImageIndex(index)
   }
 
