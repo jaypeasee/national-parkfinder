@@ -21,7 +21,7 @@ const SavedParks: React.FC<SavedParksProps> = props => {
       setParkList(bucketList)
       setPageTitle('My Bucket List Parks')
     }
-  })
+  }, [location.pathname, bucketList, visitedList])
   
   const createCards = () => {
     return parkList.map((savedPark: LocalParkData) => {

@@ -26,7 +26,7 @@ const MainNav: React.FC<NavProps> = (props) => {
 
   useEffect(() => {
     filterButtons(nameSearch, stateSelection)
-  }, [nameSearch, stateSelection])
+  }, [nameSearch, stateSelection])// eslint-disable-line react-hooks/exhaustive-deps
 
   const createNavBtns = (parks: Array<LocalParkData>): void => {
     const parkButtons = parks.map(park => {

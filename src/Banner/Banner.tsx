@@ -14,11 +14,11 @@ const Banner: React.FC<BannerIconsProps> = props => {
     setImageIndex(0)
     setDisplayImage(images[imageIndex])
     setNumImages(images.length - 1)
-  }, [currentPark])
+  }, [currentPark])// eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setDisplayImage(images[imageIndex])
-  }, [imageIndex, images])
+  }, [imageIndex, images])// eslint-disable-line react-hooks/exhaustive-deps
 
   const navigateToImage = (index: number) => {
     setImageIndex(index)

@@ -5,8 +5,8 @@ import SavedParks from '../SavedParks/SavedParks'
 import Footer from '../Footer/Footer'
 import { Route, Switch, useLocation, useHistory } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
-import './App.scss'
 import { LocalParkContainer } from '../interfaces'
+import './App.scss'
 
 const App: React.FC<LocalParkContainer> = () => {
   const [visitedList, setVisitedList] = useState<LocalParkContainer[] | any>([])
@@ -16,19 +16,19 @@ const App: React.FC<LocalParkContainer> = () => {
   
   useEffect(() => {
     retrieveFromStorage()
-  }, [])
+  }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (location.pathname === '/') {
       generateRandomParkCode()
     } 
-  }, [location.pathname])
+  }, [location.pathname])// eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     updateLocalVisitedParks()
     updateLocalBucketListParks()
     saveToStorage()
-  }, [visitedList, bucketList])
+  }, [visitedList, bucketList])// eslint-disable-line react-hooks/exhaustive-deps
 
   const generateRandomParkCode = (): void => {
     let index = Math.floor(Math.random() * nationalParks.length)
@@ -99,7 +99,7 @@ const App: React.FC<LocalParkContainer> = () => {
   const updateLocalVisitedParks = () => {
     if (localStorage.visitedList) {
       return nationalParks.map(park => {
-        visitedList.forEach(visitedPark => {
+        return visitedList.forEach(visitedPark => {
           if (visitedPark.parkCode === park.parkCode) {
             return park.visited = true
           }
@@ -111,7 +111,7 @@ const App: React.FC<LocalParkContainer> = () => {
   const updateLocalBucketListParks = () => {
     if (localStorage.bucketList) {
       return nationalParks.map(park => {
-        bucketList.forEach(bucketListPark => {
+        return bucketList.forEach(bucketListPark => {
           if (bucketListPark.parkCode === park.parkCode) {
             return park.bucketList = true
           }
