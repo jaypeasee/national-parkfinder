@@ -2,7 +2,7 @@
 @import "../variables.scss";
 
 .banner {
-  width: 100%;
+  width: auto;
 }
 
 .header-container {
@@ -27,7 +27,7 @@
 
 .image-container {
   background-color: $olive-green;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
