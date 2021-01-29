@@ -1,15 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 import Banner from '../Banner/Banner'
 import UserNav from '../UserNav/UserNav'
 import ParkInfo from '../ParkInfo/ParkInfo'
+import Loading from '../Loading/Loading'
 import { CurrentPark, LocalParkData, LocalParkContainer, CurrentParkContainer, AddRemoveFunctionality } from '../interfaces'
 import { parkRequest } from './npsApiCall'
 import './ParkContainer.scss'
 
-type ParkContainerProps = LocalParkContainer | CurrentPark | LocalParkData | CurrentParkContainer | AddRemoveFunctionality | { parkCode: string } | {findChosenPark: (parkCode: string) => void}
+type ParkContainerProps = LocalParkContainer | CurrentPark | LocalParkData | CurrentParkContainer | AddRemoveFunctionality | { parkCode: string } | { findChosenPark: (parkCode: string) => void }
 
 const ParkContainer: React.FC<ParkContainerProps> = props => {
   const [currentPark, setCurrentPark] = useState<CurrentPark>()
+  const [loading, setLoading] = useState<boolean>(true)
   const { parkCode } = props as any
   const { findChosenPark } = props as any
   const { addToVisited } = props as AddRemoveFunctionality
@@ -22,29 +24,35 @@ const ParkContainer: React.FC<ParkContainerProps> = props => {
       parkRequest(parkCode)
         .then(data => {
           setCurrentPark(data.response.data[0])
+          setLoading(false)
         })
         .catch(error => setCurrentPark(error.message))
     }
   }, [parkCode])
 
   return (
-    <section className='park-container'>
-      {currentPark &&
-        <section>
-          <Banner
-            currentPark={currentPark} />
-          <UserNav
-            currentPark={currentPark} />
-          <ParkInfo
-            currentPark={currentPark}
-            localPark={findChosenPark(currentPark.parkCode)}
-            addToVisited={addToVisited}
-            deleteFromVisited={deleteFromVisited}
-            addToBucketList={addToBucketList}
-            deleteFromBucketList={deleteFromBucketList} />
-        </section>
+    <Fragment>
+      {!loading ?
+        <section className='park-container'>
+          {currentPark &&
+            <section>
+              <Banner
+                currentPark={currentPark} />
+              <UserNav
+                currentPark={currentPark} />
+              <ParkInfo
+                currentPark={currentPark}
+                localPark={findChosenPark(currentPark.parkCode)}
+                addToVisited={addToVisited}
+                deleteFromVisited={deleteFromVisited}
+                addToBucketList={addToBucketList}
+                deleteFromBucketList={deleteFromBucketList} />
+            </section>
+          }
+        </section> :
+        <Loading />
       }
-    </section>
+    </Fragment>
   )
 }
 

@@ -127,6 +127,10 @@ const App: React.FC<LocalParkContainer> = () => {
           generateRandomParkCode={generateRandomParkCode} />
         <Switch>
           <Route
+            exact
+            path='/'
+          />
+          <Route
             path='/park/:parkCode'
             render={({ match }) => {
                return (
@@ -144,6 +148,7 @@ const App: React.FC<LocalParkContainer> = () => {
             }}
           />
           <Route
+            exact
             path='/user/visited'
             render={() => {
               return (
@@ -159,6 +164,7 @@ const App: React.FC<LocalParkContainer> = () => {
             }}
           />
           <Route
+            exact
             path='/user/bucket-list'
             render={() => {
               return (
@@ -172,6 +178,12 @@ const App: React.FC<LocalParkContainer> = () => {
                 />
               )
             }}
+          />
+          <Route
+            path='/'
+            render={() => 
+              <h1>Page not found</h1>
+            }
           />
         </Switch>
       </section>
