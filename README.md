@@ -31,8 +31,7 @@ National Parkfinder is an application that allows you to explore all 63 of the n
 
 ## Demo
 
-This project was a final contestant at the Turing School of Software and Design's Demo Competition. The presentation video for it can be found [here](https://www.youtube.com/watch?v=DYZMqm7vZA0).
-
+This project was a final contestant at the Turing School of Software and Design's Demo Competition. See the presentation video for it below.
 
 
 [![demo comp presentation](https://imgur.com/a/8oVWpcU)](https://www.youtube.com/watch?v=DYZMqm7vZA0)
