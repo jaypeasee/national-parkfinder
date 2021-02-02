@@ -33,7 +33,7 @@ National Parkfinder is an application that allows you to explore all 63 of the n
 
 This project was a final contestant at the Turing School of Software and Design's Demo Competition. The presentation video for it can be found [here](https://www.youtube.com/watch?v=DYZMqm7vZA0).
 
-[![demo comp presentation](https://media.giphy.com/media/vnsIdmADLG19l3tvvL/giphy.gif)](https://media.giphy.com/media/vnsIdmADLG19l3tvvL/giphy.gif)
+[![demo comp presentation](https://www.youtube.com/watch?v=DYZMqm7vZA0)](https://www.youtube.com/watch?v=DYZMqm7vZA0)
 
 ![gif 1](https://media.giphy.com/media/vnsIdmADLG19l3tvvL/giphy.gif)
 
