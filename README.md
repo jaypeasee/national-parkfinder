@@ -6,7 +6,7 @@ National Parkfinder is an application that allows you to explore all 63 of the n
 
 ## How To Access This Application
 
-### [Visit the deployed site](https://jaypeasee.github.io/national-parkfinder/)
+### [Visit the deployed site](https://national-parkfinder.herokuapp.com/user/visited)
 
 *On your terminal:*
 
