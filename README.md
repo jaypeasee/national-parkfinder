@@ -8,12 +8,13 @@ National Parkfinder is an application that allows you to explore all 63 of the n
 
 ## How To Access This Application
 
-### [Visit the deployed site](https://national-parkfinder.herokuapp.com/user/visited)
+### [Visit the deployed site](https://main.dv5nkpymeg34p.amplifyapp.com/)
 
 *On your terminal:*
 
 + `git clone git@github.com:jaypeasee/national-parkfinder.git`
 + `cd national-parkfinder`
++ `npm install`
 + `npm start` (to start the server)
 + `npm test` (to run the test suite)
 
@@ -60,9 +61,6 @@ National Parkfinder is an application that allows you to explore all 63 of the n
 + [Sarah Osgood](https://github.com/saraho1123)
 + [JP Carey](https://github.com/jaypeasee) 
 + [Bailey Dunning](https://github.com/baileydunning)
-
-+ [Will Mitchell](https://github.com/wvmitchell) (Project Manager)
-+ [Leta Keane](https://github.com/letakeane) (Project Manager)
 
 
 
