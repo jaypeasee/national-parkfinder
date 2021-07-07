@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 .app {
   height: 100vh;
@@ -6,14 +6,15 @@
 
 .body {
   display: flex;
-  background-color: $gray;
+  background-color: $light-gray;
 }
 
 body {
   margin: 0;
 }
 
-p, li {
+p,
+li {
   font-family: $paragraphFont;
   font-size: 1em;
   b {
@@ -21,22 +22,23 @@ p, li {
   }
 }
 
-button, a {
-font-family: $secondaryFont;
-font-size: 1.2em;
+button,
+a {
+  font-family: $secondaryFont;
+  font-size: 1.2em;
 }
 
 h1 {
-font-family: $primaryFont;
-font-size: 2.5em;
+  font-family: $primaryFont;
+  font-size: 2.5em;
 }
 
 h2 {
-font-family: $secondaryFont;
-font-size: 1.7em;
+  font-family: $secondaryFont;
+  font-size: 1.7em;
 }
 
 h3 {
-font-family: $secondaryFont;
-font-size: 1.5em;
+  font-family: $secondaryFont;
+  font-size: 1.5em;
 }

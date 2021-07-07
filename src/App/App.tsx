@@ -5,8 +5,8 @@ import SavedParks from '../SavedParks/SavedParks'
 import Footer from '../Footer/Footer'
 import { Route, Switch, useLocation, useHistory } from 'react-router-dom'
 import { nationalParks } from '../ParkData'
-import './App.scss'
 import { LocalParkContainer } from '../interfaces'
+import './App.scss'
 
 const App: React.FC<LocalParkContainer> = () => {
   const [visitedList, setVisitedList] = useState<LocalParkContainer[] | any>([])
@@ -16,23 +16,23 @@ const App: React.FC<LocalParkContainer> = () => {
   
   useEffect(() => {
     retrieveFromStorage()
-  }, [])
+  }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (location.pathname === '/') {
       generateRandomParkCode()
     } 
-  }, [location.pathname])
+  }, [location.pathname])// eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     updateLocalVisitedParks()
     updateLocalBucketListParks()
     saveToStorage()
-  }, [visitedList, bucketList])
+  }, [visitedList, bucketList])// eslint-disable-line react-hooks/exhaustive-deps
 
   const generateRandomParkCode = (): void => {
     let index = Math.floor(Math.random() * nationalParks.length)
-    history.push(`/park/${nationalParks[index].parkCode}`)
+    history.push(`/park/${nationalParks[index].parkCode}/about`)
   }
 
   const findChosenPark = (parkCode: string): any | void => {
@@ -99,7 +99,7 @@ const App: React.FC<LocalParkContainer> = () => {
   const updateLocalVisitedParks = () => {
     if (localStorage.visitedList) {
       return nationalParks.map(park => {
-        visitedList.forEach(visitedPark => {
+        return visitedList.forEach(visitedPark => {
           if (visitedPark.parkCode === park.parkCode) {
             return park.visited = true
           }
@@ -111,7 +111,7 @@ const App: React.FC<LocalParkContainer> = () => {
   const updateLocalBucketListParks = () => {
     if (localStorage.bucketList) {
       return nationalParks.map(park => {
-        bucketList.forEach(bucketListPark => {
+        return bucketList.forEach(bucketListPark => {
           if (bucketListPark.parkCode === park.parkCode) {
             return park.bucketList = true
           }
@@ -126,6 +126,10 @@ const App: React.FC<LocalParkContainer> = () => {
         <MainNav
           generateRandomParkCode={generateRandomParkCode} />
         <Switch>
+          <Route
+            exact
+            path='/'
+          />
           <Route
             path='/park/:parkCode'
             render={({ match }) => {
@@ -144,6 +148,7 @@ const App: React.FC<LocalParkContainer> = () => {
             }}
           />
           <Route
+            exact
             path='/user/visited'
             render={() => {
               return (
@@ -159,6 +164,7 @@ const App: React.FC<LocalParkContainer> = () => {
             }}
           />
           <Route
+            exact
             path='/user/bucket-list'
             render={() => {
               return (
@@ -172,6 +178,12 @@ const App: React.FC<LocalParkContainer> = () => {
                 />
               )
             }}
+          />
+          <Route
+            path='/'
+            render={() => 
+              <h1>Page not found</h1>
+            }
           />
         </Switch>
       </section>

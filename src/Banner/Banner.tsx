@@ -14,20 +14,28 @@ const Banner: React.FC<BannerIconsProps> = props => {
     setImageIndex(0)
     setDisplayImage(images[imageIndex])
     setNumImages(images.length - 1)
-  }, [currentPark])
+  }, [currentPark])// eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setDisplayImage(images[imageIndex])
-  }, [imageIndex, images])
+  }, [imageIndex, images])// eslint-disable-line react-hooks/exhaustive-deps
 
-  const navigateToImage = (index) => {
+  const navigateToImage = (index: number) => {
     setImageIndex(index)
+  }
+
+  const returnFullName = () => {
+    if (currentPark.parkCode === 'hale') {
+      return 'Haleakala National Park'
+    } else {
+      return currentPark.fullName
+    }
   }
 
   return (
     <section className='banner'>
       <div className='header-container'>
-        <h1 className='header'>{currentPark.fullName}, {currentPark.states}</h1>
+        <h1 className='header'>{returnFullName()}, {currentPark.states}</h1>
         {displayImage && <p className='caption'>
           {displayImage.caption}
         </p>}
